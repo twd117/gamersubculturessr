@@ -1,0 +1,375 @@
+<template>
+ 
+
+       
+  <div id="post-content">
+    <div class="article aparent">
+
+     
+      
+          <h1 class="ht">{{ title }}</h1>
+          <span class="plight">{{ sub }}</span>
+    <div class="line"></div>
+           <p>Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
+          </p>
+           
+             <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
+        <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
+
+
+   
+
+      
+               <Markdown :source="analyse" />
+           <div class="adscontent">
+            <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=audible&banner=0JQ00KZ513VB4C3237R2&f=ifr&linkID=da339c27ad8e696cbb980883869e5ccd&t=twd117-20&tracking_id=twd117-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+     </div>
+     <div class="adscontent">
+        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WESS5Z3AQKPESJP3Q02&f=ifr&linkID=751ee62a6eb427fb2ad14aea560daf36&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+        <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WA1AMGEM64YBAA7DD02&f=ifr&linkID=b45354aa4d99bf0b06d9f583b221559f&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+    </div>
+         <div class="video-container">
+       <iframe
+        id="ytb"
+        width="auto"
+        height="600"
+        :src="'https://www.youtube.com/embed/' + video"
+        frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+    allowfullscreen
+      >
+      </iframe>
+              </div>
+        
+      <div id="ratingandsocial">
+     
+        <div class="rs">
+                    <SocialMedia :url="currentUrl" :title="this.title" />
+
+        </div>
+
+
+
+      </div>
+       <div class="adscontent">
+        <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audible&banner=15WGQ1T6BXD8XW05K082&f=ifr&linkID=7d3b856a11319f57cfc3ef256cc0b15a&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+       <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=1WWY485S6ZYHZYBTVZ02&f=ifr&linkID=022f1a3fd34139c13e372b115b0df141&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+       </div>
+       <div id="thirdad"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+import SocialMediaVue from "./SocialMedia.vue";
+import MarkdownVue from 'vue3-markdown-it';
+import moment from 'moment'
+import { defineComponent, computed, reactive } from 'vue'
+import { useHead } from '@vueuse/head'
+import {useRoute} from 'vue-router';
+import postscribe from 'postscribe';
+
+export default defineComponent({
+  mounted() {
+    postscribe('#thirdad', '<div id="amzn-assoc-ad-8d2ef21e-c3ef-4587-8351-835e6f1e36d6"></div><script async src="\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=8d2ef21e-c3ef-4587-8351-835e6f1e36d6"><\/script>');
+
+    },
+    setup(props) {
+         const route=useRoute();
+
+    const siteData = reactive({
+      title: props.title,
+      description: props.sub,
+      url:"https://gamersubculture.com"+route.path  ,
+    
+      img: props.imgurl,
+    })
+      console.log("--R--",siteData.url)
+    useHead({
+      // Can be static or computed
+      title: computed(() => siteData.title),
+      meta: [
+      {
+          name: `twitter:card`,
+          content: computed(() => "summary_large_image"),
+        },
+    
+          {
+          name: `og:title`,
+          content: computed(() => siteData.title),
+        },
+        {
+          name: `description`,
+          content: computed(() => siteData.description),
+        },
+       
+         {
+          name: `og:image`,
+          content: computed(() => siteData.img),
+        },
+          {
+          name: `og:type`,
+          content: "article",
+        },
+          {
+          name: `og:url`,
+          content: computed(() => siteData.url),
+        },
+
+      ],
+    })
+  },
+  components: {
+    SocialMedia: SocialMediaVue,
+     Markdown:MarkdownVue,
+
+     
+
+  },
+  name: "Article",
+  props: [
+    "title",
+    "sub",
+    "img",
+    "tag",
+    "analyse",
+    "video",
+    "date",
+    "imgurl"
+
+  ],
+  data() {
+    return {
+      currentUrl: "",
+    };
+},
+created() {
+this.currentUrl = window.location.href;
+    this.moment = moment;
+
+},
+});
+</script>
+
+<style>
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+p > img {
+  width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.plight {
+      font-family: Google Sans;
+text-align:left;
+    font-size: 1.2375rem;
+    line-height: 1.95rem;
+    font-weight: 300;
+    font-style: normal;
+    color: #000;
+}
+ .adsbanner {
+      display: none; 
+}
+.adscontent {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.line {
+    height: 0.5px;
+  margin-top: 10px;
+
+  background-color:#424242;
+  width: 100%;
+ 
+}
+
+h2 {
+  
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: start;
+}
+#starcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+.ic svg {
+  margin-right: 4px;
+  color: white;
+}
+.ic {
+  position: static;
+  width: 16px;
+  height: 16px;
+  left: calc(50% - 16px / 2 - 16px);
+  top: calc(50% - 16px / 2);
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+.start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 80px;
+  height: 16px;
+  left: 0px;
+  top: 40px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
+.rs {
+  flex-grow: 1;
+}
+#ratingandsocial {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#ytb {
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+.aparent {
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  height: 100%;
+}
+.ht {
+  color: #424242;
+  font-family: Google Sans;
+  font-size: 2.25rem;
+  font-weight: 400;
+  letter-spacing: 0.0175rem;
+  line-height: 2.75rem;
+  text-align: left;
+  margin-top: 16px;
+}
+
+.news {
+  font-family: Google Sans;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #424242;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.image {
+  /*  max-height:300px; */
+
+  width: auto;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top:30px;
+}
+.article p {
+font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+   letter-spacing: 1.2px;
+  text-align: left;
+  color: #000;
+ 
+}
+
+#post-content {
+  display: flex;
+
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1090px) {
+  .aparent {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    height: 100%;
+  }
+   .ione{
+     display:none;
+  }
+}
+@media only screen and (max-width: 976px) {
+  .adsbanner700{
+    display: none;
+  }
+    .adsbanner {
+      display: flex; 
+      justify-content: center;
+}
+}
+@media only screen and (max-width: 800px) {
+  .aparent {
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+}
+
+@media only screen and (max-width: 700px) {
+  .aparent {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    height: 100%;
+  }
+  .ione{
+     display:none;
+  }
+  
+}
+@media only screen and (max-width: 600px) {
+
+  .ione{
+     display:none;
+  }
+  
+}
+@media only screen and (max-width: 470px) {
+  .adsbanner {
+      display: none;
+       
+}
+ .ione{
+     display:none;
+  }
+  .itwo{
+     display:none;
+  }
+}
+
+
+</style>
