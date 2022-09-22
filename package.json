@@ -6,7 +6,7 @@
     "dev": "node ./node_modules/vite-ssr/cli.js --port 1337 --force",
     "dev:spa": "vite --port 1337 --force",
     "build": "rm -rf dist && node ./node_modules/vite-ssr/cli.js build",
-    "serve:node": "node ./node-server/index vue"
+    "serve:node": "node ./node-server/index"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
