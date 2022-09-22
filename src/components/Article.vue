@@ -76,12 +76,12 @@ import moment from 'moment';
 import { defineComponent, computed, reactive } from 'vue';
 import { useHead } from '@vueuse/head';
 import {useRoute} from 'vue-router';
-import postscribe from 'postscribe';
+//import postscribe from 'postscribe';
 
 
 export default defineComponent({
   mounted() {
-      postscribe('#adone', `
+    /*  postscribe('#adone', `
       <div id="amzn-assoc-ad-685efb3f-43c9-4863-946b-07f2f5b6885f"><\/div>
       <script async src=https:\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=685efb3f-43c9-4863-946b-07f2f5b6885f>
         <\/script>
@@ -91,7 +91,7 @@ export default defineComponent({
       <script async src=https:\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=e98e4aa5-df51-4a6e-8d85-c1350ebcaf7a>
         <\/script>
       `
-      );
+      );*/
 
     },
     setup(props) {

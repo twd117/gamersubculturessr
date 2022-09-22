@@ -68,11 +68,10 @@ import moment from 'moment'
 import { defineComponent, computed, reactive } from 'vue'
 import { useHead } from '@vueuse/head'
 import {useRoute} from 'vue-router';
-import postscribe from 'postscribe';
 
 export default defineComponent({
   mounted() {
-    postscribe('#thirdad', '<div id="amzn-assoc-ad-8d2ef21e-c3ef-4587-8351-835e6f1e36d6"></div><script async src="\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=8d2ef21e-c3ef-4587-8351-835e6f1e36d6"><\/script>');
+   // postscribe('#thirdad', '<div id="amzn-assoc-ad-8d2ef21e-c3ef-4587-8351-835e6f1e36d6"></div><script async src="\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=8d2ef21e-c3ef-4587-8351-835e6f1e36d6"><\/script>');
 
     },
     setup(props) {
