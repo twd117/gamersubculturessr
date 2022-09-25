@@ -2,7 +2,7 @@
  
     <div class="card-shadow child card radius shadowDepth1">
        <router-link v-if="!isScience"
-    :to="{ name: 'Article', params: { id: this.id, title: this.title } }"
+    :to="{ name: 'Article', params: { id: this.id, title: this.title  } }"
   >
       <div class="card__image border-tlr-radius">
         <img :src="img[0].downloadURL" alt="image" class="border-tlr-radius" />
@@ -62,7 +62,8 @@ export default {
     "video",
     "platform",
     "rating",
-    "isScience"
+    "isScience",
+    "imgurl"
   ],
 };
 </script>

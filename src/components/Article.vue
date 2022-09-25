@@ -74,9 +74,9 @@ import SocialMediaVue from "./SocialMedia.vue";
 import MarkdownVue from 'vue3-markdown-it';
 import moment from 'moment';
 import { defineComponent, computed, reactive } from 'vue';
-import { useHead } from '@vueuse/head';
 import {useRoute} from 'vue-router';
 //import postscribe from 'postscribe';
+
 
 
 export default defineComponent({
@@ -94,11 +94,14 @@ export default defineComponent({
       );*/
 
     },
+  
     setup(props) {
-
+       
+      
+     
     //  postscribe('#firstad', '<h1>Hello PostScribe</h1>');
 
-         const route=useRoute();
+    /*     const route=useRoute();
 
     const siteData = reactive({
       title: props.title,
@@ -135,7 +138,7 @@ export default defineComponent({
         },
 
       ],
-    })
+    })*/
   },
   components: {
     SocialMedia: SocialMediaVue,
@@ -167,7 +170,10 @@ export default defineComponent({
     };
 },
 created() {
-this.currentUrl = window.location.href;
+  const route=useRoute();
+
+ 
+this.currentUrl = "https://gamersubculture.com"+route.path;
     this.moment = moment;
 
 },

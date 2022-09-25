@@ -59,6 +59,7 @@ export default {
     rating: Number,
     img:String,
     isScience:Boolean,
+    imgurl:String,
     
 
   },

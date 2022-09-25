@@ -75,7 +75,7 @@ export default defineComponent({
 
     },
     setup(props) {
-         const route=useRoute();
+    /*     const route=useRoute();
 
     const siteData = reactive({
       title: props.title,
@@ -117,7 +117,7 @@ export default defineComponent({
         },
 
       ],
-    })
+    })*/
   },
   components: {
     SocialMedia: SocialMediaVue,
@@ -144,7 +144,9 @@ export default defineComponent({
     };
 },
 created() {
-this.currentUrl = window.location.href;
+    const route=useRoute();
+    this.currentUrl = "https://gamersubculture.com"+route.path;
+
     this.moment = moment;
 
 },

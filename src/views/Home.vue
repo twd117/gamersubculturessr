@@ -10,6 +10,7 @@
       :rating="data[0].rating"
       :img="data[0].img[0].downloadURL"
       :isScience="isScience"
+      :imgurl="data[0].imgurl"
     />
     <Title />
                <div class="line"></div>
@@ -38,11 +39,12 @@ import {
   startAfter,
 } from "firebase/firestore";
 
-
 import db from "../dbclient/dbclient.js";
 
 export default {
   name: "Home",
+  
+    
   components: {
     Box: BoxVue,
     Header: HeaderVue,
@@ -98,7 +100,10 @@ export default {
             rating: doc.data().rating,
             tag: doc.data().tag,
             date: doc.data().date,
+            imgurl: doc.data().imgurl
+
           });
+          console.log(doc.id, " => ", doc.data().imgurl);
 
         });
       });
@@ -112,7 +117,7 @@ export default {
       const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(6));
       await getDocs(q).then((querySnapshot) => {
         this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-        console.log("last", this.lastVisible);
+      //  console.log("last", this.lastVisible);
 
         querySnapshot.forEach((doc) => {
           this.data.push({
@@ -128,8 +133,9 @@ export default {
             rating: doc.data().rating,
             tag: doc.data().tag,
             date: doc.data().date,
+            imgurl: doc.data().imgurl
           });
-           console.log(doc.id, " => ", doc.data());
+           console.log(doc.id, " => ", doc.data().imgurl);
         });
       });
 
@@ -155,7 +161,11 @@ export default {
            
             tag: doc.data().tag,
             date: doc.data().date,
+            imgurl: doc.data().imgurl
+
           });
+          console.log(doc.id, " => ", doc.data().imgurl);
+
         });
 
       });
@@ -188,8 +198,10 @@ export default {
            
             tag: doc.data().tag,
             date: doc.data().date,
+            imgurl: doc.data().imgurl
+
           });
-                     console.log(doc.id, " S=> ", doc.data());
+          console.log(doc.id, " => ", doc.data().imgurl);
 
         });
       });

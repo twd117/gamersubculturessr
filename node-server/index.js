@@ -49,6 +49,7 @@ server.get('*', async (request, response) => {
     response,
     // initialState: { ... } // <- This would also be available
   })
+ // console.log(`expess--------:${html}`)
 
   response.type('html')
   response.writeHead(status || 200, statusText || headers, headers)

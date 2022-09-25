@@ -31,9 +31,12 @@ export default viteSSR(
       
       // Before each route navigation we request the data needed for showing the page.
       router.beforeEach(async (to, from, next) => {
+
         if (!!to.meta.state && Object.keys(to.meta.state).length > 0) {
           // This route has state already (from server) so it can be reused.
           // State is always empty in SPA development, but present in SSR development.
+          console.log("to------",JSON.stringify(to));
+
           return next();
         }
   
@@ -52,11 +55,12 @@ export default viteSSR(
         // directly in the browser, as opposed to the first page rendering.
   
         try {
+          
           // Get our page props from our custom API:
-        /*  const res = await fetch(
+         const res = await fetch(
             `${baseUrl}/api/getProps?path=${encodeURIComponent(to.path)}&name=${
               to.name
-            }&client=${isClient}`,
+            }&client=${isClient}&title=${to.params.title}`,
             {
               method: 'GET',
               headers: {
@@ -65,7 +69,7 @@ export default viteSSR(
             }
           )
   
-          to.meta.state = await res.json()*/
+          to.meta.state = await res.json()
         } catch (error) {
           console.error(error)
           // redirect to error route

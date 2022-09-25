@@ -13,6 +13,7 @@
             :isScience="isScience"
 
       :video="item.video"
+      :imgurl="item.imgurl"
     />
     </template>
 
@@ -32,6 +33,8 @@
       :video="item.video"
       :rating="item.rating"
       :isScience="isScience"
+      :imgurl="item.imgurl"
+
     />
     </template>
     
