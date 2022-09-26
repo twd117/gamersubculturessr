@@ -44,8 +44,8 @@ export default {
   async setup(props) {
     console.log("props---",props);
 
-     const sdata = [];
-    const q = collection(db, "articles");
+  //   const sdata = [];
+ //   const q = collection(db, "articles");
     //  const queryR = query(q, where("__name__", "==", props.id));
       const queryR = doc(db, "articles", props.id);
 
@@ -140,7 +140,7 @@ export default {
       error: false,
     };
   },
-  props: ["id","title","url"],
+  props: ["id",],
   created() {
     //this.readArticles();
   },

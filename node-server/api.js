@@ -43,9 +43,9 @@ module.exports = [
     route: '/api/getProps',
     method: 'get',
     handler(req, res) {
-      const url = new URL('http://e.c' + req.originalUrl)
+     // const url = new URL('http://e.c' + req.originalUrl)
       console.log('getProps', req.data )
-      const routeName = url.searchParams.get('title') || ''
+     // const routeName = url.searchParams.get('title') || ''
       res.end(
         JSON.stringify({
          // name: routeName,

@@ -19,11 +19,11 @@
 <script>
 import ArticleVue from "../components/ScienceArticle.vue";
 import FooterVue from "../components/Footer.vue";
-import { collection, where, query, getDocs,doc,getDoc } from "firebase/firestore";
+import { doc,getDoc } from "firebase/firestore";
 import DetailNavVue from "../components/Dnav.vue"
 import db from "../dbclient/dbclient.js";
 import BoxVue from "../components/Box.vue";
-import {  inject, ref } from 'vue'
+import {   ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useContext } from 'vite-ssr/vue'
 import {  computed } from 'vue';
@@ -58,7 +58,6 @@ export default {
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
          console.log("Home---",homeLocalState.value);
-       const title = '';
 
 
        try{
@@ -70,8 +69,7 @@ export default {
        }
        useHead({
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
-         htmlAttrs: { lang: 'es' },
-         bodyAttrs: { class: 'dummy test' },
+    
          meta: [
            {
           name: `og:title`,

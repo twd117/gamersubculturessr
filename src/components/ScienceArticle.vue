@@ -44,7 +44,7 @@
       <div id="ratingandsocial">
      
         <div class="rs">
-                    <SocialMedia :url="currentUrl" :title="this.title" />
+                    <SocialMedia :url="currentUrl" :title="title" />
 
         </div>
 

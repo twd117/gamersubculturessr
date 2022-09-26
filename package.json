@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "node ./node_modules/vite-ssr/cli.js --port 1337 --force",
+    "dev": "node ./node_modules/vite-ssr/cli.js --port 8080 ",
     "dev:spa": "vite --port 1337 --force",
     "build": "rm -rf dist && node ./node_modules/vite-ssr/cli.js build",
     "serve:node": "node ./node-server/index"

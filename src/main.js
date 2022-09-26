@@ -60,7 +60,7 @@ export default viteSSR(
          const res = await fetch(
             `${baseUrl}/api/getProps?path=${encodeURIComponent(to.path)}&name=${
               to.name
-            }&client=${isClient}&title=${to.params.title}`,
+            }&client=${isClient}`,
             {
               method: 'GET',
               headers: {
