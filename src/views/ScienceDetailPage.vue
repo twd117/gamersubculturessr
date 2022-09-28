@@ -98,7 +98,7 @@ export default {
            },
          ],
        })
-       if (!homeLocalState.value) {
+       if (true) {
          // No data, get it fresh from any API
          const fbd = await getDoc(queryR);
 
