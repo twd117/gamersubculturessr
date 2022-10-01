@@ -28,7 +28,7 @@
         <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WESS5Z3AQKPESJP3Q02&f=ifr&linkID=751ee62a6eb427fb2ad14aea560daf36&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
         <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WA1AMGEM64YBAA7DD02&f=ifr&linkID=b45354aa4d99bf0b06d9f583b221559f&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
     </div>
-         <div class="video-container">
+         <div v-if="video"  class="video-container">
        <iframe
         id="ytb"
         width="auto"

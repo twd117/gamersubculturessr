@@ -27,7 +27,7 @@
 
 
 
-     <div class="video-container">
+     <div v-if="video" class="video-container">
        <iframe
         id="ytb"
         width="auto"
