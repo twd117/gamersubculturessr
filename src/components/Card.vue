@@ -100,7 +100,6 @@ a:hover {
   margin-right: 1rem;
   margin-left: 1rem;
   min-height: 100px;
-  background-color: #eee;
 }
 .card__image img {
   width: 100%;
@@ -121,9 +120,9 @@ a:hover {
 /* card article */
 .card__article a {
   text-decoration: none;
+  text-align: left;
 
   transition: all 0.5s ease;
-  text-align: left;
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   line-height: 32px;
@@ -135,6 +134,7 @@ a:hover {
   color: #2980b9;
 }
 .card-text {
+  text-align: left;
   font-family: Roboto;
   font-size: 14px;
   line-height: 20px;

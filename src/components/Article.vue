@@ -27,7 +27,12 @@
 
 
 
-     <div v-if="video" class="video-container">
+   
+        
+           
+               <Markdown :source="analyse" />
+
+               <div v-if="video" class="video-container">
        <iframe
         id="ytb"
         width="auto"
@@ -39,11 +44,6 @@
       >
       </iframe>
 </div>
-        
-           
-               <Markdown :source="analyse" />
-
-
       
   
        <div id="adone"></div>

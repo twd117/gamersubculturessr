@@ -16,8 +16,11 @@
                <div class="line"></div>
 
   </box>
+ 
 
   <ListView :isScience="isScience" :d="data" />
+
+  
   <Pagination :isScience="isScience" :next="readArticlesNext" :nextScience="readSciencesArticlesNext"  />
   <Footer />
 </template>
@@ -30,6 +33,7 @@ import ListViewVue from "../components/ListView.vue";
 import FooterVue from "../components/Footer.vue";
 import TitleVue from "../components/TitleSection.vue";
 import PaginationVue from "../components/Pagination.vue"
+import SideBarVue from "../components/SideBar.vue";
 import {
   collection,
   query,
@@ -52,7 +56,8 @@ export default {
     ListView: ListViewVue,
     Footer: FooterVue,
     Title: TitleVue,
-    Pagination:PaginationVue
+    Pagination:PaginationVue,
+    SideBar:SideBarVue
   },
   data() {
     return {
@@ -214,6 +219,12 @@ export default {
 </script>
 
 <style>
+
+.ms {
+  display: flex;
+  flex-direction: row;
+}
+
 .line {
     height: 0.2px;
   margin-top: 10px;

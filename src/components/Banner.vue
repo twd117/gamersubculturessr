@@ -82,7 +82,11 @@ a :hover{
   text-decoration: none; /* no underline */
 }
 
+.btn:hover{
+  background-color: #fff;
+  color:#262626
 
+}
 #starcontainer {
   display:flex;
   flex-direction:row;
@@ -288,6 +292,11 @@ a {
   text-align: left;
 }
 
+
 }
+
+
+
+  
 
 </style>
