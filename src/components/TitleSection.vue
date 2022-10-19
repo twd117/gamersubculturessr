@@ -1,11 +1,13 @@
 <template>
-  <div id="titlebox"><h1 class="ht">Our latest news and events</h1></div>
+  <div id="titlebox"><h1 class="ht">{{text}}</h1></div>
 </template>
 <script>
 export default {
-  name: "DetailPage",
+  name: "TitleSection",
+  props: ["text"]
 };
 </script>
+
 <style>
 #titlebox {
   display: flex;

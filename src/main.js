@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import { createPinia } from 'pinia'
 
 
 // or from 'vite-ssr/vue' or 'vite-ssr/react', which slightly improves typings
@@ -23,6 +24,9 @@ export default viteSSR(
     { routes },
     ({ app, router, isClient, url, initialState, initialRoute, request }) => {
       const head = createHead();
+      const pinia = createPinia()
+      app.use(pinia)
+
       app.use(head);
 
       app.component('font-awesome-icon', FontAwesomeIcon);

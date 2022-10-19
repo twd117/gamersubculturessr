@@ -1,27 +1,37 @@
 <template>
   <box>
-    <Header :isScience="isScience" :isScienceMethode="isScienceMethode" :sciences="readSciencesArticles" :games="readArticles" />
+    <Header    />
     <Banner
-      v-if="data.length > 0"
-      :id="data[0].id"
-      :title="data[0].title"
-      :tag="data[0].tag"
-      :sub="data[0].sub"
-      :rating="data[0].rating"
-      :img="data[0].img[0].downloadURL"
-      :isScience="isScience"
-      :imgurl="data[0].imgurl"
+      v-if="dataStore.data.length > 0"
+      :id="dataStore.data[0].id"
+      :title="dataStore.data[0].title"
+      :tag="dataStore.data[0].tag"
+      :sub="dataStore.data[0].sub"
+      :rating="dataStore.data[0].rating"
+      :img="dataStore.data[0].img[0].downloadURL"
+      :imgurl="dataStore.data[0].imgurl"
     />
-    <Title />
+    <Title text="Our latest news and events"/>
                <div class="line"></div>
 
   </box>
  
 
-  <ListView :isScience="isScience" :d="data" />
+  <ListView  :d="dataStore.data.slice(0,6)" />
 
+  <Box>
+    <Title v-if="dataStore.data.length>6" text="Latest articles"/>
+
+  <div id="vlst" v-if="dataStore.data.length>6" >
+
+
+  <VlistView  :d="dataStore.data.slice(6,dataStore.data.length)" />
+   <SideBar  :d="dataStore.sidebarData" />
+  </div>
   
-  <Pagination :isScience="isScience" :next="readArticlesNext" :nextScience="readSciencesArticlesNext"  />
+  </Box>
+  
+  <Pagination   />
   <Footer />
 </template>
 
@@ -32,8 +42,12 @@ import HeaderVue from "../components/Header.vue";
 import ListViewVue from "../components/ListView.vue";
 import FooterVue from "../components/Footer.vue";
 import TitleVue from "../components/TitleSection.vue";
-import PaginationVue from "../components/Pagination.vue"
+import PaginationVue from "../components/Pagination.vue";
 import SideBarVue from "../components/SideBar.vue";
+import VlistViewVue from "../components/VlistView.vue";
+
+import {useDataStore} from "../store/useDataStore.js"
+
 import {
   collection,
   query,
@@ -44,11 +58,18 @@ import {
 } from "firebase/firestore";
 
 import db from "../dbclient/dbclient.js";
+import { mapState,mapActions } from 'pinia';
+import { useNavStore } from "../store/useNavStore.js"
 
 export default {
   name: "Home",
   
-    
+  setup() {
+    const dataStore = useDataStore()
+    const store = useNavStore();
+
+    return { dataStore ,store}
+  },
   components: {
     Box: BoxVue,
     Header: HeaderVue,
@@ -56,170 +77,69 @@ export default {
     ListView: ListViewVue,
     Footer: FooterVue,
     Title: TitleVue,
-    Pagination:PaginationVue,
-    SideBar:SideBarVue
-  },
+    Pagination: PaginationVue,
+    SideBar: SideBarVue,
+    VlistView: VlistViewVue,
+},
+computed:{
+      
+  
+
+    },
   data() {
     return {
       name: "",
       data: [],
-      isScience: false,
-      lastVisible: null,
+     
+      
     };
   },
-
+ 
   async mounted() {
-    await this.readArticles();
+    console.log("path----",this.category);
+      switch(this.category) {
+        case "news":
+         await this.dataStore.getNewsArticles();
+        this.store.setIsNews(true);
+    await this.dataStore.getSidebarDataEnter();
+              
+          break;
+         case "games":
+         await this.dataStore.getGameArticles();
+         this.store.setIsGame(true);
+    await this.dataStore.getSidebarDataEnter();
+              
+          break;
+          case "entertainment":
+            this.store.setIsEntertainment(true);
+          await this.dataStore.getEntertainmentArticles();
+          await this.dataStore.getSidebarDataEnter();
+           break ;
+
+          default:
+          this.store.setIsGame(true);
+
+          await this.dataStore.getGameArticles();
+          await this.dataStore.getSidebarDataEnter();
+          ;
+
+      }
+   
+   // await this.getEnter();
   },
-  methods: {
-   
-   isScienceMethode(b){
-        this.isScience=b;
-   },
-
-    async readArticlesNext() {
-      //  Construct a new query starting at this document,
-      // get the next 25 cities.
-   if(this.lastVisible !== undefined){
-           const next = query(
-        collection(db, "articles"),
-        orderBy("_createdAt",'desc'),
-        startAfter(this.lastVisible),
-        limit(6)
-      );
-       await getDocs(next).then((querySnapshot) => {
-        this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-        //   console.log("last", this.lastVisible);
-
-        querySnapshot.forEach((doc) => {
-          this.data.push({
-            id: doc.id,
-            title: doc.data().title,
-            img: doc.data().img,
-            sub: doc.data().subtitle,
-            story: doc.data().story,
-            dev: doc.data().dev,
-            analyse: doc.data().analyse,
-            video: doc.data().video,
-            patform: doc.data().platform,
-            rating: doc.data().rating,
-            tag: doc.data().tag,
-            date: doc.data().date,
-            imgurl: doc.data().imgurl
-
-          });
-          console.log(doc.id, " => ", doc.data().imgurl);
-
-        });
-      });
-   }
-   
-    },
-   
-    async readArticles() {
-      this.data = [];
-
-      const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(6));
-      await getDocs(q).then((querySnapshot) => {
-        this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-      //  console.log("last", this.lastVisible);
-
-        querySnapshot.forEach((doc) => {
-          this.data.push({
-            id: doc.id,
-            title: doc.data().title,
-            img: doc.data().img,
-            sub: doc.data().subtitle,
-            story: doc.data().story,
-            dev: doc.data().dev,
-            analyse: doc.data().analyse,
-            video: doc.data().video,
-            patform: doc.data().platform,
-            rating: doc.data().rating,
-            tag: doc.data().tag,
-            date: doc.data().date,
-            imgurl: doc.data().imgurl
-          });
-           console.log(doc.id, " => ", doc.data().imgurl);
-        });
-      });
-
-  
-    },
-
-    async readSciencesArticles() {
-      this.data = [];
-
-      const q = query(collection(db, "entertainment"), orderBy("date",'desc'));
-      await getDocs(q).then((querySnapshot) => {
-        this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-
-        querySnapshot.forEach((doc) => {
-          this.data.push({
-            id: doc.id,
-            title: doc.data().title,
-            img: doc.data().img,
-            sub: doc.data().subtitle,
-            
-            analyse: doc.data().analyse,
-            video: doc.data().video,
-           
-            tag: doc.data().tag,
-            date: doc.data().date,
-            imgurl: doc.data().imgurl
-
-          });
-          console.log(doc.id, " => ", doc.data().imgurl);
-
-        });
-
-      });
-
-
-    },
-
-     async readSciencesArticlesNext() {
-      //  Construct a new query starting at this document,
-      // get the next 25 cities.
-   if(this.lastVisible !== undefined){
-           const next = query(
-        collection(db, "entertainment"),
-        orderBy("date",'desc'),
-        startAfter(this.lastVisible),
-        limit(6)
-      );
-       await getDocs(next).then((querySnapshot) => {
-        this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-
-        querySnapshot.forEach((doc) => {
-          this.data.push({
-            id: doc.id,
-            title: doc.data().title,
-            img: doc.data().img,
-            sub: doc.data().subtitle,
-           
-            analyse: doc.data().analyse,
-            video: doc.data().video,
-           
-            tag: doc.data().tag,
-            date: doc.data().date,
-            imgurl: doc.data().imgurl
-
-          });
-          console.log(doc.id, " => ", doc.data().imgurl);
-
-        });
-      });
-   }
-   
-    },
-
-  },
+  props:[
+    "category"
+  ]
+ 
 };
 </script>
 
 <style>
 
+#vlst {
+  display:flex;
+  flex-direction:row;
+}
 .ms {
   display: flex;
   flex-direction: row;
@@ -241,4 +161,6 @@ export default {
   color: #2c3e50;
   margin-top: 6px;
 }
+
+
 </style>

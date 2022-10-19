@@ -4,7 +4,7 @@
   <Article
   v-if="homeLocalState !== null"
     :title="homeLocalState.title"
-    :sub="homeLocalState.sub"
+    :sub="homeLocalState.subtitle"
     :img="homeLocalState.img"
     :tag="homeLocalState.tag"
     :analyse="homeLocalState.analyse"

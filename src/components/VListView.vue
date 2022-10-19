@@ -1,7 +1,10 @@
 <template>
-  <div id="main">
+   
+   <div id="fc">
+      
     <template v-if="store.isEntertainment">
-        <Card
+
+        <ListItem
       v-for="item in d"
       :key="item.id"
       :id="item.id"
@@ -11,6 +14,7 @@
       :tag="item.tag"
       :analyse="item.analyse"
             :isScience="isScience"
+            :date="item.date"
 
       :video="item.video"
       :imgurl="item.imgurl"
@@ -18,7 +22,8 @@
     </template>
 
       <template v-else>
-         <Card
+
+         <ListItem
       v-for="item in d"
       :key="item.id"
       :id="item.id"
@@ -32,44 +37,53 @@
       :dev="item.dev"
       :video="item.video"
       :rating="item.rating"
+      :isScience="isScience"
       :imgurl="item.imgurl"
+      :date="item.date"
 
     />
     </template>
     
-     
-  </div>
+    
+   </div>
+
+
 </template>
+  
+  <script>
+  import { useNavStore } from "../store/useNavStore.js"
 
-<script>
-import CardVue from "./Card.vue";
-import { useNavStore } from "../store/useNavStore.js";
-
-export default {
-  setup(){
+  import ListItemVue from "./ListItem.vue"
+import ListItem from "./ListItem.vue";
+  export default {
+    setup(){
     const store = useNavStore();
-    console.log(store.isEntertainment);
     console.log("Enter",store.isEntertainment);
     console.log("Game",store.isGame);
     console.log("Tech",store.isTech);
     return { store }
   },
-  name: "ListView",
-  components: {
-    Card: CardVue,
-  },
-  props: ["d","isScience"],
-};
-</script>
-
-<style>
-#main {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  margin-top: 28px;
+    name: "VlistView",
+    props: ["d",],
+    components: {
+    ListItem: ListItemVue,
+   
 }
-</style>
+
+  };
+  </script>
+  
+  <style scoped>
+
+ #fc {
+  display:flex;
+  flex-direction:column;
+  width: 75%;
+}
+@media screen and (max-width: 900px) {
+  #fc {
+ 
+  width: 100%;
+}
+}
+  </style>

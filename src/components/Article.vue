@@ -14,8 +14,8 @@
     
 
       
-        <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
-        <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
+        <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
+        <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
          <Markdown :source="story" />
        
@@ -26,7 +26,7 @@
        
 
 
-
+   
    
         
            
@@ -43,13 +43,17 @@
     allowfullscreen
       >
       </iframe>
-</div>
+
+    </div>
+
+    <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
+
+ 
       
   
-       <div id="adone"></div>
-       <div id="adtwo"></div>
-       <div id="adone"></div>
-
+       
+      
+    <div class="line"></div>
 
               
       <div id="ratingandsocial">
@@ -58,9 +62,20 @@
                     <SocialMedia :url="currentUrl" :title="title" />
 
         </div>
-
+       
             
       </div>
+   
+
+      <div id="adone">
+        <a  href="https://click.linksynergy.com/deeplink?id=776HN38ApGc&mid=24348&murl=https%3A%2F%2Fwww.gamestop.com%2Flinks%2Fcod2022-all">
+        <img class="asdimg" src="https://usc1.contabostorage.com/9b6c64f78c7b446b983b960b73d85d6a:images/HP_MW2POGWP_696x468_2UpFtr_D.webp"/>
+      </a>
+
+      <a  href="https://click.linksynergy.com/deeplink?id=776HN38ApGc&mid=24348&murl=https%3A%2F%2Fwww.gamestop.com%2Flinks%2Fgothamknights-all">
+        <img class="asdimg" src="https://usc1.contabostorage.com/9b6c64f78c7b446b983b960b73d85d6a:images/HP_GothamKnightsPOGWP_696x468_2UpFtr_D.webp"/>
+      </a>
+       </div>
        </div> 
   
       
@@ -180,7 +195,41 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 });
 </script>
 
-<style>
+<style scoped>
+.mgb{
+  margin-bottom: 20px;
+}
+.tagspan{
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background: none;
+    color: #202125;
+    border: 1px solid;
+    
+    border: #202125 1px solid;
+    transition: 250ms ease-out;
+}
+.tagcat{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+}
+#adone{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8px;
+}
+.asdimg{
+  width:100%;
+  height: auto;
+}
 .ve {
       position: relative;
     padding-bottom: 56.25%;
@@ -191,6 +240,8 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
+  margin-top: 25px;
+  margin-bottom:25px;
 }
 
 .video-container iframe {
@@ -289,7 +340,7 @@ h2 {
 #ratingandsocial {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 2px;
   margin-bottom: 50px;
 }
 #ytb {

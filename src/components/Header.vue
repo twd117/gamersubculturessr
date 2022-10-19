@@ -3,16 +3,22 @@
     <div id="logo">
       <span>ゲームオタク</span>
     </div>
-
+     
     <ul class="mhchild--featured hparent">
-           <li @click="games();isScienceMethode(false);" class="hchild nav-link" :class="{ active: !isScience }" >
-       Video-Game 
+      <li @click="gamelinkclick()" class="hchild nav-link" :class="{ active: store.isGame }" >
+       Games 
         <div class="underline" ></div>
+      </li> 
+      <li @click="newslinkclick()" class="hchild nav-link" :class="{ active: store.isNews }">
+        news
+        <div class="underline "></div>
       </li>  
-       <li @click="sciences();isScienceMethode(true)" class="hchild nav-link" :class="{ active: isScience }">
+          
+       <li @click="enterlinkclick()" class="hchild nav-link" :class="{ active: store.isEntertainment }">
         Entertainment
         <div class="underline "></div>
       </li>  
+     
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
       <router-view />
     </ul>
@@ -24,19 +30,55 @@
 </template>
 
 <script>
+import { useNavStore } from "../store/useNavStore.js"
+import {useDataStore} from "../store/useDataStore.js"
+
 export default {
+  setup(){
+    const store = useNavStore();
+    const dataStore = useDataStore()
+
+  
+    return { store ,dataStore}
+  },
   data() {
     return {
       isunderline: true,
     }
   },
-  methods: {},
+  methods: {
+    async gamelinkclick(){
+      await  this.dataStore.getGameArticles();
+    //  this.isScienceMethode(false);
+    await  this.dataStore.getSidebarDataEnter();
+      this.store.setIsGame(true);
+     },
+    async enterlinkclick(){
+      await   this.dataStore.getEntertainmentArticles();
+
+     // this.isScienceMethode(true)
+     this.store.setIsEntertainment(true);
+     await this.dataStore.getSidebarDataGames();
+
+     }
+     ,
+     async newslinkclick(){
+      await   this.dataStore.getNewsArticles();
+
+     // this.isScienceMethode(true)
+     this.store.setIsNews(true);
+     await this.dataStore.getSidebarDataGames();
+
+     }
+
+  },
   name: "Header",
   props: {
     sciences:Function,
     games:Function,
     isScienceMethode:Function,
-    isScience:Boolean,
+    sgetgame:Function,
+    sgetenter:  Function
   },
 };
 </script>

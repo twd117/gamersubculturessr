@@ -1,13 +1,28 @@
 import Home from "../views/Home.vue";
 import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
-
+import NewsDetailPage from "../views/NewsDetailPage.vue"; 
 const routes = [
+  
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
+  {
+    path: "/:category",
+    name: "category",
+    component: Home,
+    props: true
+  },
+ 
+  {
+    path: "/news/:title/:id",
+    name: "news",
+    component: NewsDetailPage,
+    props: true
+  }, 
+  
   {
     path: "/articles/:title/:id",
     name: "Article",
@@ -20,6 +35,7 @@ const routes = [
     component: SciencesDetailPage,
     props: true
   },
+  
 ];
 
 

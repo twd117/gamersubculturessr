@@ -153,10 +153,12 @@ created() {
 });
 </script>
 
-<style>
+<style scoped>
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
+  margin-top: 25px;
+  margin-bottom:25px;
 }
 
 .video-container iframe {
@@ -273,6 +275,7 @@ h2 {
   line-height: 2.75rem;
   text-align: left;
   margin-top: 16px;
+  margin-left:0px;
 }
 
 .news {

@@ -1,13 +1,34 @@
 <template>
  
     <div class="card-shadow child card radius shadowDepth1">
-       <router-link v-if="!isScience"
+       <router-link v-if="store.isGame"
     :to="{ name: 'Article', params: { id: this.id, title: this.title  } }"
   >
       <div class="card__image border-tlr-radius">
         <img :src="img[0].downloadURL" alt="image" class="border-tlr-radius" />
       </div>
+             
+      <div class="card__content card__padding">
+        <article class="card__article">
+          <a href="#">{{ title }}</a>
 
+          <p class="card-text">
+            {{ sub }}
+          </p>
+        </article>
+      </div>
+
+      <div class="lk-tag url">
+        <i class="material-icons">open_in_new</i> {{ tag }}
+      </div>
+     </router-link>
+     <router-link v-else-if="store.isNews"
+    :to="{ name: 'news', params: { id: this.id, title: this.title  } }"
+  >
+      <div class="card__image border-tlr-radius">
+        <img :src="img[0].downloadURL" alt="image" class="border-tlr-radius" />
+      </div>
+             
       <div class="card__content card__padding">
         <article class="card__article">
           <a href="#">{{ title }}</a>
@@ -48,7 +69,16 @@
 </template>
 
 <script>
+import { useNavStore } from "../store/useNavStore.js"
+
 export default {
+  setup(){
+    const store = useNavStore();
+   
+
+
+    return { store }
+  },
   name: "Card",
   props: [
     "id",
@@ -62,7 +92,6 @@ export default {
     "video",
     "platform",
     "rating",
-    "isScience",
     "imgurl"
   ],
 };
@@ -158,7 +187,8 @@ a:hover {
 }
 
 .child {
-  width: 28%;
+ /** width: 28%;*/ 
+ width: 31%;
   min-width: 237px;
   margin: 6px;
 }
@@ -185,4 +215,15 @@ a:hover {
 .card-shadow:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+@media screen and (max-width: 750px) {
+     .child{
+      width: 44%;
+     }
+}
+@media screen and (max-width: 499px) {
+     .child{
+      width: 100%;
+     }
+}
+
 </style>

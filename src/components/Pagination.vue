@@ -7,21 +7,32 @@
 </template>
 
 <script>
+import { useNavStore } from "../store/useNavStore.js"
+import {useDataStore} from "../store/useDataStore.js"
+
 export default {
+  setup(){
+    const store = useNavStore();
+    const dataStore = useDataStore()
+
+   
+    return { store,dataStore }
+  },
   name: "Pagination",
   props: {
-    isScience:Boolean,
     next: Function,
     nextScience:Function
   },
   methods: {
     pagination(){
-      if(!this.isScience){
-        this.next();
+      if(this.store.isGame){
+        this.dataStore.getNextGamesArticles();
         console.log("next------")
-    
-      }else {
-        this.nextScience();
+      }else if(this.store.isNews){
+        this.dataStore.getNextNewsArticles();
+      }
+      else {
+        this.dataStore.getNextEntertainmentArticles();
                 console.log("sciences------")
 
       }
