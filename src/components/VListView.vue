@@ -54,7 +54,6 @@
   import { useNavStore } from "../store/useNavStore.js"
 
   import ListItemVue from "./ListItem.vue"
-import ListItem from "./ListItem.vue";
   export default {
     setup(){
     const store = useNavStore();

@@ -1,6 +1,7 @@
 <template>
 <box><DetaillNav /></box>
  <suspense>
+  
   <Article
   v-if="homeLocalState !== null"
     :title="homeLocalState.title"

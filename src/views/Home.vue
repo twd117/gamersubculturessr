@@ -48,17 +48,7 @@ import VlistViewVue from "../components/VlistView.vue";
 
 import {useDataStore} from "../store/useDataStore.js"
 
-import {
-  collection,
-  query,
-  getDocs,
-  orderBy,
-  limit,
-  startAfter,
-} from "firebase/firestore";
 
-import db from "../dbclient/dbclient.js";
-import { mapState,mapActions } from 'pinia';
 import { useNavStore } from "../store/useNavStore.js"
 
 export default {
