@@ -1,7 +1,7 @@
 {
   "name": "gamersubculture",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.2.0",
   "scripts": {
     "dev": "node ./node_modules/vite-ssr/cli.js --port 8080 ",
     "dev:spa": "vite --port 1337 --force",
