@@ -44,7 +44,7 @@ import FooterVue from "../components/Footer.vue";
 import TitleVue from "../components/TitleSection.vue";
 import PaginationVue from "../components/Pagination.vue";
 import SideBarVue from "../components/SideBar.vue";
-import VlistViewVue from "../components/VlistView.vue";
+import VlistViewVue from "../components/VListView.vue";
 
 import {useDataStore} from "../store/useDataStore.js"
 
