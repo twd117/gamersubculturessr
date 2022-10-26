@@ -178,7 +178,11 @@
   </script>
   
   <style scoped>
-  
+  a {
+    list-style: none;
+    color:none;
+    text-decoration: none;
+  }
 .easy-grid {
   display: grid;
   
@@ -217,6 +221,7 @@
 .ccard {
 	background-color: #fff;
 	margin-bottom: 1.6rem;
+
 }
 
 .ccard__margin {
@@ -241,6 +246,8 @@
     margin-top: 0px;
     margin-bottom: 0px;
     font-weight: 700;
+    color: #424242;
+
 	
 }
 
