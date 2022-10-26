@@ -63,7 +63,7 @@
 </router-link>
 
 <router-link v-if="!this.isGame"
-    :to="{ name: 'Article', params: { id: data[0].id, title: this.data[0].title  } }"
+    :to="{ name: 'Article', params: { id: data[0].id, title: data[0].title  } }"
   >
     <div class="brdr">
          <div class=" cchild ccard ">
