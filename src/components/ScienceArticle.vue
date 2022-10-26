@@ -40,7 +40,10 @@
       >
       </iframe>
               </div>
-        
+              <div class="line"></div>
+
+      <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
+
       <div id="ratingandsocial">
      
         <div class="rs">
@@ -49,8 +52,9 @@
         </div>
 
 
-
       </div>
+      <HorNavBar :isGame="false" />
+      <NewsLetters/>
        <div class="adscontent">
         <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audible&banner=15WGQ1T6BXD8XW05K082&f=ifr&linkID=7d3b856a11319f57cfc3ef256cc0b15a&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=1WWY485S6ZYHZYBTVZ02&f=ifr&linkID=022f1a3fd34139c13e372b115b0df141&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
@@ -65,9 +69,10 @@
 import SocialMediaVue from "./SocialMedia.vue";
 import MarkdownVue from 'vue3-markdown-it';
 import moment from 'moment'
-import { defineComponent, computed, reactive } from 'vue'
-import { useHead } from '@vueuse/head'
+import { defineComponent, computed, reactive } from 'vue';
 import {useRoute} from 'vue-router';
+import HorNavBarVue from "./HorNavBar.vue";
+import NewsLettersVue from "./NewsLetters.vue";
 
 export default defineComponent({
   mounted() {
@@ -122,6 +127,9 @@ export default defineComponent({
   components: {
     SocialMedia: SocialMediaVue,
      Markdown:MarkdownVue,
+      HorNavBar:HorNavBarVue,
+      NewsLetters:NewsLettersVue,
+
 
      
 
@@ -154,6 +162,28 @@ created() {
 </script>
 
 <style scoped>
+.tagspan{
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background: none;
+    color: #202125;
+    border: 1px solid;
+    
+    border: #202125 1px solid;
+    transition: 250ms ease-out;
+}
+.tagcat{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%;

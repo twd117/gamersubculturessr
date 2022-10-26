@@ -9,6 +9,8 @@ import {
     orderBy,
     limit,
     startAfter,
+    addDoc,
+    where
   } from "firebase/firestore";
 
 export const useDataStore = defineStore('data',{
@@ -278,8 +280,28 @@ export const useDataStore = defineStore('data',{
      });
      
          },
-        
+         
+         async setNewLetterEmail(email){
+    //  console.log("entertainment-----------------------------");
+   // Add a new document with a generated id.
+   const q = query(collection(db, "newsletters"), where("email", "==", email));
 
+const querySnapshot = await getDocs(q);
+console.log("test----", " => ", querySnapshot.size);
+if(querySnapshot.size === 0){
+
+const docRef = await addDoc(collection(db, "newsletters"), {
+  email: email,
+});
+}
+
+
+   
+   //  console.log(this.sidebarData, "-------------entertainment");
+   
+   
+       },
+           
      },
 
 });

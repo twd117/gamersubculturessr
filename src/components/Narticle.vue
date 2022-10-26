@@ -36,11 +36,11 @@
   </div>
         
     
-         <div id="adone"></div>
-         <div id="adtwo"></div>
-         <div id="adone"></div>
-  
-  
+  <div class="line"></div>
+
+
+         <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
+
                 
         <div id="ratingandsocial">
        
@@ -48,9 +48,12 @@
                       <SocialMedia :url="currentUrl" :title="title" />
   
           </div>
-  
               
         </div>
+         
+        <HorNavBar :isGame="true" />
+      <NewsLetters/>
+
          </div> 
     
         
@@ -66,7 +69,9 @@
   import { defineComponent, computed, reactive } from 'vue';
   import {useRoute} from 'vue-router';
   //import postscribe from 'postscribe';
-  
+  import HorNavBarVue from "./HorNavBar.vue";
+  import NewsLettersVue from "./NewsLetters.vue";
+
 
   
   export default defineComponent({
@@ -132,7 +137,9 @@
     },
     components: {
       SocialMedia: SocialMediaVue,
-      
+      HorNavBar:HorNavBarVue,
+      NewsLetters:NewsLettersVue,
+
        Markdown:MarkdownVue,
      
   
@@ -167,6 +174,28 @@
   </script>
   
   <style>
+  .tagspan{
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background: none;
+    color: #202125;
+    border: 1px solid;
+    
+    border: #202125 1px solid;
+    transition: 250ms ease-out;
+}
+.tagcat{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 12px;
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+}
   .ve {
         position: relative;
       padding-bottom: 56.25%;

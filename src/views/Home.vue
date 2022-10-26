@@ -53,7 +53,6 @@ import { useNavStore } from "../store/useNavStore.js"
 
 export default {
   name: "Home",
-  
   setup() {
     const dataStore = useDataStore()
     const store = useNavStore();

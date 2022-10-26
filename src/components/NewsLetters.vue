@@ -1,0 +1,157 @@
+<template>
+
+<div class="news-letter" id="News-letter">
+    <div class="nnews ">
+      <div class="ncontainer">
+        <h1 class="news-heading">{{msg}}</h1>
+        <p class="des how-de">Get the latest gaming news, reviews, entertainment, and deals sent to your inbox. </p>
+
+        <form v-if="!disable" action="">
+          <input class="input" type="email" v-model="email"  maxlength="50" required placeholder="Enter your email address">
+          <button id="nfbtn" @click="send">Sign up</button>
+
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script>
+import {useDataStore} from "../store/useDataStore.js"
+
+export default {
+    setup(){
+        const dataStore = useDataStore()
+
+    return { dataStore }
+    },
+    name:"NewsLetters",
+    data() {
+    return {
+      email: "",
+      msg:"GamerSubculture newsletters",
+      disable:false
+    };
+},
+    methods:{
+       async send(e){
+            e.preventDefault();
+           await this.dataStore.setNewLetterEmail(this.email).then(()=> {
+               this.msg="Registration successful"
+               this.disable=true;
+           });
+            console.log("--email--",this.email);
+        }
+    }
+}
+
+</script>
+
+<style>
+.news-letter{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.ncontainer > form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.ncontainer{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  margin:16px;
+}
+.input{
+  padding:5px;
+  box-shadow: none;
+    border-color: #d8d8d8;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.375rem;
+      width: 50%;
+    padding: 0.325rem;
+    margin-bottom: 9px;
+    border: 1px solid #bfbfbf;
+    background-color: #fff;
+    font-size: 18px;
+  color: #333;
+  font-family: Roboto, sans-serif;
+}
+.nnews{
+      border: solid #e6e6e6;
+    border-width: 1px;
+  padding: 4.8px 0 9.6px 0;
+text-align: center;
+}
+.news-heading{
+  
+  font-size: 24px;
+  line-height: 1.4;
+  color: #333;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 2.5px;
+
+}
+.nnews p{
+  text-align:center;
+  font-size: 18px;
+  margin-bottom: 16px;
+  margin-top: 1px;
+  line-height: 1.8;
+  font-family: "Roboto Mono", monospace;
+
+  
+}
+
+
+#nfbtn {
+  width:50%;
+  border:none;
+  display: inline-block;
+    font-size: 16px;
+    line-height: 20.8px;
+    cursor: pointer;
+    outline: 0;
+    margin-bottom: 0;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    background-size: auto 100%;
+    border-radius: 4px;
+    transition: all 0.25s;
+    background-color: #0000FF;
+  color:white;
+}
+/****
+
+input[type="email"]{
+  display: inline-block;
+  width: 60%;
+  padding: 18px 36px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 70px;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06); 
+
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 16px;
+    line-height: 3;
+}
+
+
+
+
+***/
+</style>

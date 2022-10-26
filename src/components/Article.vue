@@ -49,11 +49,10 @@
     <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
 
  
-      
+
   
        
       
-    <div class="line"></div>
 
               
       <div id="ratingandsocial">
@@ -63,9 +62,11 @@
 
         </div>
        
-            
+            <div class="line"></div>
       </div>
-   
+
+        <HorNavBar :isGame="true" />
+      <NewsLetters/>
 
       <div id="adone">
         <a  href="https://click.linksynergy.com/deeplink?id=776HN38ApGc&mid=24348&murl=https%3A%2F%2Fwww.gamestop.com%2Flinks%2Fcod2022-all">
@@ -91,9 +92,9 @@ import moment from 'moment';
 import { defineComponent, computed, reactive } from 'vue';
 import {useRoute} from 'vue-router';
 //import postscribe from 'postscribe';
+import NewsLettersVue from "./NewsLetters.vue";
 
-
-
+import HorNavBarVue from "./HorNavBar.vue";
 export default defineComponent({
   mounted() {
     /*  postscribe('#adone', `
@@ -159,6 +160,8 @@ export default defineComponent({
     SocialMedia: SocialMediaVue,
     
      Markdown:MarkdownVue,
+     NewsLetters:NewsLettersVue,
+     HorNavBar:HorNavBarVue
    
 
     
