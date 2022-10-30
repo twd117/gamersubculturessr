@@ -2,8 +2,8 @@
    
   <div v-if="isGame" class="easy-grid">
     <router-link 
-    :to="{ name: 'Sciences', params: { id: data[0].id, title: this.data[0].title  } }"
-  >
+    :to="{ name: 'Sciences', params: { id: data[0].id, title: data[0].title  } }"
+    >
     <div class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
@@ -142,9 +142,7 @@
   import {useDataStore} from "../store/useDataStore.js"
 
   export default {
-    props:{
-    isGame: Boolean
-  },
+    
 
     name: "HorNavBar",
    async setup(props) {
@@ -173,7 +171,9 @@
     x:[]
  };
   },
-
+  props:{
+    isGame: { Type:Boolean, default: false}
+  },
   };
   </script>
   
