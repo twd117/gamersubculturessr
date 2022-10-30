@@ -39,7 +39,6 @@ export default viteSSR(
         if (!!to.meta.state && Object.keys(to.meta.state).length > 0) {
           // This route has state already (from server) so it can be reused.
           // State is always empty in SPA development, but present in SSR development.
-          console.log("to------",JSON.stringify(to));
 
           return next();
         }

@@ -1,6 +1,6 @@
 <template>
    
-  <div v-if="this.isGame" class="easy-grid">
+  <div v-if="isGame" class="easy-grid">
     <router-link 
     :to="{ name: 'Sciences', params: { id: data[0].id, title: this.data[0].title  } }"
   >
@@ -63,9 +63,9 @@
 </router-link>
 </div>
 
-<div v-if="this.isGame" class="easy-grid">
+<div v-if="!isGame" class="easy-grid">
 
-<router-link v-if="!this.isGame"
+<router-link 
     :to="{ name: 'Article', params: { id: data[0].id, title: data[0].title  } }"
   >
     <div class="brdr">
@@ -95,7 +95,7 @@
           </div>
   </div>
 </router-link>
-<router-link v-if="!this.isGame"
+<router-link 
     :to="{ name: 'Article', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
