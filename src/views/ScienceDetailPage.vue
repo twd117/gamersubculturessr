@@ -29,7 +29,7 @@ import { useContext } from 'vite-ssr/vue'
 import {  computed } from 'vue';
 
 export default {
-  name: "DetailPage",
+  name: "ScienceDetailPage",
   components: {
     Footer: FooterVue,
     Article: ArticleVue,
@@ -57,7 +57,7 @@ export default {
      const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
-         console.log("Home---",homeLocalState.value);
+      //   console.log("Home---",homeLocalState.value);
 
 
        try{

@@ -1,11 +1,11 @@
 <template>
    
-  <div class="easy-grid">
-    <router-link v-if="this.isGame"
+  <div v-if="this.isGame" class="easy-grid">
+    <router-link 
     :to="{ name: 'Sciences', params: { id: data[0].id, title: this.data[0].title  } }"
   >
     <div class="brdr">
-         <div class=" cchild ccard ">
+         <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[0].imgurl" alt="image">
               </div>
@@ -31,11 +31,11 @@
           </div>
   </div>
 </router-link>
-<router-link v-if="this.isGame"
+<router-link 
     :to="{ name: 'Sciences', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
-         <div class=" cchild ccard ">
+         <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[1].imgurl" alt="image">
               </div>
@@ -61,12 +61,15 @@
           </div>
   </div>
 </router-link>
+</div>
+
+<div v-if="this.isGame" class="easy-grid">
 
 <router-link v-if="!this.isGame"
     :to="{ name: 'Article', params: { id: data[0].id, title: data[0].title  } }"
   >
     <div class="brdr">
-         <div class=" cchild ccard ">
+         <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[0].imgurl" alt="image">
               </div>
@@ -96,7 +99,7 @@
     :to="{ name: 'Article', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
-         <div class=" cchild ccard ">
+         <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[1].imgurl" alt="image">
               </div>
@@ -146,22 +149,19 @@
     name: "HorNavBar",
    async setup(props) {
     let data = [];
-    console.log("0--sidebarData",props.isGame);
 
     const dataStore = useDataStore();
     if(props.isGame){
      
        await dataStore.getSidebarDataEnter();
        data=  dataStore.sidebarData;
-
-        console.log("1--sidebarData",data);
+     console.log("d----",data)
    
     }else{
      
        await dataStore.getSidebarDataGames();
        data = dataStore.sidebarData;
 
-        console.log("2-xxx-sidebarData",data);
 
     }
    
@@ -189,9 +189,10 @@
 
   grid-gap:  1rem;
   grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
+    2,
+    minmax(300px, 1fr) 
   );
+  align-items: center;
 }
 
 

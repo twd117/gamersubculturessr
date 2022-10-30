@@ -61,7 +61,7 @@
      
   </template>
   
-  <script>
+  <script >
   import SocialMediaVue from "./SocialMedia.vue";
   
   import MarkdownVue from 'vue3-markdown-it';

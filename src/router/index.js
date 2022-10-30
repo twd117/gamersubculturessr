@@ -9,15 +9,10 @@ const routes = [
     name: "Home",
     component: Home,
   },
-  {
-    path: "/:category",
-    name: "category",
-    component: Home,
-    props: true
-  },
+ 
  
   {
-    path: "/news/:title/:id",
+    path: "/tech/:title/:id",
     name: "news",
     component: NewsDetailPage,
     props: true
@@ -33,6 +28,12 @@ const routes = [
     path: "/entertainment/:title/:id",
     name: "Sciences",
     component: SciencesDetailPage,
+    props: true
+  },
+  {
+    path: "/:category",
+    name: "category",
+    component: Home,
     props: true
   },
   

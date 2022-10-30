@@ -141,9 +141,7 @@
         //this.readArticles();
       },
       methods: {
-        readArticles() {
-         
-        },
+       
       },
     };
     </script>

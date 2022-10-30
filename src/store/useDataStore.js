@@ -45,7 +45,7 @@ export const useDataStore = defineStore('data',{
                    date: doc.data()._createdAt,
                    imgurl: doc.data().imgurl
                  });
-                 console.log(" title => ", doc.data().title);
+              //   console.log(" title => ", doc.data().title);
  
                });
              });
@@ -70,7 +70,7 @@ export const useDataStore = defineStore('data',{
                  date: doc.data().date,
                  imgurl: doc.data().imgurl
                });
-               console.log(" title => ", doc.data().title);
+           //    console.log(" title => ", doc.data().title);
 
              });
            });
@@ -96,7 +96,7 @@ export const useDataStore = defineStore('data',{
                    imgurl: doc.data().imgurl
        
                  });
-                 console.log(" title => ", doc.data().title);
+            //     console.log(" title => ", doc.data().title);
        
                });
        
@@ -206,7 +206,7 @@ export const useDataStore = defineStore('data',{
                   imgurl: doc.data().imgurl
       
                 });
-                console.log(doc.id, " => ", doc.data().imgurl);
+              //  console.log(doc.id, " => ", doc.data().imgurl);
       
               });
             });
@@ -214,7 +214,7 @@ export const useDataStore = defineStore('data',{
          
           },
          
-          async getSidebarDataGames(){
+    async getSidebarDataGames(){
             this.sidebarData = [];
       //  console.log("entertainment-----------------------------");
      
@@ -247,7 +247,7 @@ export const useDataStore = defineStore('data',{
      });
      
          },
-         async getSidebarDataEnter(){
+   async getSidebarDataEnter(){
             this.sidebarData = [];
       //  console.log("entertainment-----------------------------");
      

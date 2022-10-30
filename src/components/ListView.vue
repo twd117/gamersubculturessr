@@ -48,10 +48,7 @@ import { useNavStore } from "../store/useNavStore.js";
 export default {
   setup(){
     const store = useNavStore();
-    console.log(store.isEntertainment);
-    console.log("Enter",store.isEntertainment);
-    console.log("Game",store.isGame);
-    console.log("Tech",store.isTech);
+   
     return { store }
   },
   name: "ListView",

@@ -87,7 +87,7 @@ computed:{
   async mounted() {
     console.log("path----",this.category);
       switch(this.category) {
-        case "news":
+        case "tech":
          await this.dataStore.getNewsArticles();
         this.store.setIsNews(true);
     await this.dataStore.getSidebarDataEnter();

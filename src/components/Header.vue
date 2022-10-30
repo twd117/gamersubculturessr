@@ -9,16 +9,16 @@
        Games 
         <div class="underline" ></div>
       </li> 
-      <li @click="newslinkclick()" class="hchild nav-link" :class="{ active: store.isNews }">
-        news
-        <div class="underline "></div>
-      </li>  
+      
           
        <li @click="enterlinkclick()" class="hchild nav-link" :class="{ active: store.isEntertainment }">
         Entertainment
         <div class="underline "></div>
       </li>  
-     
+      <li @click="newslinkclick()" class="hchild nav-link" :class="{ active: store.isNews }">
+        Tech
+        <div class="underline "></div>
+      </li> 
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
       <router-view />
     </ul>

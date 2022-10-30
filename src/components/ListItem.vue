@@ -96,9 +96,7 @@
   export default {
     setup(){
     const store = useNavStore();
-    console.log("Enter",store.isEntertainment);
-    console.log("Game",store.isGame);
-    console.log("Tech",store.isTech);
+    
     return { store }
   },
     name: "ListItem",
