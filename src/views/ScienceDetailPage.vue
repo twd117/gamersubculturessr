@@ -11,6 +11,7 @@
     :video="homeLocalState.video"
     :date="homeLocalState.date"
     :imgurl="homeLocalState.imgurl"
+    :rating="homeLocalState.rating"
   />
   <Footer  />
   </div>

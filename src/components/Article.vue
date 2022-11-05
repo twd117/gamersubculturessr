@@ -9,6 +9,7 @@
              <p>Platform(s): {{ platform }} </p>
          <div class="line"></div>
       <p v-if="release!==null && release.length>3">Release date: {{  release }}</p>
+
     
     
     
@@ -32,6 +33,8 @@
            
                <Markdown :source="analyse" />
 
+               <Rating :rating="rating"/> 
+
                <div v-if="video" class="video-container">
        <iframe
         id="ytb"
@@ -46,19 +49,20 @@
 
     </div>
 
-    <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
+    <div class="tagcat"><span class="tagspan">{{ tag }}</span>          
+</div>
 
  
 
   
        
-      
+
 
               
       <div id="ratingandsocial">
      
         <div class="rs">
-                    <SocialMedia :url="currentUrl" :title="title" />
+                <SocialMedia :url="currentUrl" :title="title" />
 
         </div>
        
@@ -95,6 +99,7 @@ import {useRoute} from 'vue-router';
 import NewsLettersVue from "./NewsLetters.vue";
 
 import HorNavBarVue from "./HorNavBar.vue";
+import RatingVue from "./Rating.vue";
 export default defineComponent({
   mounted() {
     /*  postscribe('#adone', `
@@ -161,7 +166,8 @@ export default defineComponent({
     
      Markdown:MarkdownVue,
      NewsLetters:NewsLettersVue,
-     HorNavBar:HorNavBarVue
+     HorNavBar:HorNavBarVue,
+     Rating:RatingVue
    
 
     

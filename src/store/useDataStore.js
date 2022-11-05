@@ -93,7 +93,8 @@ export const useDataStore = defineStore('data',{
                   
                    tag: doc.data().tag,
                    date: doc.data().date,
-                   imgurl: doc.data().imgurl
+                   imgurl: doc.data().imgurl,
+                   rating:doc.data().rating
        
                  });
             //     console.log(" title => ", doc.data().title);
@@ -168,7 +169,8 @@ export const useDataStore = defineStore('data',{
                  
                   tag: doc.data().tag,
                   date: doc.data().date,
-                  imgurl: doc.data().imgurl
+                  imgurl: doc.data().imgurl,
+                  rating:doc.data().rating
       
                 });
                 console.log(doc.id, " => ", doc.data().imgurl);
@@ -268,7 +270,9 @@ export const useDataStore = defineStore('data',{
      
            tag: doc.data().tag,
            date: doc.data().date,
-           imgurl: doc.data().imgurl
+           imgurl: doc.data().imgurl,
+           rating:doc.data().rating
+
          });
        //   console.log(doc.id, "-------------entertainment");
        });

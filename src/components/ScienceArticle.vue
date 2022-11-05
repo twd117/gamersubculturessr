@@ -21,6 +21,8 @@
 
       
                <Markdown :source="analyse" />
+               <Rating :rating="rating"/> 
+
            <div class="adscontent">
             <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=audible&banner=0JQ00KZ513VB4C3237R2&f=ifr&linkID=da339c27ad8e696cbb980883869e5ccd&t=twd117-20&tracking_id=twd117-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
      </div>
@@ -73,6 +75,7 @@ import { defineComponent, computed, reactive } from 'vue';
 import {useRoute} from 'vue-router';
 import HorNavBarVue from "./HorNavBar.vue";
 import NewsLettersVue from "./NewsLetters.vue";
+import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
@@ -129,6 +132,8 @@ export default defineComponent({
      Markdown:MarkdownVue,
       HorNavBar:HorNavBarVue,
       NewsLetters:NewsLettersVue,
+      Rating:RatingVue
+
 
 
      
@@ -143,7 +148,8 @@ export default defineComponent({
     "analyse",
     "video",
     "date",
-    "imgurl"
+    "imgurl",
+    "rating"
 
   ],
   data() {
