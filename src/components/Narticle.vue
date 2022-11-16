@@ -19,12 +19,7 @@
   
            <Markdown :html="true"  :breaks="true" :source="story" />
 
-           <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5853275170"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+        
          
              
                  <div v-if="video" class="video-container">
@@ -58,11 +53,7 @@
          
         <HorNavBar :isGame="true" />
       <NewsLetters/>
-      <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5114908570"></ins>
+     
 
          </div> 
     
@@ -89,12 +80,13 @@
       let Script = document.createElement("script");
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
+    /*
     let adScript = document.createElement("script");
     adScript.setAttribute("crossorigin", "anonymous");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     document.head.appendChild(adScript);
     let adpScript = document.createElement("script");
-    adpScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});";
+    adpScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});";*/
   
       },
     
