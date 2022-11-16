@@ -20,16 +20,12 @@
    
 
       
-               <Markdown :source="analyse" />
+               <Markdown :html="true"  :breaks="true" :source="analyse" />
+
+       
                <Rating :rating="rating"/> 
 
-           <div class="adscontent">
-            <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=audible&banner=0JQ00KZ513VB4C3237R2&f=ifr&linkID=da339c27ad8e696cbb980883869e5ccd&t=twd117-20&tracking_id=twd117-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-     </div>
-     <div class="adscontent">
-        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WESS5Z3AQKPESJP3Q02&f=ifr&linkID=751ee62a6eb427fb2ad14aea560daf36&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-        <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=0WA1AMGEM64YBAA7DD02&f=ifr&linkID=b45354aa4d99bf0b06d9f583b221559f&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    </div>
+      
          <div v-if="video"  class="video-container">
        <iframe
         id="ytb"
@@ -57,10 +53,7 @@
       </div>
       <HorNavBar :isGame="false" />
       <NewsLetters/>
-       <div class="adscontent">
-        <iframe class="itwo" src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audible&banner=15WGQ1T6BXD8XW05K082&f=ifr&linkID=7d3b856a11319f57cfc3ef256cc0b15a&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-       <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=primevideo&banner=1WWY485S6ZYHZYBTVZ02&f=ifr&linkID=022f1a3fd34139c13e372b115b0df141&t=twd117-20&tracking_id=twd117-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-       </div>
+     
        <div id="thirdad"></div>
     </div>
   </div>
@@ -76,6 +69,7 @@ import {useRoute} from 'vue-router';
 import HorNavBarVue from "./HorNavBar.vue";
 import NewsLettersVue from "./NewsLetters.vue";
 import RatingVue from "./Rating.vue";
+
 
 export default defineComponent({
   mounted() {
@@ -149,7 +143,8 @@ export default defineComponent({
     "video",
     "date",
     "imgurl",
-    "rating"
+    "rating",
+    "tweet"
 
   ],
   data() {
@@ -168,6 +163,16 @@ created() {
 </script>
 
 <style scoped>
+.twitter-tweet{
+  display: flex;
+    width: 100%;
+  
+    justify-content: center;
+    
+}
+.twitter-tweet > iframe{
+height: 765px;
+    width: 550px;}
 .tagspan{
     padding: 0.75em 1.5em;
     cursor: pointer;

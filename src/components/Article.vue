@@ -1,6 +1,5 @@
 <template>
  
-
        
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
@@ -18,20 +17,17 @@
         <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
-         <Markdown :source="story" />
+         <Markdown :html="true" :breaks="true" :source="story" />
        
        
-       
-         
-
        
 
-
+   
    
    
         
            
-               <Markdown :source="analyse" />
+               <Markdown :html="true"  :breaks="true"  :source="analyse" />
 
                <Rating :rating="rating"/> 
 
@@ -72,15 +68,7 @@
         <HorNavBar :isGame="true" />
       <NewsLetters/>
 
-      <div id="adone">
-        <a  href="https://click.linksynergy.com/deeplink?id=776HN38ApGc&mid=24348&murl=https%3A%2F%2Fwww.gamestop.com%2Flinks%2Fcod2022-all">
-        <img class="asdimg" src="https://usc1.contabostorage.com/9b6c64f78c7b446b983b960b73d85d6a:images/HP_MW2POGWP_696x468_2UpFtr_D.webp"/>
-      </a>
-
-      <a  href="https://click.linksynergy.com/deeplink?id=776HN38ApGc&mid=24348&murl=https%3A%2F%2Fwww.gamestop.com%2Flinks%2Fgothamknights-all">
-        <img class="asdimg" src="https://usc1.contabostorage.com/9b6c64f78c7b446b983b960b73d85d6a:images/HP_GothamKnightsPOGWP_696x468_2UpFtr_D.webp"/>
-      </a>
-       </div>
+     
        </div> 
   
       
@@ -100,6 +88,7 @@ import NewsLettersVue from "./NewsLetters.vue";
 
 import HorNavBarVue from "./HorNavBar.vue";
 import RatingVue from "./Rating.vue";
+
 export default defineComponent({
   mounted() {
     /*  postscribe('#adone', `
@@ -186,7 +175,8 @@ export default defineComponent({
     "platform",
     "rating",
     "release",
-    "imgurl"
+    "imgurl",
+    "tweet"
   ],
   data() {
     return {
@@ -205,6 +195,16 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
+.twitter-tweet{
+  display: flex;
+    width: 100%;
+  
+    justify-content: center;
+    
+}
+.twitter-tweet > iframe{
+height: 765px;
+    width: 550px;}
 .mgb{
   margin-bottom: 20px;
 }

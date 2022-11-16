@@ -17,9 +17,9 @@
           <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
           <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
   
-           <Markdown :source="story" />
-         
-         
+           <Markdown :html="true"  :breaks="true" :source="story" />
+
+     
          
              
                  <div v-if="video" class="video-container">
@@ -90,10 +90,9 @@
   
       },
     
-      setup(props) {
-         
-        
-       
+     async setup(props) {
+
+   
       //  postscribe('#firstad', '<h1>Hello PostScribe</h1>');
   
       /*     const route=useRoute();
@@ -155,7 +154,8 @@
       "story",
       "video",
       "date",
-      "imgurl"
+      "imgurl",
+      "tweet"
     ],
     data() {
       return {
@@ -174,6 +174,16 @@
   </script>
   
   <style>
+  .twitter-tweet{
+  display: flex;
+    width: 100%;
+  
+    justify-content: center;
+    
+}
+.twitter-tweet > iframe{
+height: 765px;
+    width: 550px;}
   .tagspan{
     padding: 0.75em 1.5em;
     cursor: pointer;
