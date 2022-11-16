@@ -73,9 +73,12 @@ import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
-   // postscribe('#thirdad', '<div id="amzn-assoc-ad-8d2ef21e-c3ef-4587-8351-835e6f1e36d6"></div><script async src="\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=8d2ef21e-c3ef-4587-8351-835e6f1e36d6"><\/script>');
-
-    },
+      let Script = document.createElement("script");
+    Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    document.head.appendChild(Script);
+     
+  
+      },
     setup(props) {
     /*     const route=useRoute();
 
@@ -164,8 +167,8 @@ created() {
 
 <style scoped>
 .twitter-tweet{
-  display: flex;
-    width: 100%;
+  margin-right: auto;
+    margin-left: auto;
   
     justify-content: center;
     

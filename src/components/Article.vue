@@ -91,19 +91,12 @@ import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
-    /*  postscribe('#adone', `
-      <div id="amzn-assoc-ad-685efb3f-43c9-4863-946b-07f2f5b6885f"><\/div>
-      <script async src=https:\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=685efb3f-43c9-4863-946b-07f2f5b6885f>
-        <\/script>
-      `);
-      postscribe('#adtwo', `
-      <div id="amzn-assoc-ad-e98e4aa5-df51-4a6e-8d85-c1350ebcaf7a"><\/div>
-      <script async src=https:\/\/z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=e98e4aa5-df51-4a6e-8d85-c1350ebcaf7a>
-        <\/script>
-      `
-      );*/
-
-    },
+      let Script = document.createElement("script");
+    Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    document.head.appendChild(Script);
+     
+  
+      },
   
     setup(props) {
        
@@ -196,8 +189,8 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 
 <style scoped>
 .twitter-tweet{
-  display: flex;
-    width: 100%;
+  margin-right: auto;
+    margin-left: auto;
   
     justify-content: center;
     
