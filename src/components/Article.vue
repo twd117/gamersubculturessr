@@ -20,14 +20,7 @@
          <Markdown :html="true" :breaks="true" :source="story" />
        
        
-         <amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5853275170"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
+       
         
    
    
