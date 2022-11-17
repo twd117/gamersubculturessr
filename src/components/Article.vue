@@ -22,7 +22,7 @@
        
        
 
-   
+          <div class="space"></div>
    
    
         
@@ -188,6 +188,10 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
+.space {
+  width: 100%;
+  height: 380px;
+}
 .twitter-tweet{
   margin-right: auto;
     margin-left: auto;

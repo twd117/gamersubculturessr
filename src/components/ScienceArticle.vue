@@ -1,7 +1,7 @@
 <template>
  
 
-       
+       <div class="space"></div>
   <div id="post-content">
     <div class="article aparent">
 
@@ -166,6 +166,11 @@ created() {
 </script>
 
 <style scoped>
+
+.space {
+  width: 100%;
+  height: 380px;
+}
 .twitter-tweet{
   margin-right: auto;
     margin-left: auto;

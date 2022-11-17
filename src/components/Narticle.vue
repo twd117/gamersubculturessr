@@ -1,6 +1,6 @@
 <template>
  
-
+     <div class="space"></div>
        
     <h1 class="ht">{{ title }}</h1>
     <div id="post-content">
@@ -19,7 +19,7 @@
   
            <Markdown :html="true"  :breaks="true" :source="story" />
 
-        
+            
          
              
                  <div v-if="video" class="video-container">
@@ -174,6 +174,10 @@
   </script>
   
   <style>
+  .space {
+  width: 100%;
+  height: 380px;
+}
   .twitter-tweet{
   display: flex;
   margin-right: auto;
