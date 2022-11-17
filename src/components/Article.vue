@@ -20,13 +20,15 @@
          <Markdown :html="true" :breaks="true" :source="story" />
        
        
-       
-         <ins class="adsbygoogle"
+       <div class="adsencectn">
+        <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="5853275170"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
+       </div>
+        
    
    
         
@@ -101,7 +103,7 @@ export default defineComponent({
     let adScript = document.createElement("script");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
-
+    adScript.async=true;
     document.body.appendChild(adScript);
     let adpushScript = document.createElement("script");
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
@@ -203,9 +205,9 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
-.space {
+.adsencectn {
   width: 100%;
-  height: 380px;
+  height: auto;
 }
 .twitter-tweet{
   margin-right: auto;
