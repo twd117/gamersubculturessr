@@ -1,5 +1,10 @@
 <template>
- 
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5853275170"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
        
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
@@ -98,7 +103,11 @@ export default defineComponent({
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
 
-    document.head.appendChild(adScript);
+    document.body.appendChild(adScript);
+    let adpushScript = document.createElement("script");
+    adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
+
+    document.body.appendChild(adpushScript);
 
     
      
