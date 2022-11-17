@@ -82,7 +82,7 @@
    
 </template>
 
-<script>
+<script >
 import SocialMediaVue from "./SocialMedia.vue";
 
 import MarkdownVue from 'vue3-markdown-it';
@@ -104,14 +104,14 @@ export default defineComponent({
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
     adScript.async=true;
-    document.body.appendChild(adScript);
-    let adpushScript = document.createElement("script");
+    document.head.appendChild(adScript);
+  /*  let adpushScript = document.createElement("script");
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
     document.body.appendChild(adpushScript);
     let adsencectn = document.getElementById("adsencectn");
     adsencectn.appendChild(adScript);
-    adsencectn.appendChild(adpushScript);
+    adsencectn.appendChild(adpushScript);*/
 
     
      
