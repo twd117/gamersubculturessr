@@ -105,6 +105,11 @@ export default defineComponent({
     adScript.setAttribute("crossorigin","anonymous");
     adScript.async=true;
     document.head.appendChild(adScript);
+    let ampScript = document.createElement("script");
+    ampScript.setAttribute("src", "https://cdn.ampproject.org/v0/amp-ad-0.1.js");
+    ampScript.setAttribute("custom-element","amp-ad");
+    ampScript.async=true;
+    document.head.appendChild(ampScript);
   /*  let adpushScript = document.createElement("script");
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
