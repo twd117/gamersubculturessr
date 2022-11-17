@@ -20,7 +20,7 @@
          <Markdown :html="true" :breaks="true" :source="story" />
        
        
-       <div class="adsencectn">
+       <div id="adsencectn">
         <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1291356316800764"
@@ -109,6 +109,9 @@ export default defineComponent({
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
     document.body.appendChild(adpushScript);
+    let adsencectn = document.getElementById("adsencectn");
+    adsencectn.appendChild(adScript);
+    adsencectn.appendChild(adpushScript);
 
     
      
@@ -205,7 +208,7 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
-.adsencectn {
+#adsencectn {
   width: 100%;
   height: auto;
 }
