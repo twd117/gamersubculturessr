@@ -106,14 +106,7 @@ export default {
         },
          ],
          link: [{ rel: 'stylesheet' }],
-         script: [
-    // primitive values are also fine
-    { 
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764',
-      async: true,
-      crossorigin:"anonymous",
-    },
-  ],
+     
        })
        if (true) {
          // No data, get it fresh from any API
