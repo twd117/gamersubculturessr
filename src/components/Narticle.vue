@@ -80,10 +80,10 @@
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
     let adScript = document.createElement("script");
-    adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
+ /*   adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
 
-    document.head.appendChild(adScript);
+    document.head.appendChild(adScript);*/
     /*
     let adScript = document.createElement("script");
     adScript.setAttribute("crossorigin", "anonymous");

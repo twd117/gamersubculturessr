@@ -90,14 +90,15 @@ import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
+    
       let Script = document.createElement("script");
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
-    let adScript = document.createElement("script");
+  /*  let adScript = document.createElement("script");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
     adScript.async=true;
-    document.head.appendChild(adScript);
+    document.head.appendChild(adScript);*/
    /* let ampScript = document.createElement("script");
     ampScript.setAttribute("src", "https://cdn.ampproject.org/v0/amp-ad-0.1.js");
     ampScript.setAttribute("custom-element","amp-ad");
