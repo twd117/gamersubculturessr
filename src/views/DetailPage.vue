@@ -83,6 +83,14 @@ export default {
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
        useHead({
+        script: [
+    // primitive values are also fine
+    { 
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764',
+      async: true,
+      crossorigin:"anonymous"
+    },
+  ],
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
       
          meta: [
