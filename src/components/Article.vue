@@ -3,6 +3,12 @@
        
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-79+d6+v+y+55"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="8049468760"></ins>
     <div class="article aparent">
       <h1 class="news">Developer(s): {{ dev }}</h1>
              <p>Platform(s): {{ platform }} </p>
@@ -17,16 +23,25 @@
         <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
-         <Markdown :html="true" :breaks="true" :source="story" />
+         <Markdown :html="true" :breaks="true" :source="story +analyse" />
        
        
        
-        
+         <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="2797142084"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
    
    
         
-           
-               <Markdown :html="true"  :breaks="true"  :source="analyse" />
+     <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5853275170"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 
                <Rating :rating="rating"/> 
 
@@ -42,10 +57,9 @@
       >
       </iframe>
 
-    </div>
+               </div>
 
-    <div class="tagcat"><span class="tagspan">{{ tag }}</span>          
-</div>
+    <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
 
  
 
@@ -104,10 +118,10 @@ export default defineComponent({
     ampScript.setAttribute("custom-element","amp-ad");
     ampScript.async=true;
     document.head.appendChild(ampScript);*/
-  /*  let adpushScript = document.createElement("script");
+    let adpushScript = document.createElement("script");
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
-    document.body.appendChild(adpushScript);
+    document.body.appendChild(adpushScript);/*
     let adsencectn = document.getElementById("adsencectn");
     adsencectn.appendChild(adScript);
     adsencectn.appendChild(adpushScript);*/
