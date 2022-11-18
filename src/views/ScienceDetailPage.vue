@@ -92,12 +92,7 @@ export default {
        
          ],
          link: [{ rel: 'stylesheet' }],
-         script: [
-           {
-             type: 'application/ld+json',
-             children: JSON.stringify({ something: true }),
-           },
-         ],
+      
        })
        if (true) {
          // No data, get it fresh from any API

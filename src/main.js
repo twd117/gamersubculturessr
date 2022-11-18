@@ -3,8 +3,7 @@ import './style.css'
 import App from './App.vue'
 import { createPinia } from 'pinia'
 import Vue from 'vue'
-import Ads from 'vue-google-adsense'
-import VueScript2 from 'vue-script2'
+
 
 
 // or from 'vite-ssr/vue' or 'vite-ssr/react', which slightly improves typings
@@ -35,11 +34,7 @@ export default viteSSR(
       app.component('font-awesome-icon', FontAwesomeIcon);
 
       app.component(ClientOnly.name, ClientOnly);
-      if(isClient){
-        app.use(VueScript2);
-
-        app.use(Ads.AutoAdsense, { adClient: 'pub-1291356316800764', isNewAdsCode: true });
-      }
+     
       
       // Before each route navigation we request the data needed for showing the page.
       router.beforeEach(async (to, from, next) => {
