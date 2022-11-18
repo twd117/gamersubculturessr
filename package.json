@@ -29,8 +29,10 @@
     "vite": "2.7.7",
     "vite-ssr": "^0.16.0",
     "vue": "3",
+    "vue-google-adsense": "^1.10.1",
     "vue-router": "4",
     "vue-script-component": "^0.1.7",
+    "vue-script2": "^2.1.0",
     "vue-tweet": "^2.0.2",
     "vue3-markdown-it": "^1.0.10"
   }
