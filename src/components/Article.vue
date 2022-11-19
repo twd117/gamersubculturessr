@@ -3,7 +3,10 @@
        
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
-    <div class="adsencectn">
+   
+  
+    <div class="article aparent">
+      <div class="adsencectn">
       <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="fluid"
@@ -12,8 +15,6 @@
      data-ad-slot="8049468760"></ins>
 
     </div>
-  
-    <div class="article aparent">
       <h1 class="news">Developer(s): {{ dev }}</h1>
              <p>Platform(s): {{ platform }} </p>
          <div class="line"></div>
