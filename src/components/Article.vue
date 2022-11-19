@@ -3,12 +3,16 @@
        
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
-    <ins class="adsbygoogle"
+    <div class="adsencectn">
+      <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="fluid"
      data-ad-layout-key="-79+d6+v+y+55"
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="8049468760"></ins>
+
+    </div>
+  
     <div class="article aparent">
       <h1 class="news">Developer(s): {{ dev }}</h1>
              <p>Platform(s): {{ platform }} </p>
@@ -25,9 +29,8 @@
 
          <Markdown :html="true" :breaks="true" :source="story +analyse" />
        
-       
-       
-         <ins class="adsbygoogle"
+       <div class="adsencectn">
+        <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="2797142084"
@@ -42,6 +45,9 @@
      data-ad-slot="5853275170"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
+       </div>
+       
+    
 
                <Rating :rating="rating"/> 
 
@@ -221,7 +227,7 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
-#adsencectn {
+.adsencectn {
   width: 100%;
   height: auto;
 }
