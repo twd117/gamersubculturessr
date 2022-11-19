@@ -6,15 +6,7 @@
    
   
     <div class="article aparent">
-      <div class="adsencectn">
-      <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-79+d6+v+y+55"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="8049468760"></ins>
-
-    </div>
+     
       <h1 class="news">Developer(s): {{ dev }}</h1>
              <p>Platform(s): {{ platform }} </p>
          <div class="line"></div>
@@ -30,7 +22,7 @@
 
          <Markdown :html="true" :breaks="true" :source="story +analyse" />
        
-       <div class="adsencectn">
+       <div id="adsencectn1">
         <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1291356316800764"
@@ -40,14 +32,17 @@
    
    
         
-     <ins class="adsbygoogle"
+    
+       </div>
+       <div id="adsencectn2">
+
+        <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="5853275170"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
        </div>
-       
     
 
                <Rating :rating="rating"/> 
@@ -88,7 +83,15 @@
         <HorNavBar :isGame="true" />
       <NewsLetters/>
 
-     
+      <div id="adsencectn">
+      <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-79+d6+v+y+55"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="8049468760"></ins>
+
+    </div>
        </div> 
   
       
@@ -115,23 +118,29 @@ export default defineComponent({
       let Script = document.createElement("script");
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
-  /*  let adScript = document.createElement("script");
+    let adScript = document.createElement("script");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
     adScript.async=true;
-    document.head.appendChild(adScript);*/
-   /* let ampScript = document.createElement("script");
-    ampScript.setAttribute("src", "https://cdn.ampproject.org/v0/amp-ad-0.1.js");
-    ampScript.setAttribute("custom-element","amp-ad");
-    ampScript.async=true;
-    document.head.appendChild(ampScript);*/
+    document.head.appendChild(adScript);
     let adpushScript = document.createElement("script");
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
-    document.body.appendChild(adpushScript);/*
-    let adsencectn = document.getElementById("adsencectn");
+    document.body.appendChild(adpushScript);
+   /* const adsencectn = document.getElementById("adsencectn");
+    
     adsencectn.appendChild(adScript);
-    adsencectn.appendChild(adpushScript);*/
+    adsencectn.appendChild(adpushScript);
+    const adsencectn1 = document.getElementById("adsencectn1");
+    
+    adsencectn1.appendChild(adScript);
+    adsencectn1.appendChild(adpushScript);
+
+    const adsencectn2 = document.getElementById("adsencectn2");
+    
+    adsencectn2.appendChild(adScript);
+    adsencectn2.appendChild(adpushScript);*/
+    
 
     
      
@@ -228,9 +237,14 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style scoped>
-.adsencectn {
+#adsencectn {
   width: 100%;
-  height: auto;
+}
+#adsencectn1 {
+  width: 100%;
+}
+#adsencectn2 {
+  width: 100%;
 }
 .twitter-tweet{
   margin-right: auto;

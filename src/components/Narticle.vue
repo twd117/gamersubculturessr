@@ -19,7 +19,27 @@
            <Markdown :html="true"  :breaks="true" :source="story" />
 
             
-         
+           <div id="adsencectn1">
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="2797142084"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+   
+   
+        
+    
+       </div>
+       <div id="adsencectn2">
+
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5853275170"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+       </div>
              
                  <div v-if="video" class="video-container">
          <iframe
@@ -52,7 +72,15 @@
          
         <HorNavBar :isGame="true" />
       <NewsLetters/>
-     
+      <div id="adsencectn">
+      <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-79+d6+v+y+55"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="8049468760"></ins>
+
+    </div>
 
          </div> 
     
@@ -80,6 +108,14 @@
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
     let adScript = document.createElement("script");
+    adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
+    adScript.setAttribute("crossorigin","anonymous");
+    adScript.async=true;
+    document.head.appendChild(adScript);
+    let adpushScript = document.createElement("script");
+    adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
+
+    document.body.appendChild(adpushScript);
  /*   adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
 
@@ -178,6 +214,15 @@
   </script>
   
   <style>
+  #adsencectn {
+  width: 100%;
+}
+#adsencectn1 {
+  width: 100%;
+}
+#adsencectn2 {
+  width: 100%;
+}
   .space {
   width: 100%;
   height: 380px;
