@@ -82,6 +82,11 @@
           
              meta: [
              {
+                name:`twitter:card`,
+                content:`summary_large_image`
+                }
+              ,
+             {
               name: `og:title`,
               content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
                },
