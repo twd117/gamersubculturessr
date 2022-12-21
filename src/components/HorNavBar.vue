@@ -7,7 +7,7 @@
     <div class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[0].imgurl" alt="image">
+                  <img :src="data[0].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
@@ -37,7 +37,7 @@
   <div  class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[1].imgurl" alt="image">
+                  <img :src="data[1].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
@@ -71,7 +71,7 @@
     <div class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[0].imgurl" alt="image">
+                  <img :src="data[0].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
@@ -101,7 +101,7 @@
   <div  class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[1].imgurl" alt="image">
+                  <img :src="data[1].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
