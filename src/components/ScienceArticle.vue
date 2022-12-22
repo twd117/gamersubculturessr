@@ -13,12 +13,14 @@
            <p>Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
           </p>
            
-           <!--      
+           <!--   
+             <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image" :src="img[0].downloadURL"  />
+   
+         -->  
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
-           -->  
-           <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image" :src="img[0].downloadURL"  />
-
+          
+          
 
    
 

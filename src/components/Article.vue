@@ -22,9 +22,10 @@
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
            -->  
-           <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image mgb" :src="img[0].downloadURL"  />
+           <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
+        <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
-
+          
          <Markdown :html="true" :breaks="true" :source="story +analyse" />
        
        <div id="adsencectn1">
