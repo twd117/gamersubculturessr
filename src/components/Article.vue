@@ -5,7 +5,7 @@
   <div id="post-content">
    
   
-    <div class="article aparent">
+    <article class="article aparent">
      
       <h1 class="news">Developer(s): {{ dev }}</h1>
              <p>Platform(s): {{ platform }} </p>
@@ -24,7 +24,6 @@
            -->  
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
-
           
          <Markdown :html="true" :breaks="true" :source="story +analyse" />
        
@@ -98,7 +97,8 @@
      data-ad-slot="8049468760"></ins>
 
     </div>
-       </div> 
+      
+  </article> 
   
       
     </div>
@@ -357,9 +357,12 @@ text-align:left;
 
 h2 {
   
-  margin-top: 16px;
   margin-bottom: 16px;
-  text-align: start;
+  margin-top: 32px;
+    margin-bottom: 16px;
+    text-align: start;
+    font-family: Alegreya sans-serif;
+    color: black;
 }
 #starcontainer {
   display: flex;
@@ -441,6 +444,17 @@ h2 {
   margin-top: -8px;
   text-align: left;
 }
+.article p {
+font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.5;
+   letter-spacing: 1.2px;
+  color: #202125;
+  margin-top:16px;
+  margin-bottom:16px;
+  text-align: justify;
+}
 
 .image {
   /*  max-height:300px; */
@@ -448,17 +462,7 @@ h2 {
   width: auto;
   height: auto;
 }
-.article p {
-font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.5;
-   letter-spacing: 1.2px;
-  text-align: left;
-  color: #202125;
-  margin-top:16px;
-  margin-bottom:16px;
-}
+
 
 #post-content {
   display: flex;
@@ -506,6 +510,7 @@ font-family: 'Open Sans', sans-serif;
       display: none; 
 }
 }
+
 
 
 </style>
