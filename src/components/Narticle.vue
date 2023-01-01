@@ -1,13 +1,13 @@
 <template>
  
        
-    <h1 class="ht">{{ title }}</h1>
+    <h1 class="htn">{{ title }}</h1>
     <div id="post-content">
       <div class="article aparent">
         <h1 class="news"></h1>
         <span class="plight">{{ sub }}</span>
     <div class="line"></div>
-           <p>Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
+           <p id="typo_pl">Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
           </p>
       
       
@@ -221,7 +221,7 @@
   });
   </script>
   
-  <style>
+  <style >
   #adsencectn {
   width: 100%;
 }
@@ -327,11 +327,14 @@ height: 765px;
   }
   
   h2 {
-    
-    margin-top: 16px;
+  
+  margin-bottom: 16px;
+  margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
-  }
+    font-family: Alegreya sans-serif;
+    color: rgb(30,30,30);
+}
   #starcontainer {
     display: flex;
     flex-direction: row;
@@ -390,7 +393,7 @@ height: 765px;
     flex-direction: column;
     height: 100%;
   }
-  .ht {
+  .htn {
     color: #424242;
     font-family: Google Sans;
     font-size: 2.25rem;
@@ -398,8 +401,9 @@ height: 765px;
     letter-spacing: 0.0175rem;
     line-height: 2.75rem;
     text-align: left;
+    margin-left: 35px;
+
     margin-bottom:16px;
-      margin-left: 35px;
   
   }
   
@@ -411,6 +415,8 @@ height: 765px;
     color: #424242;
     margin-top: -8px;
     text-align: left;
+    margin-bottom: 0px;
+
   }
   
   .image {
@@ -419,7 +425,7 @@ height: 765px;
     width: auto;
     height: auto;
   }
-  .article p {
+  #typo_pl  {
   font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -430,6 +436,29 @@ height: 765px;
     margin-top:16px;
     margin-bottom:16px;
   }
+  #typo_rel  {
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+     letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+    margin-top:16px;
+    margin-bottom:16px;
+  }
+.article p {
+font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.5;
+   letter-spacing: 1.2px;
+  color: #000;
+  margin-top:16px;
+  margin-bottom:16px;
+  text-align: justify;
+}
+
   
   #post-content {
     display: flex;

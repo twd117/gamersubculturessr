@@ -17,7 +17,7 @@
         </div>
        
         
-        <h2>{{title}}</h2>
+        <h2 class="btit">{{title}}</h2>
         <p>{{sub}}</p>
           <a href="#" class="btn">
             Read Now <i class="fas fa-chevron-right"></i>
@@ -34,7 +34,7 @@
        
        
         
-        <h2>{{title}}</h2>
+        <h2 class="btit"> {{title}}</h2>
         <p>{{sub}}</p>
           <a href="#" class="btn">
             Read Now <i class="fas fa-chevron-right"></i>
@@ -56,7 +56,7 @@
         </div>
        
         
-        <h2>{{title}}</h2>
+        <h2 class="btit">{{title}}</h2>
         <p>{{sub}}</p>
           <a href="#" class="btn">
             Read Now <i class="fas fa-chevron-right"></i>
@@ -88,11 +88,7 @@ export default {
   },
   setup(){
     const store = useNavStore();
-    console.log(store.isEntertainment);
-    console.log("Enter",store.isEntertainment);
-    console.log("Game",store.isGame);
-    console.log("Tech",store.isTech);
-    
+  
     return { store }
   },
    data() {
@@ -105,6 +101,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped >
+
+.btit {
+  
+ 
+    text-align: start;
+    font-family: Roboto;
+    color: white;
+}
 a {
   color:white;
   text-decoration: none; /* no underline */

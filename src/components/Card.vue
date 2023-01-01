@@ -147,6 +147,10 @@ a:hover {
 }
 
 /* card article */
+.card__article{
+  display: flex;
+    flex-direction: column;
+}
 .card__article a {
   text-decoration: none;
   text-align: left;
@@ -163,7 +167,7 @@ a:hover {
   color: #2980b9;
 }
 .card-text {
-  text-align: left;
+  text-align: justify;
   font-family: Roboto;
   font-size: 14px;
   line-height: 20px;

@@ -5,12 +5,12 @@
   <div id="post-content">
    
   
-    <article class="article aparent">
+    <div class="article aparent">
      
       <h1 class="news">Developer(s): {{ dev }}</h1>
-             <p>Platform(s): {{ platform }} </p>
+             <p id="typo_pl">Platform(s): {{ platform }} </p>
          <div class="line"></div>
-      <p v-if="release!==null && release.length>3">Release date: {{  release }}</p>
+      <p id="typo_rel" v-if="release!==null && release.length>3">Release date: {{  release }}</p>
 
     
     
@@ -98,7 +98,7 @@
 
     </div>
       
-  </article> 
+  </div> 
   
       
     </div>
@@ -242,7 +242,7 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 });
 </script>
 
-<style scoped>
+<style >
 #adsencectn {
   width: 100%;
 }
@@ -358,11 +358,11 @@ text-align:left;
 h2 {
   
   margin-bottom: 16px;
-  margin-top: 32px;
+  margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
     font-family: Alegreya sans-serif;
-    color: black;
+    color: rgb(30,30,30);
 }
 #starcontainer {
   display: flex;
@@ -431,7 +431,8 @@ h2 {
   line-height: 2.75rem;
   text-align: left;
   margin-bottom:16px;
-    margin-left: 35px;
+  margin-left: 35px;
+
 
 }
 
@@ -443,18 +444,44 @@ h2 {
   color: #424242;
   margin-top: -8px;
   text-align: left;
+  margin-bottom: 0px;
 }
+
+#typo_pl  {
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+     letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+    margin-top:16px;
+    margin-bottom:16px;
+  }
+  #typo_rel  {
+  font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+     letter-spacing: 1.2px;
+    text-align: left;
+    color: #202125;
+    margin-top:16px;
+    margin-bottom:16px;
+  }
 .article p {
 font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 550;
   line-height: 1.5;
    letter-spacing: 1.2px;
-  color: #202125;
+  color: #000;
   margin-top:16px;
   margin-bottom:16px;
   text-align: justify;
 }
+
+
 
 .image {
   /*  max-height:300px; */

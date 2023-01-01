@@ -68,13 +68,16 @@ export default {
   margin:16px;
 }
 .input{
-  padding:5px;
+  transition: all 0.3s ease-in-out;
+    background: none;
+    box-shadow: none;
+    height: 50px;
+    padding: 5px 15px;
+    box-shadow: none;
   box-shadow: none;
     border-color: #d8d8d8;
     border-radius: 0.25rem;
-    padding: 0.5rem 0.5rem 0.5rem 1.375rem;
       width: 50%;
-    padding: 0.325rem;
     margin-bottom: 9px;
     border: 1px solid #bfbfbf;
     background-color: #fff;
@@ -110,6 +113,9 @@ text-align: center;
 
 
 #nfbtn {
+  font-family: 'Roboto Mono';
+    height: 2.6rem;
+    font-weight: bolder;
   width:50%;
   border:none;
   display: inline-block;
