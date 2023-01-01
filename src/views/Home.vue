@@ -47,7 +47,8 @@ import SideBarVue from "../components/SideBar.vue";
 import VlistViewVue from "../components/VListView.vue";
 
 import {useDataStore} from "../store/useDataStore.js"
-
+import { useHead } from '@vueuse/head'
+import {  computed } from 'vue';
 
 import { useNavStore } from "../store/useNavStore.js"
 
@@ -56,6 +57,27 @@ export default {
   setup() {
     const dataStore = useDataStore()
     const store = useNavStore();
+    useHead({
+      
+      title:computed(()=>   "GamerSubculture"),
+   
+      meta: [
+    
+      {
+       name: `og:title`,
+       content:computed(()=> "GamerSubculture"),
+        },
+     {
+       name: `description`,
+       content:computed(()=>  "Gamersubculture is a home for all the game news, previews, trailer and reviews, you will find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
+     },
+    
+     
+   
+      ],
+  
+    });
+
 
     return { dataStore ,store}
   },
