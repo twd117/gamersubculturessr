@@ -127,6 +127,12 @@ computed:{
           await this.dataStore.getSidebarDataEnter();
            break ;
 
+           case "smlc":
+           this.store.setIsScifi(true);
+          await this.dataStore.getSMLCArticles();
+          await this.dataStore.getSidebarDataEnter();
+            break;
+
           default:
           this.store.setIsGame(true);
 

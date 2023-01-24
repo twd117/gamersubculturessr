@@ -22,6 +22,27 @@
         <i class="material-icons">open_in_new</i> {{ tag }}
       </div>
      </router-link>
+     <router-link v-else-if="store.isScifi"
+    :to="{ name: 'smlc', params: { id: this.id, title: this.title  } }"
+  >
+      <div class="card__image border-tlr-radius">
+        <img :src="img[0].downloadURL" alt="image" class="border-tlr-radius" />
+      </div>
+             
+      <div class="card__content card__padding">
+        <article class="card__article">
+          <a href="#">{{ title }}</a>
+
+          <p class="card-text">
+            {{ sub }}
+          </p>
+        </article>
+      </div>
+
+      <div class="lk-tag url">
+        <i class="material-icons">open_in_new</i> {{ tag }}
+      </div>
+     </router-link>
      <router-link v-else-if="store.isNews"
     :to="{ name: 'news', params: { id: this.id, title: this.title  } }"
   >

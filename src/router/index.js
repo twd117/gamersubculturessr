@@ -2,6 +2,7 @@ import Home from "../views/Home.vue";
 import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
 import NewsDetailPage from "../views/NewsDetailPage.vue"; 
+import Smlc from "../views/Smlc.vue";
 const routes = [
   
   {
@@ -28,6 +29,12 @@ const routes = [
     path: "/entertainment/:title/:id",
     name: "Sciences",
     component: SciencesDetailPage,
+    props: true
+  },
+  {
+    path: "/smlc/:title/:id",
+    name: "smlc",
+    component: Smlc,
     props: true
   },
   {

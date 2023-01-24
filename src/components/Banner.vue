@@ -42,6 +42,23 @@
       </div>
     </section>
     </router-link>
+    <router-link v-else-if="store.isScifi"
+    :to="{ name: 'smlc', params: { id: this.id, title: this.title } }"
+  >
+    <section class="xbox" :style="{   background: 'url('+this.url+') no-repeat center center/cover'  }">
+      <div class="content">
+        <div id="tag"> <span>{{tag}}</span> </div>
+       
+       
+        
+        <h2 class="btit"> {{title}}</h2>
+        <p>{{sub}}</p>
+          <a href="#" class="btn">
+            Read Now <i class="fas fa-chevron-right"></i>
+          </a>
+      </div>
+    </section>
+    </router-link>
        <router-link v-else
     :to="{ name: 'Sciences', params: { id: this.id, title: this.title } }"
   >

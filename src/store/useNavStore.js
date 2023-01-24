@@ -6,6 +6,7 @@ export const useNavStore = defineStore('navStore', {
     isGame: true,
         isEntertainment: false,
         isNews:false,
+        isScifi:false
 
   }),
   actions:{
@@ -13,6 +14,8 @@ export const useNavStore = defineStore('navStore', {
       this.isEntertainment=b;
       this.isGame=false;
       this.isNews=false;
+      this.isScifi=false;
+
 
 
      },
@@ -20,6 +23,7 @@ export const useNavStore = defineStore('navStore', {
       this.isGame=b;
       this.isNews=false;
       this.isEntertainment=false;
+      this.isScifi=false;
 
 
 
@@ -28,11 +32,17 @@ export const useNavStore = defineStore('navStore', {
       this.isNews=b;
       this.isGame=false;;
       this.isEntertainment=false;
+      this.isScifi=false;
 
 
 
      },
-    
+    setIsScifi(b){
+      this.isNews=false;
+      this.isGame=false;;
+      this.isEntertainment=false;
+      this.isScifi=b;
+    }
   }
     // other options...
   });

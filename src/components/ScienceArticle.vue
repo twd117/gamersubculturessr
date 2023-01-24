@@ -22,7 +22,6 @@
           
           
 
-   
 
       
                <Markdown :html="true"  :breaks="true" :source="analyse" />
@@ -106,6 +105,7 @@ import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
+   // console.log("mounted--",this.analyse);
       let Script = document.createElement("script");
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
@@ -201,6 +201,7 @@ created() {
     this.currentUrl = "https://gamersubculture.com"+route.path;
 
     this.moment = moment;
+  //  console.log("--analyse:",this.analyse);
 
 },
 });

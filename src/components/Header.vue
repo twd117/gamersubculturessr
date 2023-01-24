@@ -19,6 +19,10 @@
         Tech
         <div class="underline "></div>
       </li> 
+      <li @click="scifilinkclick()" class="hchild nav-link" :class="{ active: store.isScifi }">
+        science-myth-legend-conspiration
+        <div class="underline "></div>
+      </li> 
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
       <router-view />
     </ul>
@@ -70,6 +74,14 @@ export default {
      await this.dataStore.getSidebarDataGames();
 
      }
+     ,
+     async scifilinkclick(){
+          await   this.dataStore.getSMLCArticles();
+
+            // this.isScienceMethode(true)
+            this.store.setIsScifi(true);
+            await this.dataStore.getSidebarDataGames();
+        }
 
   },
   name: "Header",

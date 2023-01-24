@@ -104,6 +104,34 @@ export const useDataStore = defineStore('data',{
              });
 
          },
+         async getSMLCArticles(state){
+          this.data=[];
+          const q = query(collection(db, "smlc"), orderBy("date",'desc'),limit(10));
+          await getDocs(q).then((querySnapshot) => {
+            this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+    
+            querySnapshot.forEach((doc) => {
+              this.data.push({
+                id: doc.id,
+                title: doc.data().title,
+                img: doc.data().img,
+                sub: doc.data().subtitle,
+                
+                analyse: doc.data().analyse,
+                video: doc.data().video,
+               
+                tag: doc.data().tag,
+                date: doc.data().date,
+                imgurl: doc.data().imgurl,
+    
+              });
+         //     console.log(" title => ", doc.data().title);
+    
+            });
+    
+          });
+
+      },
 
          async getNextGamesArticles() {
             //  Construct a new query starting at this document,
@@ -144,6 +172,43 @@ export const useDataStore = defineStore('data',{
          
           },
          
+          async getNextSMLCArticles() {
+            //  Construct a new query starting at this document,
+            // get the next 25 cities.
+         if(this.lastVisible !== undefined){
+                 const next = query(
+              collection(db, "smlc"),
+              orderBy("date",'desc'),
+              startAfter(this.lastVisible),
+              limit(10)
+            );
+             await getDocs(next).then((querySnapshot) => {
+              this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+              //   console.log("last", this.lastVisible);
+      
+              querySnapshot.forEach((doc) => {
+                this.data.push({
+                  id: doc.id,
+                  title: doc.data().title,
+                  img: doc.data().img,
+                  sub: doc.data().subtitle,
+                 
+                  analyse: doc.data().analyse,
+                  video: doc.data().video,
+                 
+                  tag: doc.data().tag,
+                  date: doc.data().date,
+                  imgurl: doc.data().imgurl,
+      
+                });
+             //   console.log(doc.id, " => ", doc.data().imgurl);
+      
+              });
+            });
+         }
+         
+          },
+
           async getNextEntertainmentArticles() {
             //  Construct a new query starting at this document,
             // get the next 25 cities.
