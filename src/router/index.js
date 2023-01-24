@@ -2,7 +2,7 @@ import Home from "../views/Home.vue";
 import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
 import NewsDetailPage from "../views/NewsDetailPage.vue"; 
-import Smlc from "../views/Smlc.vue";
+import Smlc from "../views/smlc.vue";
 const routes = [
   
   {
