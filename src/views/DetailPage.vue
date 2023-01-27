@@ -43,7 +43,7 @@ export default {
 
   },
   async setup(props) {
-    console.log("props---",props);
+   // console.log("props---",props);
 
   //   const sdata = [];
  //   const q = collection(db, "articles");
@@ -97,7 +97,7 @@ export default {
            },
         {
           name: `description`,
-          content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.sub : ""),
+          content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
         },
        
          {

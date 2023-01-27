@@ -81,7 +81,7 @@
              },
           {
             name: `description`,
-            content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.sub : ""),
+            content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
           },
          
            {
@@ -104,8 +104,9 @@
                    homeLocalState.value = fbd.data();
                   
                                 
-         //  console.log("Home---",homeLocalState.value);
            if (import.meta.env.SSR) {
+          //  console.log("Home---",homeLocalState.value);
+
              // Save this data in SSR initial state for hydration later
              initialState.homeLocalState = homeLocalState.value;
            }

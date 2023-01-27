@@ -107,7 +107,7 @@ computed:{
   },
  
   async mounted() {
-    console.log("path----",this.category);
+   // console.log("path----",this.category);
       switch(this.category) {
         case "tech":
          await this.dataStore.getNewsArticles();

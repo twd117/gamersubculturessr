@@ -82,7 +82,7 @@ export default {
            },
         {
           name: `description`,
-          content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.sub : ""),
+          content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
         },
        
          {

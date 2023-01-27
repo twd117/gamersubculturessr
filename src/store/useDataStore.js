@@ -238,7 +238,7 @@ export const useDataStore = defineStore('data',{
                   rating:doc.data().rating
       
                 });
-                console.log(doc.id, " => ", doc.data().imgurl);
+          //      console.log(doc.id, " => ", doc.data().imgurl);
       
               });
             });
@@ -356,7 +356,7 @@ export const useDataStore = defineStore('data',{
    const q = query(collection(db, "newsletters"), where("email", "==", email));
 
 const querySnapshot = await getDocs(q);
-console.log("test----", " => ", querySnapshot.size);
+//console.log("test----", " => ", querySnapshot.size);
 if(querySnapshot.size === 0){
 
 const docRef = await addDoc(collection(db, "newsletters"), {
