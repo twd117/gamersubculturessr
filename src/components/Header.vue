@@ -20,7 +20,7 @@
         <div class="underline "></div>
       </li> 
       <li @click="scifilinkclick()" class="hchild nav-link" :class="{ active: store.isScifi }">
-        science-myth-legend-conspiration
+        others
         <div class="underline "></div>
       </li> 
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
