@@ -152,7 +152,12 @@ computed:{
 </script>
 
 <style>
-
+ul {
+  margin:32px;
+}
+h3 {
+  text-align: left;
+}
 #vlst {
   display:flex;
   flex-direction:row;
