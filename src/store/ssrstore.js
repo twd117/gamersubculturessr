@@ -125,10 +125,10 @@ const  getGameArticles = async function()  {
 
 export default allData = async function(){
   
-   const games =  await getGameArticles();
-   const techs = await getNewsArticles();
-   const ent = await getEntertainmentArticles();
-   const news = await getSMLCArticles();
+   let games =  await getGameArticles();
+   let techs = await getNewsArticles();
+   let ent = await getEntertainmentArticles();
+   let news = await getSMLCArticles();
    games = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
    techs = techs.map(name => `/tech/${name["title"]}/${name["id"]}`);
    ent =ent.map(name => `/entertainment/${name["title"]}/${name["id"]}`);
