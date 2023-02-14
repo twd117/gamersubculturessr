@@ -6,17 +6,18 @@ import Sitemap from 'vite-plugin-sitemap';
 import allData from "./src/store/ssrstore.js";
 
 
+const ASSET_URL = process.env.ASSET_URL || '';
 
 // https://vitejs.dev/config/
 export default defineConfig( async ({ command, mode }) => {
   const games = await allData();
   const dynamicRoutes = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
 
-  console.log(dynamicRoutes);
+ // console.log(dynamicRoutes);
   return {
     plugins: [
       vue(),
-      Sitemap({ dynamicRoutes }),
+      Sitemap({ outDir:"public",dynamicRoutes }),
      
       viteSSR({
         build: {

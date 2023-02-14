@@ -43,7 +43,7 @@ const routes = [
     component: Home,
     props: true
   },
-  
+ 
 ];
 
 
