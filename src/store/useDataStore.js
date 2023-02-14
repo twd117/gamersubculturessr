@@ -24,7 +24,7 @@ export const useDataStore = defineStore('data',{
      actions : {
         async getGameArticles(state){
             this.data = [];
-             const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(10));
+             const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(30));
              await getDocs(q).then((querySnapshot) => {
                this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
              //  console.log("last", this.lastVisible);
@@ -52,7 +52,7 @@ export const useDataStore = defineStore('data',{
          },
          async getNewsArticles(state){
           this.data = [];
-           const q = query(collection(db, "news"), orderBy("date",'desc'),limit(10));
+           const q = query(collection(db, "news"), orderBy("date",'desc'),limit(30));
            await getDocs(q).then((querySnapshot) => {
              this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
            //  console.log("last", this.lastVisible);
@@ -77,7 +77,7 @@ export const useDataStore = defineStore('data',{
        },
         async getEntertainmentArticles(state){
              this.data=[];
-             const q = query(collection(db, "entertainment"), orderBy("date",'desc'),limit(10));
+             const q = query(collection(db, "entertainment"), orderBy("date",'desc'),limit(30));
              await getDocs(q).then((querySnapshot) => {
                this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
        
@@ -106,7 +106,7 @@ export const useDataStore = defineStore('data',{
          },
          async getSMLCArticles(state){
           this.data=[];
-          const q = query(collection(db, "smlc"), orderBy("date",'desc'),limit(10));
+          const q = query(collection(db, "smlc"), orderBy("date",'desc'),limit(30));
           await getDocs(q).then((querySnapshot) => {
             this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
     

@@ -24,4 +24,7 @@ if (typeof window !== 'undefined') {
  getAnalytics(app);
 }
 const db = getFirestore();
+
+
+
 export default db;
