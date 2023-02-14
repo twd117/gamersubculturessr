@@ -10,14 +10,13 @@ const ASSET_URL = process.env.ASSET_URL || '';
 
 // https://vitejs.dev/config/
 export default defineConfig( async ({ command, mode }) => {
-  const games = await allData();
-  const dynamicRoutes = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
+  const dynamicRoutes = await allData();
 
  // console.log(dynamicRoutes);
   return {
     plugins: [
       vue(),
-      Sitemap({ outDir:"public",dynamicRoutes }),
+      Sitemap({  hostname:"https://www.gamersubculture.com",outDir:"public",dynamicRoutes }),
      
       viteSSR({
         build: {

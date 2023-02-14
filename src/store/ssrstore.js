@@ -129,6 +129,10 @@ export default allData = async function(){
    const techs = await getNewsArticles();
    const ent = await getEntertainmentArticles();
    const news = await getSMLCArticles();
+   games = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
+   techs = techs.map(name => `/tech/${name["title"]}/${name["id"]}`);
+   ent =ent.map(name => `/entertainment/${name["title"]}/${name["id"]}`);
+   news = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
 
    return [...games, ...techs, ...ent, ...news];
 
