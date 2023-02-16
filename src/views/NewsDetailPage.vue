@@ -108,7 +108,7 @@
              script: [ { 
           type:"application/ld+json",
           children:computed(()=>`{
-      "@context": "https://schema.org",
+      "@context": "https://www.gamersubculture.com",
       "@type": "NewsArticle",
       "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
       "image": [
