@@ -107,7 +107,7 @@
         
        ],
 
-      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}"
+      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
       "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
       "author": [{
           "@type": "Person",
