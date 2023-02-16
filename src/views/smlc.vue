@@ -100,7 +100,7 @@
           type:"application/ld+json",
           children:computed(()=>`{
       "@context": "https://schema.org",
-      "@type": "NewsArticle",
+      "@type": "Article",
       "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
       "image": [
       ${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}
