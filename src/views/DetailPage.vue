@@ -123,7 +123,7 @@ export default {
       "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
         
        ],
-      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}"
      
     }`)
         }
