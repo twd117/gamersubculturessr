@@ -104,7 +104,7 @@ export default {
       "@type": "NewsArticle",
       "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
       "image": [
-      ${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}
+      "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
         
        ],
       "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
