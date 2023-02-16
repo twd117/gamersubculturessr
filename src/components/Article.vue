@@ -133,8 +133,11 @@ export default defineComponent({
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
     document.body.appendChild(adpushScript);
+
+   
+
    /* const adsencectn = document.getElementById("adsencectn");
-    
+
     adsencectn.appendChild(adScript);
     adsencectn.appendChild(adpushScript);
     const adsencectn1 = document.getElementById("adsencectn1");

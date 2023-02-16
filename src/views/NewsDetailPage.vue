@@ -27,7 +27,8 @@
     import { useHead } from '@vueuse/head'
     import { useContext } from 'vite-ssr/vue'
     import {  computed } from 'vue';
-    
+    import moment from "moment";
+
     
     
     
@@ -104,6 +105,21 @@
               content: "article",
             },
              ],
+             script: [ { 
+          type:"application/ld+json",
+          children:computed(()=>`{
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
+      "image": [
+      ${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}
+        
+       ],
+      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
+     
+    }`)
+        }
+       ],
              link: [{ rel: 'stylesheet' }],
           
            })

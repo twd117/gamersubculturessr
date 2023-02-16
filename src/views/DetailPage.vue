@@ -32,8 +32,9 @@ import {   ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useContext } from 'vite-ssr/vue'
 import {  computed } from 'vue';
+import {parse, stringify, toJSON, fromJSON} from 'flatted';
 
-
+import moment from "moment";
 
 
 export default {
@@ -82,10 +83,12 @@ export default {
        const { initialState } = useContext()
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
+       console.log("computed--,",computed(()=> homeLocalState.value.title ));
        useHead({
       
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
-      
+         
+
          meta: [
          {
           name:`twitter:card`,
@@ -110,6 +113,21 @@ export default {
         },
       
          ],
+         script: [ { 
+          type:"application/ld+json",
+          children:computed(()=>`{
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
+      "image": [
+      ${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}
+        
+       ],
+      "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+     
+    }`)
+        }
+       ],
          link: [{ rel: 'stylesheet' }],
      
        })
