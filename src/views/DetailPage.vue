@@ -114,9 +114,8 @@ export default {
       
          ],
        
-    }`)
-        }
-       ],
+   
+       
          link: [{ rel: 'stylesheet' }],
      
        })

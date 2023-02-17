@@ -98,7 +98,7 @@
            ],
          
         
-           link: [{ rel: 'stylesheet' }],
+           link: [{ rel: 'stylesheet' }]
         
          })
          if (true) {
