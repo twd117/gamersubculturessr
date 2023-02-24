@@ -154,8 +154,12 @@ computed:{
 <style>
 ul {
   margin:32px;
+  text-align: start;
 }
 h3 {
+  text-align: left;
+}
+h4 {
   text-align: left;
 }
 #vlst {

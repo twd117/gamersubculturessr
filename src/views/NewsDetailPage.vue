@@ -150,6 +150,12 @@
     
     <style>
     
-    
+    ul {
+  margin:32px;
+  text-align: start;
+}  
+h4 {
+  text-align: left;
+}
     </style>
     

@@ -161,6 +161,12 @@ export default {
 </script>
 
 <style>
-
+h4 {
+  text-align: left;
+}
+ul {
+  margin:32px;
+  text-align: start;
+}
 
 </style>
