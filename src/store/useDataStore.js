@@ -55,7 +55,7 @@ export const useDataStore = defineStore('data',{
            const q = query(collection(db, "news"), orderBy("date",'desc'),limit(30));
            await getDocs(q).then((querySnapshot) => {
              this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
-           //  console.log("last", this.lastVisible);
+           //  console.log("last", this.lastVisible);ss
      
              querySnapshot.forEach((doc) => {
                this.data.push({
