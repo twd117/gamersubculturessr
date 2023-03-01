@@ -107,6 +107,25 @@
              ],
         
              link: [{ rel: 'stylesheet' }],
+             script: [ { 
+    type:"application/ld+json",
+    children:computed(()=>`
+{
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
+              "image": [
+              "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
+                
+              ],
+              "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
+              "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
+              "author": [{
+                  "@type": "Person",
+                  "name": "rolox",
+                  "url": "https://twitter.com/Rolox77"}]
+}`
+         )} ]
           
            })
            if (true) {
