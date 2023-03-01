@@ -195,6 +195,20 @@
   align-items: center;
 }
 
+@media (max-width: 650px) {
+
+.easy-grid{
+  display: grid;
+  
+
+  grid-gap:  1rem;
+  grid-template-columns: repeat(
+    1,
+    minmax(200px, 1fr) 
+  );
+  align-items: center;}
+}
+
 
 .vline {
     width: 12px;
@@ -273,7 +287,6 @@ margin-top: 4px
 	
 
 .cxchild { 
-  margin:12px;
      width:100%;
 
 }

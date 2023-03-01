@@ -20,7 +20,6 @@
 </suspense>
   <Footer  />
 </template>
-
 <script>
 import ArticleVue from "../components/Article.vue";
 import FooterVue from "../components/Footer.vue";
@@ -80,9 +79,9 @@ export default {
       });*/
 
 ////////////////////////////////////////////////////////
-       const { initialState } = useContext()
+       const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
-       const homeLocalState = ref(initialState.homeLocalState || null)
+       const homeLocalState = ref(initialState.homeLocalState || null);
        console.log("computed--,",computed(()=> homeLocalState.value.title ));
        useHead({
       
@@ -114,11 +113,8 @@ export default {
       
          ],
        
-   
-       
-         link: [{ rel: 'stylesheet' }],
-     
-       })
+    
+       });
        if (true) {
          // No data, get it fresh from any API
          const fbd = await getDoc(queryR);

@@ -16,7 +16,7 @@
       <Footer  />
     </template>
     
-    <script>
+<script>
     import ArticleVue from "../components/Narticle.vue";
     import FooterVue from "../components/Footer.vue";
     import { collection, getDoc,doc } from "firebase/firestore";

@@ -134,6 +134,32 @@ text-align: center;
     background-color: #0000FF;
   color:white;
 }
+
+@media (max-width: 650px) {
+
+  .input{
+  transition: all 0.3s ease-in-out;
+    background: none;
+    box-shadow: none;
+    height: 50px;
+    padding: 5px 15px;
+    box-shadow: none;
+  box-shadow: none;
+    border-color: #d8d8d8;
+    border-radius: 0.25rem;
+      width: 70%;
+    margin-bottom: 9px;
+    
+    border: 1px solid #bfbfbf;
+    background-color: #fff;
+    font-size: 14px;
+  color: #333;
+  font-family: Roboto, sans-serif;
+}
+
+}
+
+
 /****
 
 input[type="email"]{

@@ -25,8 +25,10 @@ export default viteSSR(
     { routes },
     ({ app, router, isClient, url, initialState, initialRoute, request }) => {
       const head = createHead();
+  
+      
       const pinia = createPinia()
-      app.use(pinia)
+      app.use(pinia);
 
       app.use(head);
 
@@ -80,9 +82,9 @@ export default viteSSR(
           // redirect to error route
         }
   
-        next()
+        next();
       })
   
-      return { head }
+      return { head };
     }
   )

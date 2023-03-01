@@ -38,5 +38,7 @@
     "vue-script2": "^2.1.0",
     "vue-tweet": "^2.0.2",
     "vue3-markdown-it": "^1.0.10"
+  },
+  "devDependencies": {
   }
 }

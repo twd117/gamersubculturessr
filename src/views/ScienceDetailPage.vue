@@ -16,7 +16,6 @@
   <Footer  />
   </div>
 </template>
-
 <script>
 import ArticleVue from "../components/ScienceArticle.vue";
 import FooterVue from "../components/Footer.vue";

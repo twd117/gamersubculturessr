@@ -16,7 +16,7 @@
     </div>
   </template>
   
-  <script>
+<script>
   import ArticleVue from "../components/ScienceArticle.vue";
   import FooterVue from "../components/Footer.vue";
   import { doc,getDoc } from "firebase/firestore";
@@ -28,6 +28,7 @@
   import { useContext } from 'vite-ssr/vue'
   import {  computed } from 'vue';
   import moment from "moment";
+ 
 
   
   export default {
@@ -69,6 +70,10 @@
          }catch(e){
   
          }
+
+           
+
+
          useHead({
            title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
       
@@ -98,7 +103,8 @@
            ],
          
         
-           link: [{ rel: 'stylesheet' }]
+           link: [{ rel: 'stylesheet' }],
+          
         
          })
          if (true) {
