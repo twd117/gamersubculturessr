@@ -4,7 +4,6 @@
     <h1 class="htn">{{ title }}</h1>
     <div id="post-content">
       <div class="article aparent">
-        <h1 class="news"></h1>
         <span class="plight">{{ sub }}</span>
     <div class="line"></div>
            <p id="typo_pl">Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}

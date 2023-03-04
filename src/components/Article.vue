@@ -7,7 +7,7 @@
   
     <div class="article aparent">
      
-      <h1 class="news">Developer(s): {{ dev }}</h1>
+      <h2 class="news">Developer(s): {{ dev }}</h2>
              <p id="typo_pl">Platform(s): {{ platform }} </p>
          <div class="line"></div>
       <p id="typo_rel" v-if="release!==null && release.length>3">Release date: {{  release }}</p>
