@@ -3,7 +3,7 @@
 <div class="news-letter" id="News-letter">
     <div class="nnews ">
       <div class="ncontainer">
-        <h1 class="news-heading">{{msg}}</h1>
+        <h2 class="news-heading">{{msg}}</h2>
         <p class="des how-de">Get the latest gaming news, reviews, entertainment, and deals sent to your inbox. </p>
 
         <form v-if="!disable" action="">
