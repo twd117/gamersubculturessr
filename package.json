@@ -40,5 +40,6 @@
     "vue3-markdown-it": "^1.0.10"
   },
   "devDependencies": {
+    "vite-plugin-rss": "^0.0.6"
   }
 }

@@ -10,6 +10,7 @@ import {
   addDoc,
   where
 } from "firebase/firestore";
+import moment from "moment";
 
 const getNewsArticles = async function(){
   const data = [];
@@ -123,17 +124,40 @@ const  getGameArticles = async function()  {
    return data;
 }
 
-export default allData = async function(){
+export default allData = async function(b){
   
    let games =  await getGameArticles();
    let techs = await getNewsArticles();
    let ent = await getEntertainmentArticles();
    let news = await getSMLCArticles();
-   games = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
-   techs = techs.map(name => `/tech/${name["title"]}/${name["id"]}`);
-   ent =ent.map(name => `/entertainment/${name["title"]}/${name["id"]}`);
-   news = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
+  let xsitegames = games.map(name => `/articles/${name["title"]}/${name["id"]}`);
+ let xsitetechs = techs.map(name => `/tech/${name["title"]}/${name["id"]}`);
+let  xsiteent =ent.map(name => `/entertainment/${name["title"]}/${name["id"]}`);
+let  xsitenews = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
+  
+   let rssgames = games.map((name) =>  ({
+     title : `${name["title"]}`, 
+     link : `https://www.gamersubculture.com/articles/${name["title"]}/${name["id"]}`,
+     pubDate : new Date(name['date']['seconds']*1000) })
+   );
+   let rsstech = techs.map((name) =>  ({
+    title : `${name["title"]}`, 
+    link : `https://www.gamersubculture.com/tech/${name["title"]}/${name["id"]}`,
+    pubDate : new Date(name['date']['seconds']*1000) })
+  );
+  let rssent = ent.map((name) =>  ({
+    title : `${name["title"]}`, 
+    link : `https://www.gamersubculture.com/entertainment/${name["title"]}/${name["id"]}`,
+    pubDate : new Date(name['date']['seconds']*1000) })
+  );
+  let rssnews = news.map((name) =>  ({
+    title : `${name["title"]}`, 
+    link : `https://www.gamersubculture.com/smlc/${name["title"]}/${name["id"]}`,
+    pubDate : new Date(name['date']['seconds']*1000)})
+  );
+  
+  console.log(rssnews);
 
-   return [...games, ...techs, ...ent, ...news];
+   return b ? [...xsitegames, ...xsitetechs, ...xsiteent, ...xsitenews] : [...rssgames,...rssent,...rssnews,...rsstech];
 
 };

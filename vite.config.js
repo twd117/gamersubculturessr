@@ -4,13 +4,15 @@ import viteSSR from 'vite-ssr/plugin.js'
 import api from './node-server/api.js'
 import Sitemap from 'vite-plugin-sitemap';
 import allData from "./src/store/ssrstore.js";
+import { rssPlugin } from "vite-plugin-rss";
 
 
 const ASSET_URL = process.env.ASSET_URL || '';
 
 // https://vitejs.dev/config/
 export default defineConfig( async ({ command, mode }) => {
-  const dynamicRoutes = await allData();
+  const dynamicRoutes = await allData(true);
+  const rss = await allData(false);
 
  // console.log(dynamicRoutes);
   return {
@@ -30,6 +32,17 @@ export default defineConfig( async ({ command, mode }) => {
         },
       },
      
+      rssPlugin({
+        mode: "define",
+        items: [
+         ...rss
+        ],
+        channel: {
+          title: "GamerSubculture RSS Feed",
+          link: "https://www.gamersubculture.com",
+          description: "Rss feed for https://www.gamersubculture.com.",
+        },
+      }),
   
     ],
    
