@@ -65,7 +65,7 @@ export default {
     
       {
        name: `og:title`,
-       content:computed(()=> "GamerSubculture"),
+       content:computed(()=> "Video Game News and Reviews - GamerSubculture"),
         },
      {
        name: `description`,
