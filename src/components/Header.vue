@@ -1,7 +1,7 @@
 <template>
   <header class="mhparent navbar-container">
     <div id="logo">
-      <span>ゲームオタク</span>
+      <span id="publishername"><!--ゲームオタク-->GamerSubculture </span>
     </div>
      
     <ul class="mhchild--featured hparent">
@@ -193,7 +193,16 @@ a {
   margin-top: 27px;
 }
 
+#publishername {
+ 
+  color: #5f6368;
+  font-style: normal;
+    font-weight: 400;
+    line-height: 1.4rem;
+    font-family: roboto-monospace;
+    font-size: x-large;
 
+}
 
 .header-shadow {
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.26);
