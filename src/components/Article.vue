@@ -26,7 +26,7 @@
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
           
          <Markdown :html="true" :breaks="true" :source="story +analyse" />
-       
+         
        <div id="adsencectn1">
         <ins class="adsbygoogle"
      style="display:block"
@@ -87,6 +87,13 @@
 
         <HorNavBar :isGame="true" />
       <NewsLetters/>
+      <div id="adsencectn5">
+          <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5114908570"></ins>
+         </div>
 
       <div id="adsencectn">
       <ins class="adsbygoogle"
@@ -255,6 +262,10 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 #adsencectn2 {
   width: 100%;
 }
+#adsencectn5 {
+  width: 100%;
+}
+
 .twitter-tweet{
   margin-right: auto;
     margin-left: auto;

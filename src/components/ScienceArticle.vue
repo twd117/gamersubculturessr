@@ -77,6 +77,13 @@
       </div>
       <HorNavBar :isGame="false" />
       <NewsLetters/>
+      <div id="adsencectn5">
+          <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5114908570"></ins>
+         </div>
       <div id="adsencectn">
       <ins class="adsbygoogle"
      style="display:block"
@@ -215,6 +222,9 @@ created() {
   width: 100%;
 }
 #adsencectn2 {
+  width: 100%;
+}
+#adsencectn5 {
   width: 100%;
 }
 .twitter-tweet{
