@@ -257,7 +257,6 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 
 <style >
 .mkrdown{
-  min-height: 600px;
 }
 #adsencectn {
   width: 100%;
