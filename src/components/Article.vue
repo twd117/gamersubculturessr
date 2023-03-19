@@ -39,6 +39,8 @@
         
     
        </div>
+     
+     <!--
        <div id="adsencectn2">
 
         <ins class="adsbygoogle"
@@ -47,7 +49,7 @@
      data-ad-slot="5853275170"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-       </div>
+       </div> -->
     
 
                <Rating :rating="rating"/> 
@@ -95,7 +97,7 @@
      data-ad-slot="5114908570"></ins>
          </div>
 
-      <div id="adsencectn">
+    <!--  <div id="adsencectn">
       <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="fluid"
@@ -103,7 +105,7 @@
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="8049468760"></ins>
 
-    </div>
+    </div>  -->
       
   </div> 
   
@@ -112,7 +114,7 @@
    
 </template>
 
-<script >
+<script>
 import SocialMediaVue from "./SocialMedia.vue";
 
 import MarkdownVue from 'vue3-markdown-it';
@@ -255,15 +257,19 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 <style >
 #adsencectn {
   width: 100%;
+  min-height: 280px
 }
 #adsencectn1 {
   width: 100%;
+  min-height: 280px
 }
 #adsencectn2 {
   width: 100%;
+  min-height: 280px
 }
 #adsencectn5 {
   width: 100%;
+  min-height: 280px
 }
 
 .twitter-tweet{
@@ -509,6 +515,7 @@ font-family: 'Open Sans', sans-serif;
   display: flex;
 
   justify-content: center;
+  min-height: 600px;
 }
 
 @media only screen and (max-width: 1090px) {
