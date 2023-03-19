@@ -438,6 +438,7 @@ h2 {
   width: 65%;
   flex-direction: column;
   height: 100%;
+  min-height: 600px;
 }
 .ht {
   color: #424242;
