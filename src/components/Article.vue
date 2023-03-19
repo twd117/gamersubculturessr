@@ -25,7 +25,7 @@
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
           
-         <Markdown :html="true" :breaks="true" :source="story +analyse" />
+         <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
          
        <div id="adsencectn1">
         <ins class="adsbygoogle"
@@ -256,6 +256,9 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 </script>
 
 <style >
+.mkrdown{
+  min-height: 600px;
+}
 #adsencectn {
   width: 100%;
 }
@@ -438,7 +441,6 @@ h2 {
   width: 65%;
   flex-direction: column;
   height: 100%;
-  min-height: 600px;
 }
 .ht {
   color: #424242;
