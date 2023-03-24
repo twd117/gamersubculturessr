@@ -29,27 +29,7 @@
        
                <Rating :rating="rating"/> 
 
-               <div id="adsencectn1">
-        <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="2797142084"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-   
-   
-        
-    
-       </div>
-       <div id="adsencectn2">
-
-        <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5853275170"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-       </div>
+            
          <div v-if="video"  class="video-container">
        <iframe
         id="ytb"
@@ -77,23 +57,7 @@
       </div>
       <HorNavBar :isGame="false" />
       <NewsLetters/>
-      <div id="adsencectn5">
-          <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5114908570"></ins>
-         </div>
-      <div id="adsencectn">
-      <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-79+d6+v+y+55"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="8049468760"></ins>
-
-    </div>
-       <div id="thirdad"></div>
+      
     </div>
   </div>
 </template>
@@ -128,7 +92,48 @@ export default defineComponent({
     document.body.appendChild(adpushScript);
       },
     setup(props) {
-    /*     const route=useRoute();
+    /*   
+
+       <div id="adsencectn1">
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="2797142084"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+   
+   
+        
+    
+       </div>
+       <div id="adsencectn2">
+
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5853275170"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+       </div>
+
+    <div id="adsencectn5">
+          <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5114908570"></ins>
+         </div>
+      <div id="adsencectn">
+      <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-79+d6+v+y+55"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="8049468760"></ins>
+
+    </div>
+       <div id="thirdad"></div>
+    const route=useRoute();
 
     const siteData = reactive({
       title: props.title,

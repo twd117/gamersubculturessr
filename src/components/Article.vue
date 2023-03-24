@@ -27,29 +27,7 @@
           
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
          
-       <div id="adsencectn1">
-        <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="2797142084"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-   
-   
-        
-    
-       </div>
-     
-     
-       <div id="adsencectn2">
-
-        <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5853275170"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-       </div> 
+      
        <div id="adsencectn5">
           <ins class="adsbygoogle"
      style="display:block"
@@ -139,7 +117,29 @@ export default defineComponent({
    
 
    /* const adsencectn = document.getElementById("adsencectn");
+  <div id="adsencectn1">
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="2797142084"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+   
+   
+        
+    
+       </div>
+     
+     
+       <div id="adsencectn2">
 
+        <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5853275170"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+       </div> 
      <!--  <div id="adsencectn">
       <ins class="adsbygoogle"
      style="display:block"
