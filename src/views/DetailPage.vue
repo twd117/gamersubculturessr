@@ -1,7 +1,6 @@
 <template>
 <box><DetaillNav /></box>
- <suspense>
-  
+  <Suspense>
   <Article
   v-if="homeLocalState !== null"
     :title="homeLocalState.title"
@@ -17,7 +16,7 @@
     :release="homeLocalState.release"
     :imgurl="homeLocalState.imgurl"
   />
-</suspense>
+  </Suspense>
   <Footer  />
 </template>
 <script>
@@ -31,7 +30,6 @@ import {   ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useContext } from 'vite-ssr/vue'
 import {  computed } from 'vue';
-import {parse, stringify, toJSON, fromJSON} from 'flatted';
 
 import moment from "moment";
 
@@ -82,7 +80,7 @@ export default {
        const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null);
-       console.log("computed--,",computed(()=> homeLocalState.value.title ));
+     //  console.log("computed--,",computed(()=> homeLocalState.value.title ));
        useHead({
       
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),

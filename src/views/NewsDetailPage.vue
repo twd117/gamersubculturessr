@@ -1,6 +1,7 @@
 <template>
     <box><DetaillNav /></box>
-     <suspense>
+    <Suspense>
+
       <Article
       v-if="homeLocalState !== null"
         :title="homeLocalState.title"
@@ -12,7 +13,8 @@
         :video="homeLocalState.video"
         :imgurl="homeLocalState.imgurl"
       />
-    </suspense>
+    </Suspense>
+
       <Footer  />
     </template>
     
@@ -40,7 +42,7 @@
     
       },
       async setup(props) {
-        console.log("props---",props);
+     //   console.log("props---",props);
     
       //   const sdata = [];
      //   const q = collection(db, "articles");
@@ -135,7 +137,7 @@
              if(fbd.exists())
                      homeLocalState.value = fbd.data();
                                   
-             console.log("Home---",homeLocalState.value);
+          //   console.log("Home---",homeLocalState.value);
              if (import.meta.env.SSR) {
                // Save this data in SSR initial state for hydration later
                initialState.homeLocalState = homeLocalState.value;

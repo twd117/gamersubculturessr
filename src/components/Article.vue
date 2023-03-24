@@ -98,15 +98,7 @@
       <NewsLetters/>
      
 
-    <!--  <div id="adsencectn">
-      <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-79+d6+v+y+55"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="8049468760"></ins>
-
-    </div>  -->
+  
       
   </div> 
   
@@ -147,6 +139,16 @@ export default defineComponent({
    
 
    /* const adsencectn = document.getElementById("adsencectn");
+
+     <!--  <div id="adsencectn">
+      <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-79+d6+v+y+55"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="8049468760"></ins>
+
+    </div>  -->
 
     adsencectn.appendChild(adScript);
     adsencectn.appendChild(adpushScript);

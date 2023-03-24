@@ -26,8 +26,7 @@
 </template>
   
   <script>
-import { calculateString } from 'bytebuffer';
-import { computed } from 'vue';
+
 
   export default {
     name: "Rating",

@@ -10,7 +10,6 @@ import {
   addDoc,
   where
 } from "firebase/firestore";
-import moment from "moment";
 
 const getNewsArticles = async function(){
   const data = [];
@@ -156,7 +155,7 @@ let  xsitenews = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
     pubDate : new Date(name['date']['seconds']*1000)})
   );
   
-  console.log(rssnews);
+ // console.log(rssnews);
 
    return b ? [...xsitegames, ...xsitetechs, ...xsiteent, ...xsitenews] : [...rssgames,...rssent,...rssnews,...rsstech];
 

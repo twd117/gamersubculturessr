@@ -1,6 +1,8 @@
 <template>
   <div>
   <box><DetaillNav /></box>
+  <Suspense>
+
     <Article
     v-if="homeLocalState !== null"
       :title="homeLocalState.title"
@@ -12,6 +14,8 @@
       :date="homeLocalState.date"
       :imgurl="homeLocalState.imgurl"
     />
+  </Suspense>
+
     <Footer  />
     </div>
   </template>

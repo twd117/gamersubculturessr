@@ -1,6 +1,8 @@
 <template>
 <div>
 <box><DetaillNav /></box>
+<Suspense>
+
   <Article
   v-if="homeLocalState !== null"
     :title="homeLocalState.title"
@@ -13,6 +15,9 @@
     :imgurl="homeLocalState.imgurl"
     :rating="homeLocalState.rating"
   />
+  
+</Suspense>
+
   <Footer  />
   </div>
 </template>

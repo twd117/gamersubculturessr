@@ -153,7 +153,7 @@
      
        await dataStore.getSidebarDataEnter();
        data=  dataStore.sidebarData;
-     console.log("d----",data)
+    // console.log("d----",data)
    
     }else{
      

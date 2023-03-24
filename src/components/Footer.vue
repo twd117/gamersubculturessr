@@ -2,7 +2,7 @@
          <footer class="Site-content" id="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2022 NeptuneStudio | All rights reserved.</p>
+        <p>&copy; 2023 NeptuneStudio | All rights reserved.</p>
         
       </div>
     </div>
