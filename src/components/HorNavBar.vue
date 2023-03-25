@@ -1,10 +1,19 @@
 <template>
-   
+    <div class="hsb">
+      <span>Mores</span>
+        <h3>News</h3>
+    
+  <div class="line"></div>
   <div v-if="isGame" class="easy-grid">
+   
+    
     <router-link 
     :to="{ name: 'Sciences', params: { id: data[0].id, title: data[0].title  } }"
     >
     <div class="brdr">
+      <div class="hsb">
+       
+      </div>
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[0].imgurl" alt="image">
@@ -35,6 +44,7 @@
     :to="{ name: 'Sciences', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
+    
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
                   <img :src="data[1].imgurl" alt="image">
@@ -130,7 +140,7 @@
       
   
 </div>
-
+</div>
 
 
 
@@ -178,6 +188,36 @@
   </script>
   
   <style scoped>
+  .line {
+    height: 0.5px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+
+  background-color:#424242;
+  width: 100%;
+ 
+}
+  .hsb > span{
+    display: flex;
+    text-align: left;
+    color: red;
+    font-family:  'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hsb > h3{
+    font-family:  'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
   a {
     list-style: none;
     color:none;

@@ -243,13 +243,14 @@ created() {
 height: 765px;
     width: 550px;}
 .tagspan{
+  border-radius: 30px;
     padding: 0.75em 1.5em;
     cursor: pointer;
-    background: none;
+    background:#E5E5E5;
     color: #202125;
     border: 1px solid;
-    
-    border: #202125 1px solid;
+
+    border:  0px solid;
     transition: 250ms ease-out;
 }
 .tagcat{

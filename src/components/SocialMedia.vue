@@ -30,6 +30,10 @@
             <font-awesome-icon icon="fa-brands fa-reddit-alien" inverse/>
 
       </a>
+      <a class="re-h" @click="  copyToClipboard()" target="_blank">
+        <font-awesome-icon icon="fa-solid fa-link" inverse />
+            </a>
+          
 
       <!-- PINTEREST -->
     </div>
@@ -37,10 +41,25 @@
 </template>
 
 <script>
+  import { copyText } from 'vue3-clipboard';
+
 export default {
   name: "SocialButton",
   props: ["url", "title"],
   methods: {
+    copyToClipboard(){
+      console.log("clipborader----")
+
+      copyText(this.url + "&title=" + this.title, undefined, (error, event) => {
+          if (error) {
+            alert('Can not copy')
+            console.log(error)
+          } else {
+            alert('link Copied to clipBoard')
+            console.log(event)
+          }
+        })
+    },
     gotoRedit() {
       window.open(
         "https://reddit.com/submit?url=" + this.url + "&title=" + this.title

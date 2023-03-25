@@ -69,7 +69,6 @@
 
         </div>
        
-            <div class="line"></div>
       </div>
 
         <HorNavBar :isGame="true" />
@@ -286,19 +285,19 @@ height: 765px;
   margin-bottom: 20px;
 }
 .tagspan{
+  border-radius: 30px;
     padding: 0.75em 1.5em;
     cursor: pointer;
-    background: none;
+    background:#E5E5E5;
     color: #202125;
     border: 1px solid;
-    
-    border: #202125 1px solid;
+
+    border:  0px solid;
     transition: 250ms ease-out;
 }
 .tagcat{
   padding-top: 10px;
   padding-bottom: 10px;
-
   font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 600;
