@@ -34,6 +34,7 @@
         <font-awesome-icon icon="fa-solid fa-link" inverse />
             </a>
           
+          
 
       <!-- PINTEREST -->
     </div>
@@ -41,15 +42,20 @@
 </template>
 
 <script>
-  import { copyText } from 'vue3-clipboard';
+  import { getModularInstance } from '@firebase/util';
+import { escapeHtml } from '@vue/shared';
+import { urlencoded } from 'body-parser';
+import { copyText } from 'vue3-clipboard';
 
 export default {
   name: "SocialButton",
   props: ["url", "title"],
   methods: {
+
+   
     copyToClipboard(){
       console.log("clipborader----")
-
+     
       copyText(this.url + "&title=" + this.title, undefined, (error, event) => {
           if (error) {
             alert('Can not copy')

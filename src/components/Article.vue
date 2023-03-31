@@ -15,7 +15,7 @@
     
     
     
-
+       
       
          <!--      
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
@@ -60,7 +60,7 @@
   
        
 
-
+    <div id="amzn-assoc-ad-bad8079e-0a4b-44ff-a97b-c2aa0dc9132a"></div>
               
       <div id="ratingandsocial">
      
@@ -99,8 +99,11 @@ import RatingVue from "./Rating.vue";
 
 export default defineComponent({
   mounted() {
-    
       let Script = document.createElement("script");
+            let amazonScript = document.createElement("script");
+            amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bad8079e-0a4b-44ff-a97b-c2aa0dc9132a")
+         document.body.appendChild(amazonScript);
+
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
     let adScript = document.createElement("script");
