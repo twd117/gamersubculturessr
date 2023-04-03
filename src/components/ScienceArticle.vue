@@ -56,6 +56,8 @@
 
       </div>
       <HorNavBar :isGame="false" />
+      <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
+      
       <NewsLetters/>
       
     </div>
@@ -80,6 +82,10 @@ export default defineComponent({
       let Script = document.createElement("script");
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
+    let amazonScript = document.createElement("script");
+            amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=a7d57b86-663b-465e-9a91-6ede27915f95")
+         document.body.appendChild(amazonScript);
+
      
     let adScript = document.createElement("script");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");

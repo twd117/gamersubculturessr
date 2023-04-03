@@ -60,7 +60,7 @@
   
        
 
-    <div id="amzn-assoc-ad-bad8079e-0a4b-44ff-a97b-c2aa0dc9132a"></div>
+    <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
               
       <div id="ratingandsocial">
      
@@ -101,7 +101,7 @@ export default defineComponent({
   mounted() {
       let Script = document.createElement("script");
             let amazonScript = document.createElement("script");
-            amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=bad8079e-0a4b-44ff-a97b-c2aa0dc9132a")
+            amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=a7d57b86-663b-465e-9a91-6ede27915f95")
          document.body.appendChild(amazonScript);
 
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
