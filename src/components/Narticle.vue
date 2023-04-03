@@ -55,9 +55,10 @@
           </div>
               
         </div>
+        <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
+
          
         <HorNavBar :isGame="true" />
-        <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
 
       <NewsLetters/>
       
