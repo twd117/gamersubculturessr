@@ -124,10 +124,19 @@ export default {
               ],
               "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
               "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+             
               "author": [{
                   "@type": "Person",
                   "name": "rolox",
-                  "url": "https://twitter.com/Rolox77"}]
+                  "url": "https://twitter.com/Rolox77"}],
+               
+              "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.sub:"").value}",
+
+
+              "publisher": {
+                              "@type": "Organization",
+                              "name": "GamerSubculture"
+                            }
 }`
          )} ]
        
