@@ -121,7 +121,7 @@ export default {
                   "name": "rolox",
                   "url": "https://twitter.com/Rolox77"}],
 
-                  "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.sub:"").value}",
+                  "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.subtitle:"").value}",
 
 
                   "publisher": {
