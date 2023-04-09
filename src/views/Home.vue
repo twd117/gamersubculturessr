@@ -1,5 +1,6 @@
 <template>
   <box>
+
     <Header    />
     <Banner
       v-if="dataStore.data.length > 0"
@@ -11,7 +12,10 @@
       :img="dataStore.data[0].img[0].downloadURL"
       :imgurl="dataStore.data[0].imgurl"
     />
-    <Title text="Our latest news and events"/>
+   
+   
+
+<Title text="Our latest news and events"/>
                <div class="line"></div>
 
   </box>
