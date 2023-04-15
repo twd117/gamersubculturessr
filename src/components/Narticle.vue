@@ -55,6 +55,7 @@
           </div>
               
         </div>
+        <AmazonAds />
         <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
 
          
@@ -80,6 +81,7 @@
   //import postscribe from 'postscribe';
   import HorNavBarVue from "./HorNavBar.vue";
   import NewsLettersVue from "./NewsLetters.vue";
+  import AmazonAdsVue from "./AmazonAds.vue";
 
 
   
@@ -205,6 +207,8 @@
       NewsLetters:NewsLettersVue,
 
        Markdown:MarkdownVue,
+       AmazonAds:AmazonAdsVue
+
      
   
       

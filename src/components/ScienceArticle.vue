@@ -55,7 +55,11 @@
 
 
       </div>
+      <AmazonAds />
+      
       <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
+
+      
 
       <HorNavBar :isGame="false" />
       
@@ -75,6 +79,7 @@ import {useRoute} from 'vue-router';
 import HorNavBarVue from "./HorNavBar.vue";
 import NewsLettersVue from "./NewsLetters.vue";
 import RatingVue from "./Rating.vue";
+import AmazonAdsVue from "./AmazonAds.vue";
 
 
 export default defineComponent({
@@ -189,7 +194,8 @@ export default defineComponent({
      Markdown:MarkdownVue,
       HorNavBar:HorNavBarVue,
       NewsLetters:NewsLettersVue,
-      Rating:RatingVue
+      Rating:RatingVue,
+      AmazonAds:AmazonAdsVue
 
 
 
