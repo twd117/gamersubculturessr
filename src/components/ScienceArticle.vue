@@ -279,6 +279,8 @@ height: 765px;
     color: #202125;
 }
 .video-container {
+  min-height: 600px;
+
   position: relative;
   padding-bottom: 56.25%;
   margin-top: 25px;

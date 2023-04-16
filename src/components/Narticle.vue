@@ -300,6 +300,8 @@ height: 765px;
       max-width: 100%;
   }
   .video-container {
+    min-height: 600px;
+
     position: relative;
     padding-bottom: 56.25%;
     margin-top: 25px;
