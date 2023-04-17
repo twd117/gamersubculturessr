@@ -445,6 +445,8 @@ h2 {
   margin-bottom: 10px;
 }
 .aparent {
+  min-height: 800px;
+
   display: flex;
   width: 65%;
   flex-direction: column;
