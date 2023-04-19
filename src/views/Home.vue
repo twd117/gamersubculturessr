@@ -69,11 +69,11 @@ export default {
     
       {
        name: `og:title`,
-       content:computed(()=> "Video Game News and Reviews - GamerSubculture"),
+       content:computed(()=> "All Video Game world: news and Reviews - GamerSubculture" ),
         },
      {
        name: `description`,
-       content:computed(()=>  "Gamersubculture is a home for all the game news, previews, trailer and reviews, you will find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
+       content:computed(()=>  "Gamersubculture is a home for all the gaming world, news, previews, trailer and reviews, you will find the latest video game world news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
      },
     
      
