@@ -157,6 +157,6 @@ let  xsitenews = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
   
  // console.log(rssnews);
 
-   return b ? [...xsitegames, ...xsitetechs, ...xsiteent, ...xsitenews] : [...rssgames,...rssent,...rssnews,...rsstech];
+   return b ? [...xsitegames, ...xsitetechs, ...xsiteent, ...xsitenews ,"https://gamersubculture.com/stories.html"] : [...rssgames,...rssent,...rssnews,...rsstech];
 
 };
