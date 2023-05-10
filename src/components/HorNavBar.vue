@@ -83,7 +83,7 @@
               <div class="ccard__image ">
                   <img :src="data[0].imgurl" alt="image">
               </div>
-              <div class="clk-tag  "> Entertainment </div>
+              <div class="clk-tag  "> Games </div>
               <div class="ccard__content ">
                   
  
@@ -113,7 +113,7 @@
               <div class="ccard__image ">
                   <img :src="data[1].imgurl" alt="image">
               </div>
-              <div class="clk-tag  "> Entertainment </div>
+              <div class="clk-tag  "> Games </div>
               <div class="ccard__content ">
                   
  

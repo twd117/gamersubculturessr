@@ -20,7 +20,7 @@
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
           
-          
+          <AmazonSpecial/>
 
 
       
@@ -80,6 +80,8 @@ import HorNavBarVue from "./HorNavBar.vue";
 import NewsLettersVue from "./NewsLetters.vue";
 import RatingVue from "./Rating.vue";
 import AmazonAdsVue from "./AmazonAds.vue";
+import AmazonSpecialVue from "./AmazonSpecial.vue";
+
 
 
 export default defineComponent({
@@ -195,7 +197,9 @@ export default defineComponent({
       HorNavBar:HorNavBarVue,
       NewsLetters:NewsLettersVue,
       Rating:RatingVue,
-      AmazonAds:AmazonAdsVue
+      AmazonAds:AmazonAdsVue,
+      AmazonSpecial:AmazonSpecialVue
+
 
 
 

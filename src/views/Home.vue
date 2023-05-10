@@ -128,7 +128,7 @@ computed:{
           case "entertainment":
             this.store.setIsEntertainment(true);
           await this.dataStore.getEntertainmentArticles();
-          await this.dataStore.getSidebarDataEnter();
+          await this.dataStore.getSidebarDataGames();
            break ;
 
            case "smlc":

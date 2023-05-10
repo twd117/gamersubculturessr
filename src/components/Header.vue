@@ -71,7 +71,7 @@ export default {
 
      // this.isScienceMethode(true)
      this.store.setIsNews(true);
-     await this.dataStore.getSidebarDataGames();
+     await this.dataStore.getSidebarDataEnter();
 
      }
      ,
@@ -80,7 +80,7 @@ export default {
 
             // this.isScienceMethode(true)
             this.store.setIsScifi(true);
-            await this.dataStore.getSidebarDataGames();
+            await this.dataStore.getSidebarDataEnter();
         }
 
   },

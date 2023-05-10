@@ -80,7 +80,7 @@ export default {
        const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null);
-     //  console.log("computed--,",computed(()=> homeLocalState.value.title ));
+       console.log("computed--,", homeLocalState.value );
        useHead({
       
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
@@ -122,8 +122,8 @@ export default {
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
                 
               ],
-              "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
-              "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+              "datePublished": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+              "dateModified": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
              
               "author": [{
                   "@type": "Person",
@@ -148,7 +148,7 @@ export default {
          if(fbd.exists())
                  homeLocalState.value = fbd.data();
                               
-     //    console.log("Home---",homeLocalState.value);
+        // console.log("Home---",homeLocalState.value._createdAt);
          if (import.meta.env.SSR) {
            // Save this data in SSR initial state for hydration later
            initialState.homeLocalState = homeLocalState.value;

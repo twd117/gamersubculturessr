@@ -20,7 +20,7 @@
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
           <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
         
-           
+           <AmazonSpecial/>
         
           
            <Markdown :html="true"  :breaks="true" :source="story" />
@@ -82,6 +82,7 @@
   import HorNavBarVue from "./HorNavBar.vue";
   import NewsLettersVue from "./NewsLetters.vue";
   import AmazonAdsVue from "./AmazonAds.vue";
+  import AmazonSpecialVue from "./AmazonSpecial.vue";
 
 
   
@@ -207,7 +208,9 @@
       NewsLetters:NewsLettersVue,
 
        Markdown:MarkdownVue,
-       AmazonAds:AmazonAdsVue
+       AmazonAds:AmazonAdsVue,
+       AmazonSpecial:AmazonSpecialVue
+
 
      
   
