@@ -1,5 +1,5 @@
 <template>
-    <div class="nativeads">
+    <div id="nativeads">
 
       
   
@@ -15,19 +15,22 @@ import { defineComponent } from 'vue';
   export default defineComponent( {
     name: "AmazonSpecial",
     mounted(){
+        
        
-      
-        let Script = document.createElement("script");
-        Script.setAttribute("src","/amazon.js");
+         
+        let amazonpromScript = document.createElement("script");
+        amazonpromScript.setAttribute("src","/amazon.js");
 
-        Script.setAttribute("type","text/javascript");
+        amazonpromScript.setAttribute("type","text/javascript");
 
 
-document.body.appendChild(Script);
-            let amazonScript = document.createElement("script");
-            amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US")
-         document.body.appendChild(amazonScript);
-
+          // document.body.appendChild(Script);
+            let amazonpromtwoScript = document.createElement("script");
+            amazonpromtwoScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US")
+      //   document.body.appendChild(amazonScript);
+         let nativeads = document.getElementById("nativeads");
+        nativeads.appendChild(amazonpromScript);
+        nativeads.appendChild(amazontwopromScript);
   
    
     }

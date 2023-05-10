@@ -24,9 +24,13 @@
            -->  
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
-          <AmazonSpecial/>
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
-         
+         <div id="nativeads">
+
+      
+  
+
+</div>
       
        <div id="adsencectn5">
           <ins class="adsbygoogle"
@@ -120,7 +124,21 @@ export default defineComponent({
 
     document.body.appendChild(adpushScript);
 
-   
+   /*************************** */
+
+   let amazonpromScript = document.createElement("script");
+        amazonpromScript.setAttribute("src","/amazon.js");
+
+        amazonpromScript.setAttribute("type","text/javascript");
+
+
+          // document.body.appendChild(Script);
+            let amazonpromtwoScript = document.createElement("script");
+            amazonpromtwoScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US")
+      //   document.body.appendChild(amazonScript);
+         let nativeads = document.getElementById("nativeads");
+        nativeads.appendChild(amazonpromScript);
+        nativeads.appendChild(amazonpromtwoScript);
 
    /* const adsencectn = document.getElementById("adsencectn");
   <div id="adsencectn1">
