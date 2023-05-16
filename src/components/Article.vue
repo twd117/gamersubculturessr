@@ -24,7 +24,7 @@
            -->  
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
-      <AmazonSpecial/>
+   
 
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
      
@@ -70,6 +70,7 @@
         </div>
        
       </div>
+      <AmazonSpecial/>
       <AmazonAds />
       <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
        
