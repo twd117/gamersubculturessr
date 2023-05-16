@@ -116,7 +116,7 @@ export default {
     children:computed(()=>`
 {
               "@context": "https://schema.org",
-              "@type": "Article",
+              "@type": "BlogPosting",
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
@@ -127,7 +127,7 @@ export default {
              
               "author": [{
                   "@type": "Person",
-                  "name": "rolox",
+                  "name": "Rolox Tot",
                   "url": "https://twitter.com/Rolox77"}],
                
               "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.subtitle:"").value}",
