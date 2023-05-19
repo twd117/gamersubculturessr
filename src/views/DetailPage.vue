@@ -116,7 +116,7 @@ export default {
     children:computed(()=>`
 {
               "@context": "https://schema.org",
-              "@type": "BlogPosting",
+              "@type": "NewsArticle",
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
