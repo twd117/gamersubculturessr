@@ -29,14 +29,9 @@
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
      
       
-       <div id="adsencectn5">
-          <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-1291356316800764"
-     data-ad-slot="5114908570"></ins>
-         </div>
-    
+      
+         <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
+
 
                <Rating :rating="rating"/> 
 
@@ -58,7 +53,13 @@
 
  
 
-  
+    <div id="adsencectn5">
+          <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1291356316800764"
+     data-ad-slot="5114908570"></ins>
+         </div>
        
 
               
@@ -70,8 +71,6 @@
         </div>
        
       </div>
-      <AmazonAds/>
-      <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
        
 
         <HorNavBar :isGame="true" />
