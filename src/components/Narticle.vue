@@ -25,8 +25,7 @@
           
            <Markdown :html="true"  :breaks="true" :source="story" />
 
-           <div id="amzn-assoc-ad-a7d57b86-663b-465e-9a91-6ede27915f95"></div>
-
+           <AmazonAds/>
              
                  <div v-if="video" class="video-container">
          <iframe
@@ -57,7 +56,6 @@
               
         </div>
 
-        <div id="amzn-assoc-ad-c17ce2e0-a1c1-4540-be54-883f943a1ceb"></div>
 
          
         <HorNavBar :isGame="true" />
