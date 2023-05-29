@@ -64,6 +64,7 @@
         </div>
        
       </div>
+
        
       <div id="adsencectn5">
           <ins class="adsbygoogle"
@@ -72,7 +73,8 @@
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="5114908570"></ins>
          </div>
-       
+
+         <div id="amzn-assoc-ad-c17ce2e0-a1c1-4540-be54-883f943a1ceb"></div>
 
         <HorNavBar :isGame="true" />
       <NewsLetters/>
