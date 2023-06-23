@@ -63,7 +63,7 @@
         </div>
        
       </div>
-
+       <div id="amazonbox"></div>
        
       <div id="adsencectn5">
           <ins class="adsbygoogle"
@@ -122,8 +122,31 @@ export default defineComponent({
     document.body.appendChild(adpushScript);
 
    /*************************** */
-
- 
+   /*
+   let abox = document.getElementById("amazonbox");
+   let amaads = document.createElement("script");
+         amaads.setAttribute("type","text/javascript");
+         amaads.textContent = ` 
+          amzn_assoc_tracking_id = "twd117259-20";
+          amzn_assoc_ad_mode = "manual"; 
+          amzn_assoc_ad_type = "smart";
+          amzn_assoc_marketplace = "amazon";
+          amzn_assoc_region = "US";
+          amzn_assoc_design = "enhanced_links";
+          amzn_assoc_asins = "B0B7NYN3N3";
+          amzn_assoc_placement = "adunit"; 
+          amzn_assoc_linkid = "3e4dc4bfd8282595c2d01a989ea00465";      
+        
+       
+         `;
+            let box = document.createElement("script");
+            box.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US");
+         
+            abox.appendChild(amaads);
+            abox.appendChild(box);
+     
+     */
+      
 
    /* const adsencectn = document.getElementById("adsencectn");
   <div id="adsencectn1">
@@ -576,6 +599,10 @@ font-family: 'Open Sans', sans-serif;
       display: none; 
 }
 }
+/**************Amazon */
+
+
+
 
 
 
