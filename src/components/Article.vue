@@ -29,7 +29,6 @@
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
      
       
-      
                <AmazonAds/>
 
                <Rating :rating="rating"/> 
@@ -64,14 +63,18 @@
        
       </div>
        <div id="amazonbox"></div>
-       
-      <div id="adsencectn5">
+     <!--
+      
+        <div id="adsencectn5">
           <ins class="adsbygoogle"
      style="display:block"
      data-ad-format="autorelaxed"
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="5114908570"></ins>
          </div>
+      
+      --->  
+    
 
 
         <HorNavBar :isGame="true" />

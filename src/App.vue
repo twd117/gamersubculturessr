@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -31,4 +32,6 @@ export default {
   margin-top: 6px;
   
 }
+
+
 </style>
