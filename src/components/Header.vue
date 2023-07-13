@@ -1,7 +1,7 @@
 <template>
   <header class="mhparent navbar-container">
     <div id="logo">
-      <span id="publishername"><!--ゲームオタク-->GamerSubculture </span>
+      <span id="publishername">ゲームオタク </span>
     </div>
      
     <ul class="mhchild--featured hparent">
