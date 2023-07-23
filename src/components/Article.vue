@@ -29,7 +29,6 @@
          <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
      
       
-               <AmazonAds/>
 
                <Rating :rating="rating"/> 
 

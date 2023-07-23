@@ -25,7 +25,6 @@
           
            <Markdown :html="true"  :breaks="true" :source="story" />
 
-           <AmazonAds/>
              
                  <div v-if="video" class="video-container">
          <iframe
