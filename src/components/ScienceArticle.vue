@@ -302,6 +302,7 @@ p > img {
     height: auto;
     margin-bottom: 30px;
     margin-top: 30px;
+    border-radius: 12px;
 }
 .plight {
       font-family: Google Sans;
