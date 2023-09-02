@@ -57,6 +57,37 @@
        
 </div>
  </router-link>
+
+ <router-link  v-else-if="store.isScifi"
+
+:to="{ name: 'smlc', params: { id: this.id, title: this.title  } }"
+>
+<div class="crd-ctn">
+ <img class="card-img" :src="img[0].downloadURL">
+
+<div class="thecard">
+
+<div class="Dcard-caption">
+<div >
+  <div class="dtg">
+  <span class="date">{{ date ? toDate(date.seconds): "" }}</span>
+    <span class="flt">#{{tag}}</span>
+  </div>
+           <h1>{{title}} </h1>
+<p>{{sub}}</p>
+
+   </div>
+
+</div>
+
+
+</div>
+   
+</div>
+</router-link>
+
+ 
+
  <router-link v-else
     :to="{ name: 'Sciences', params: { id: this.id, title: this.title } }"
   >
