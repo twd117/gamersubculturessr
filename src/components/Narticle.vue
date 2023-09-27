@@ -10,7 +10,8 @@
           </p>
       
       
-  
+          <AmaDisclosure/>
+
          <!-- 
           
 <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image mgb" :src="img[0].downloadURL"  />
@@ -81,6 +82,8 @@
   import NewsLettersVue from "./NewsLetters.vue";
   import AmazonAdsVue from "./AmazonAds.vue";
   import AmazonSpecialVue from "./AmazonSpecial.vue";
+  import AmaDisclosureVue from "./AmaDisclosure.vue";
+
 
 
   
@@ -207,7 +210,9 @@
 
        Markdown:MarkdownVue,
        AmazonAds:AmazonAdsVue,
-       AmazonSpecial:AmazonSpecialVue
+       AmazonSpecial:AmazonSpecialVue,
+       AmaDisclosure:AmaDisclosureVue
+
 
 
      

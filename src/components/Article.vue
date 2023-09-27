@@ -14,7 +14,7 @@
 
     
     
-    
+      <AmaDisclosure/>
        
       
          <!--      
@@ -103,6 +103,7 @@ import HorNavBarVue from "./HorNavBar.vue";
 import RatingVue from "./Rating.vue";
 import AmazonAdsVue from "./AmazonAds.vue";
 import AmazonSpecialVue from "./AmazonSpecial.vue";
+import AmaDisclosureVue from "./AmaDisclosure.vue";
 
 export default defineComponent({
   mounted() {
@@ -255,7 +256,8 @@ export default defineComponent({
      HorNavBar:HorNavBarVue,
      Rating:RatingVue,
      AmazonAds:AmazonAdsVue,
-     AmazonSpecial:AmazonSpecialVue
+     AmazonSpecial:AmazonSpecialVue,
+     AmaDisclosure:AmaDisclosureVue
 
 
    

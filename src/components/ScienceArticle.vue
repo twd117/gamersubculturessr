@@ -12,7 +12,9 @@
     <div class="line"></div>
            <p id="typo_pl">Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
           </p>
-           
+
+          <AmaDisclosure/>
+
            <!--   
              <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image" :src="img[0].downloadURL"  />
    
@@ -80,6 +82,7 @@ import NewsLettersVue from "./NewsLetters.vue";
 import RatingVue from "./Rating.vue";
 import AmazonAdsVue from "./AmazonAds.vue";
 import AmazonSpecialVue from "./AmazonSpecial.vue";
+import AmaDisclosureVue from "./AmaDisclosure.vue";
 
 
 
@@ -197,7 +200,9 @@ export default defineComponent({
       NewsLetters:NewsLettersVue,
       Rating:RatingVue,
       AmazonAds:AmazonAdsVue,
-      AmazonSpecial:AmazonSpecialVue
+      AmazonSpecial:AmazonSpecialVue,
+      AmaDisclosure:AmaDisclosureVue
+
 
 
 
