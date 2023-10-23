@@ -30,7 +30,6 @@
 
 
 
-               <Rating :rating="rating"/> 
 
             
          <div v-if="video"  class="video-container">
@@ -48,6 +47,9 @@
               <div class="line"></div>
 
       <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
+
+      <Rating :rating="rating"/> 
+
 
       <div id="ratingandsocial">
      

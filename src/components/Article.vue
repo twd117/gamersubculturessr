@@ -30,7 +30,6 @@
      
       
 
-               <Rating :rating="rating"/> 
 
                <div v-if="video" class="video-container">
        <iframe
@@ -50,7 +49,8 @@
 
  
 
-  
+    <Rating :rating="rating"/> 
+
 
               
       <div id="ratingandsocial">
