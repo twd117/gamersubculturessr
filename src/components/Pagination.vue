@@ -31,6 +31,9 @@ export default {
       }else if(this.store.isNews){
         this.dataStore.getNextNewsArticles();
       }
+      else if(this.store.setIsScifi){
+        this.dataStore.getNextSMLCArticles();
+      }
       else {
         this.dataStore.getNextEntertainmentArticles();
                 console.log("sciences------")
