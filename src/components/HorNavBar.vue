@@ -2,33 +2,33 @@
     <div class="hsb">
       <span>Mores</span>
         <h3>News</h3>
-    
+
   <div class="line"></div>
   <div v-if="isGame" class="easy-grid">
-   
-    
-    <router-link 
+
+
+    <router-link
     :to="{ name: 'Sciences', params: { id: data[0].id, title: data[0].title  } }"
     >
     <div class="brdr">
       <div class="hsb">
-       
+
       </div>
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[0].imgurl" alt="image">
+                  <img :src="data[0].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
-                  
- 
+
+
                   <div class="ccard__article">
             <h4>
                 {{data[0].title}}
             </h4>
 
 
-                  
+
                   </div>
               </div>
 
@@ -36,30 +36,30 @@
         {{data[0].tag}}
 
       </div>
-          
+
           </div>
   </div>
 </router-link>
-<router-link 
+<router-link
     :to="{ name: 'Sciences', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
-    
+
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[1].imgurl" alt="image">
+                  <img :src="data[1].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Entertainment </div>
               <div class="ccard__content ">
-                  
- 
+
+
                   <div class="ccard__article">
             <h4>
             {{data[1].title}}
             </h4>
 
 
-                  
+
                   </div>
               </div>
 
@@ -67,7 +67,7 @@
         {{data[1].tag}}
 
       </div>
-          
+
           </div>
   </div>
 </router-link>
@@ -75,25 +75,25 @@
 
 <div v-if="!isGame" class="easy-grid">
 
-<router-link 
+<router-link
     :to="{ name: 'Article', params: { id: data[0].id, title: data[0].title  } }"
   >
     <div class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[0].imgurl" alt="image">
+                  <img :src="data[0].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Games </div>
               <div class="ccard__content ">
-                  
- 
+
+
                   <div class="ccard__article">
             <h4>
                 {{data[0].title}}
             </h4>
 
 
-                  
+
                   </div>
               </div>
 
@@ -101,29 +101,29 @@
         {{data[0].tag}}
 
       </div>
-          
+
           </div>
   </div>
 </router-link>
-<router-link 
+<router-link
     :to="{ name: 'Article', params: { id: data[1].id, title: data[1].title  } }"
   >
   <div  class="brdr">
          <div class=" cxchild ccard ">
               <div class="ccard__image ">
-                  <img :src="data[1].imgurl" alt="image">
+                  <img :src="data[1].img[0].downloadURL" alt="image">
               </div>
               <div class="clk-tag  "> Games </div>
               <div class="ccard__content ">
-                  
- 
+
+
                   <div class="ccard__article">
             <h4>
             {{data[1].title}}
             </h4>
 
 
-                  
+
                   </div>
               </div>
 
@@ -131,28 +131,28 @@
         {{data[1].tag}}
 
       </div>
-          
+
           </div>
   </div>
 </router-link>
 
-  
-      
-  
+
+
+
 </div>
 </div>
 
 
 
-  
-  
+
+
   </template>
-  
+
   <script>
   import {useDataStore} from "../store/useDataStore.js"
 
   export default {
-    
+
 
     name: "HorNavBar",
    async setup(props) {
@@ -160,19 +160,19 @@
 
     const dataStore = useDataStore();
     if(props.isGame){
-     
+
        await dataStore.getSidebarDataEnter();
        data=  dataStore.sidebarData;
     // console.log("d----",data)
-   
+
     }else{
-     
+
        await dataStore.getSidebarDataGames();
        data = dataStore.sidebarData;
 
 
     }
-   
+
 
     return { dataStore,data }
   },
@@ -186,7 +186,7 @@
   },
   };
   </script>
-  
+
   <style scoped>
   .line {
     height: 0.5px;
@@ -195,7 +195,7 @@
 
   background-color:#424242;
   width: 100%;
- 
+
 }
   .hsb > span{
     display: flex;
@@ -225,28 +225,28 @@
   }
 .easy-grid {
   display: grid;
-  
 
+   align-items: start;
   grid-gap:  1rem;
   grid-template-columns: repeat(
     2,
-    minmax(300px, 1fr) 
+    minmax(300px, 1fr)
   );
-  align-items: center;
-}
+ }
 
 @media (max-width: 650px) {
 
 .easy-grid{
   display: grid;
-  
 
+  align-items: start;
   grid-gap:  1rem;
   grid-template-columns: repeat(
     1,
-    minmax(200px, 1fr) 
+    minmax(200px, 1fr)
   );
-  align-items: center;}
+ 
+}
 }
 
 
@@ -267,7 +267,7 @@
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  
+
 }
 
 /***********************old card ************************************/
@@ -284,13 +284,13 @@
   margin-bottom:0.5rem;
   text-align: left;
 }
- 
+
 
     .ccard__image img {
         border-radius: 8px;
        height: auto;
     width: 100%;
-	
+
 	}
 
 
@@ -303,7 +303,7 @@
     font-weight: 700;
     color: #424242;
 
-	
+
 }
 
 .ccard-text{
@@ -317,16 +317,16 @@ margin-top: 4px
 
 
 
-	
 
 
 
 
 
 
-	
 
-.cxchild { 
+
+
+.cxchild {
      width:100%;
 
 }
@@ -339,9 +339,9 @@ margin-top: 4px
     color: #5f6368;
     font-family: 'Roboto Mono', monospace;
    margin-top:.5rem;
-   margin-bottom:.5rem; 
-  
-  
+   margin-bottom:.5rem;
+
+
 }
 
 .clk-tag url {

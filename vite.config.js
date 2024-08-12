@@ -18,8 +18,8 @@ export default defineConfig( async ({ command, mode }) => {
   return {
     plugins: [
       vue(),
-      Sitemap({  hostname:"https://www.gamersubculture.com",outDir:"public",dynamicRoutes }),
-     
+      Sitemap({  hostname:"https://www.gmrnews.com",outDir:"public",dynamicRoutes }),
+
       viteSSR({
         build: {
           keepIndexHtml: true,
@@ -31,26 +31,26 @@ export default defineConfig( async ({ command, mode }) => {
           api.forEach(({ route, handler }) => middlewares.use(route, handler))
         },
       },
-     
+
       rssPlugin({
         mode: "define",
         items: [
          ...rss
         ],
         channel: {
-          title: "GamerSubculture RSS Feed",
-          link: "https://www.gamersubculture.com",
-          description: "Rss feed for https://www.gamersubculture.com.",
+          title: "Gmrnews RSS Feed",
+          link: "https://www.gmrnews.com",
+          description: "Rss feed for https://www.gmrnews.com.",
         },
       }),
-  
+
     ],
-   
+
     resolve: {
       alias: {
       },
     },
-    server: { 
+    server: {
       fs: {
       // The API logic is in outside of the project
       strict: false,

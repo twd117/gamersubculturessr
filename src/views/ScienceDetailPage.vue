@@ -15,7 +15,7 @@
     :imgurl="homeLocalState.imgurl"
     :rating="homeLocalState.rating"
   />
-  
+
 </Suspense>
 
   <Footer  />
@@ -60,7 +60,7 @@ export default {
  const sdata = [];
      //  const queryR = query(q, where("__name__", "==", props.id));
      const queryR = doc(db, "entertainment", props.id);
-    
+
      const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
@@ -76,7 +76,7 @@ export default {
        }
        useHead({
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
-    
+
          meta: [
          {
           name:`twitter:card`,
@@ -90,7 +90,7 @@ export default {
           name: `description`,
           content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
         },
-       
+
          {
           name: `og:image`,
           content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
@@ -99,11 +99,11 @@ export default {
           name: `og:type`,
           content: "article",
         },
-       
+
          ],
-       
+
          link: [{ rel: 'stylesheet' }],
-         script: [ { 
+         script: [ {
     type:"application/ld+json",
     children:computed(()=>`
 {
@@ -112,7 +112,7 @@ export default {
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
-                
+
               ],
               "datePublished": "${computed(()=> homeLocalState.value !==null && homeLocalState.value.date !==undefined ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
               "dateModified": "${computed(()=> homeLocalState.value !==null && homeLocalState.value.date !==undefined ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
@@ -126,11 +126,11 @@ export default {
 
                   "publisher": {
                                   "@type": "Organization",
-                                  "name": "GamerSubculture"
+                                  "name": "Gmrnews"
                                 }
 }`
          )} ]
-      
+
        })
        if (true) {
          // No data, get it fresh from any API
@@ -138,7 +138,7 @@ export default {
 
          if(fbd.exists())
                  homeLocalState.value = fbd.data();
-                              
+
         // console.log("Home---",homeLocalState.value);
          if (import.meta.env.SSR) {
            // Save this data in SSR initial state for hydration later
@@ -148,14 +148,14 @@ export default {
        return {
         homeLocalState
        }
-    
-    
+
+
     }
 
   ,
   methods: {
     readArticles() {
-      
+
     },
   },
 };

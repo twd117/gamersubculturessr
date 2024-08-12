@@ -1,12 +1,12 @@
 <template>
- 
 
-       
+
+
   <div id="post-content">
     <div class="article aparent">
 
-     
-      
+
+
           <h1 class="hts">{{ title }}</h1>
           <span class="plight">{{ sub }}</span>
     <div class="line"></div>
@@ -15,23 +15,28 @@
 
           <AmaDisclosure/>
 
-           <!--   
+           <!--
              <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image" :src="img[0].downloadURL"  />
-   
-         -->  
+
+         -->
+         
+         <!--
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
-        <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
-          
+        <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/> -->
+        
+        <img  class="image mgb" :src="img[0].downloadURL"  />
 
 
 
-      
+
+
+
                <Markdown :html="true"  :breaks="true" :source="analyse" />
 
 
 
 
-            
+
          <div v-if="video"  class="video-container">
        <iframe
         id="ytb"
@@ -44,15 +49,14 @@
       >
       </iframe>
               </div>
-              <div class="line"></div>
 
       <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
 
-      <Rating :rating="rating"/> 
+      <Rating :rating="rating"/>
 
 
       <div id="ratingandsocial">
-     
+
         <div class="rs">
                     <SocialMedia :url="currentUrl" :title="title" />
 
@@ -60,14 +64,14 @@
 
 
       </div>
-      
+
 
 
 
       <HorNavBar :isGame="false" />
-      
+
       <NewsLetters/>
-      
+
     </div>
   </div>
 </template>
@@ -98,7 +102,7 @@ export default defineComponent({
             amazonScript.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=a7d57b86-663b-465e-9a91-6ede27915f95")
          document.body.appendChild(amazonScript);
 
-     
+
     let adScript = document.createElement("script");
     adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
@@ -110,7 +114,7 @@ export default defineComponent({
     document.body.appendChild(adpushScript);
       },
     setup(props) {
-    /*   
+    /*
 
        <div id="adsencectn1">
         <ins class="adsbygoogle"
@@ -119,10 +123,10 @@ export default defineComponent({
      data-ad-slot="2797142084"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-   
-   
-        
-    
+
+
+
+
        </div>
        <div id="adsencectn2">
 
@@ -156,8 +160,8 @@ export default defineComponent({
     const siteData = reactive({
       title: props.title,
       description: props.sub,
-      url:"https://gamersubculture.com"+route.path  ,
-    
+      url:"https://gmrnews.com"+route.path  ,
+
       img: props.imgurl,
     })
       console.log("--R--",siteData.url)
@@ -169,7 +173,7 @@ export default defineComponent({
           name: `twitter:card`,
           content: computed(() => "summary_large_image"),
         },
-    
+
           {
           name: `og:title`,
           content: computed(() => siteData.title),
@@ -178,7 +182,7 @@ export default defineComponent({
           name: `description`,
           content: computed(() => siteData.description),
         },
-       
+
          {
           name: `og:image`,
           content: computed(() => siteData.img),
@@ -209,7 +213,7 @@ export default defineComponent({
 
 
 
-     
+
 
   },
   name: "Article",
@@ -233,7 +237,7 @@ export default defineComponent({
 },
 created() {
     const route=useRoute();
-    this.currentUrl = "https://gamersubculture.com"+route.path;
+    this.currentUrl = "https://gmrnews.com"+route.path;
 
     this.moment = moment;
   //  console.log("--analyse:",this.analyse);
@@ -258,9 +262,9 @@ created() {
 .twitter-tweet{
   margin-right: auto;
     margin-left: auto;
-  
+
     justify-content: center;
-    
+
 }
 .twitter-tweet > iframe{
 height: 765px;
@@ -321,7 +325,7 @@ text-align:left;
     color: #000;
 }
  .adsbanner {
-      display: none; 
+      display: none;
 }
 .adscontent {
 
@@ -336,16 +340,16 @@ text-align:left;
 
   background-color:#424242;
   width: 100%;
- 
+
 }
 
 h2 {
-  
+
   margin-bottom: 16px;
   margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
-    font-family: Alegreya sans-serif;
+   font-family:  Avenir, Helvetica, Arial, sans-serif;
     color: rgb(30,30,30);
 }
 #starcontainer {
@@ -496,7 +500,7 @@ font-family: 'Open Sans', sans-serif;
     display: none;
   }
     .adsbanner {
-      display: flex; 
+      display: flex;
       justify-content: center;
 }
 }
@@ -507,7 +511,7 @@ font-family: 'Open Sans', sans-serif;
     flex-direction: column;
     height: 100%;
   }
-  
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -520,19 +524,19 @@ font-family: 'Open Sans', sans-serif;
   .ione{
      display:none;
   }
-  
+
 }
 @media only screen and (max-width: 600px) {
 
   .ione{
      display:none;
   }
-  
+
 }
 @media only screen and (max-width: 470px) {
   .adsbanner {
       display: none;
-       
+
 }
  .ione{
      display:none;

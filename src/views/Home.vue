@@ -12,14 +12,14 @@
       :img="dataStore.data[0].img[0].downloadURL"
       :imgurl="dataStore.data[0].imgurl"
     />
-   
-   
+
+
 
 <Title text="Our latest Games news"/>
                <div class="line"></div>
 
   </box>
- 
+
 
   <ListView  :d="dataStore.data.slice(0,6)" />
 
@@ -32,9 +32,9 @@
   <VlistView  :d="dataStore.data.slice(6,dataStore.data.length)" />
    <SideBar  :d="dataStore.sidebarData" />
   </div>
-  
+
   </Box>
-  
+
   <Pagination   />
   <Footer />
 </template>
@@ -62,24 +62,24 @@ export default {
     const dataStore = useDataStore()
     const store = useNavStore();
     useHead({
-      
-      title:computed(()=>   "GamerSubculture"),
-   
+
+      title:computed(()=>   "Gmrnews"),
+
       meta: [
-    
+
       {
        name: `og:title`,
-       content:computed(()=> "GamerSubculture" ),
+       content:computed(()=> "Gmrnews" ),
         },
      {
        name: `description`,
-       content:computed(()=>  "Gamersubculture find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
+       content:computed(()=>  "Gmrnews find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
      },
-    
-     
-   
+
+
+
       ],
-  
+
     });
 
 
@@ -97,19 +97,19 @@ export default {
     VlistView: VlistViewVue,
 },
 computed:{
-      
-  
+
+
 
     },
   data() {
     return {
       name: "",
       data: [],
-     
-      
+
+
     };
   },
- 
+
   async mounted() {
    // console.log("path----",this.category);
       switch(this.category) {
@@ -117,13 +117,13 @@ computed:{
          await this.dataStore.getNewsArticles();
         this.store.setIsNews(true);
     await this.dataStore.getSidebarDataEnter();
-              
+
           break;
          case "games":
          await this.dataStore.getGameArticles();
          this.store.setIsGame(true);
     await this.dataStore.getSidebarDataEnter();
-              
+
           break;
           case "entertainment":
             this.store.setIsEntertainment(true);
@@ -145,13 +145,13 @@ computed:{
           ;
 
       }
-   
+
    // await this.getEnter();
   },
   props:[
     "category"
   ]
- 
+
 };
 </script>
 
@@ -181,7 +181,7 @@ h4 {
 
   background-color:#424242;
   width: 100%;
- 
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

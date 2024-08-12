@@ -1,6 +1,6 @@
 <template>
- 
-       
+
+
     <h1 class="htn">{{ title }}</h1>
     <div id="post-content">
       <div class="article aparent">
@@ -8,25 +8,29 @@
     <div class="line"></div>
            <p id="typo_pl">Written on {{ moment(new Date(date.seconds * 1000)).format("ddd MMM DD, YYYY") }}
           </p>
-      
-      
+
+
           <AmaDisclosure/>
 
-         <!-- 
-          
+         <!--
+
 <img v-if="img[0]!==null || typeof img[0]!=='undefined'" class="image mgb" :src="img[0].downloadURL"  />
 
-          
-           -->  
+
+           -->
+           
+           <!--
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image" :src="img[0].downloadURL"  />
           <img v-else-if="imgurl.length>6" class="image" :src="imgurl"/>
-        
+-->
           
-        
-          
+          <img  class="image mgb" :src="img[0].downloadURL"  />
+
+
+
            <Markdown :html="true"  :breaks="true" :source="story" />
 
-             
+
                  <div v-if="video" class="video-container">
          <iframe
           id="ytb"
@@ -39,40 +43,39 @@
         >
         </iframe>
   </div>
-        
-    
-  <div class="line"></div>
+
+
 
 
          <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
 
-                
+
         <div id="ratingandsocial">
-       
+
           <div class="rs">
                       <SocialMedia :url="currentUrl" :title="title" />
-  
+
           </div>
-              
+
         </div>
 
 
-         
+
         <HorNavBar :isGame="true" />
 
       <NewsLetters/>
-      
 
-         </div> 
-    
-        
+
+         </div>
+
+
       </div>
-     
+
   </template>
-  
+
   <script >
   import SocialMediaVue from "./SocialMedia.vue";
-  
+
   import MarkdownVue from 'vue3-markdown-it';
   import moment from 'moment';
   import { defineComponent, computed, reactive } from 'vue';
@@ -86,7 +89,7 @@
 
 
 
-  
+
   export default defineComponent({
     mounted() {
       let Script = document.createElement("script");
@@ -105,7 +108,7 @@
     adpushScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});"
 
     document.body.appendChild(adpushScript);
- /*  
+ /*
  <div id="adsencectn5">
           <ins class="adsbygoogle"
      style="display:block"
@@ -122,7 +125,7 @@
      data-ad-slot="8049468760"></ins>
 
     </div>
-      
+
            <div id="adsencectn1">
         <ins class="adsbygoogle"
      style="display:block"
@@ -130,10 +133,10 @@
      data-ad-slot="2797142084"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-   
-   
-        
-    
+
+
+
+
        </div>
        <div id="adsencectn2">
 
@@ -144,7 +147,7 @@
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
        </div>
- 
+
  adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
     adScript.setAttribute("crossorigin","anonymous");
 
@@ -156,21 +159,21 @@
     document.head.appendChild(adScript);
     let adpScript = document.createElement("script");
     adpScript.innerHTML="(adsbygoogle = window.adsbygoogle || []).push({});";*/
-  
+
       },
-    
+
      async setup(props) {
 
-   
+
       //  postscribe('#firstad', '<h1>Hello PostScribe</h1>');
-  
+
       /*     const route=useRoute();
-  
+
       const siteData = reactive({
         title: props.title,
         description: props.sub,
-        url:"https://gamersubculture.com"+route.path  ,
-      
+        url:"https://gmrnews.com"+route.path  ,
+
         img: props.imgurl,
       })
         console.log("--R--",siteData.url)
@@ -186,7 +189,7 @@
             name: `description`,
             content: computed(() => siteData.description),
           },
-         
+
            {
             name: `og:image`,
             content: computed(() => siteData.img),
@@ -199,7 +202,7 @@
             name: `og:url`,
             content: computed(() => siteData.url),
           },
-  
+
         ],
       })*/
     },
@@ -215,10 +218,10 @@
 
 
 
-     
-  
-      
-  
+
+
+
+
     },
     name: "Article",
     props: [
@@ -239,15 +242,15 @@
   },
   created() {
     const route=useRoute();
-  
-   
-  this.currentUrl = "https://gamersubculture.com"+route.path;
+
+
+  this.currentUrl = "https://gmrnews.com"+route.path;
       this.moment = moment;
-  
+
   },
   });
   </script>
-  
+
   <style >
   #adsencectn {
   width: 100%;
@@ -270,7 +273,7 @@
   margin-right: auto;
     margin-left: auto;
     justify-content: center;
-    
+
 }
 .twitter-tweet > iframe{
 height: 765px;
@@ -313,7 +316,7 @@ height: 765px;
     margin-top: 25px;
     margin-bottom:25px;
   }
-  
+
   .video-container iframe {
     position: absolute;
     top: 0;
@@ -321,7 +324,7 @@ height: 765px;
     width: 100%;
     height: 100%;
   }
-  
+
   p > img {
     width: 100%;
       height: auto;
@@ -329,7 +332,7 @@ height: 765px;
       margin-top: 30px;
       border-radius: 12px;
   }
-  
+
   .plight {
         font-family: Google Sans;
   text-align:left;
@@ -342,31 +345,31 @@ height: 765px;
   .line {
       height: 0.5px;
     margin-top: 10px;
-  
+
     background-color:#424242;
     width: 100%;
-   
+
   }
    .adsbanner {
-        display: none; 
+        display: none;
   }
   .adscontent {
-  
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 16px;
     margin-bottom: 16px;
-  
+
   }
-  
+
   h2 {
-  
+
   margin-bottom: 16px;
   margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
-    font-family: Alegreya sans-serif;
+   font-family:  Avenir, Helvetica, Arial, sans-serif;
     color: rgb(30,30,30);
 }
   #starcontainer {
@@ -384,7 +387,7 @@ height: 765px;
     height: 16px;
     left: calc(50% - 16px / 2 - 16px);
     top: calc(50% - 16px / 2);
-  
+
     flex: none;
     order: 1;
     align-self: stretch;
@@ -396,13 +399,13 @@ height: 765px;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-  
+
     position: static;
     width: 80px;
     height: 16px;
     left: 0px;
     top: 40px;
-  
+
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -440,9 +443,9 @@ height: 765px;
     margin-left: 35px;
 
     margin-bottom:16px;
-  
+
   }
-  
+
   .news {
     font-family: Google Sans;
     font-weight: 500;
@@ -454,10 +457,10 @@ height: 765px;
     margin-bottom: 0px;
 
   }
-  
+
   .image {
     /*  max-height:300px; */
-  
+
     width: auto;
     height: auto;
   }
@@ -495,13 +498,13 @@ font-family: 'Open Sans', sans-serif;
   text-align: justify;
 }
 
-  
+
   #post-content {
     display: flex;
-  
+
     justify-content: center;
   }
-  
+
   @media only screen and (max-width: 1090px) {
     .aparent {
       display: flex;
@@ -515,7 +518,7 @@ font-family: 'Open Sans', sans-serif;
       display: none;
     }
       .adsbanner {
-        display: flex; 
+        display: flex;
         justify-content: center;
   }
   }
@@ -526,9 +529,9 @@ font-family: 'Open Sans', sans-serif;
       flex-direction: column;
       height: 100%;
     }
-    
+
   }
-  
+
   @media only screen and (max-width: 700px) {
     .aparent {
       display: flex;
@@ -539,10 +542,10 @@ font-family: 'Open Sans', sans-serif;
   }
   @media only screen and (max-width: 470px) {
     .adsbanner {
-        display: none; 
+        display: none;
   }
   }
 
 
-  
+
   </style>

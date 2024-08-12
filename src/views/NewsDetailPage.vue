@@ -17,7 +17,7 @@
 
       <Footer  />
     </template>
-    
+
 <script>
 
     import ArticleVue from "../components/Narticle.vue";
@@ -32,29 +32,29 @@
     import {  computed } from 'vue';
     import moment from "moment";
 
-    
-    
-    
+
+
+
     export default {
       name: "NewsDetailPage",
       mounted(){
-    
-    
+
+
       },
       async setup(props) {
      //   console.log("props---",props);
-    
+
       //   const sdata = [];
      //   const q = collection(db, "articles");
         //  const queryR = query(q, where("__name__", "==", props.id));
           const queryR = doc(db, "news", props.id);
-    
+
          /* const firebaseData = getDocs(queryR).then((querySnapshot) => {
-    
-    
-    
+
+
+
             querySnapshot.forEach((doc) => {
-    
+
               sdata.push({
                 id: doc.id,
                 title: doc.data().title,
@@ -76,14 +76,14 @@
               //this.error = true;
             }
           });*/
-    
+
     ////////////////////////////////////////////////////////
            const { initialState } = useContext()
            // Hydrate from initialState, if there's anything
            const homeLocalState = ref(initialState.homeLocalState || null)
            useHead({
              title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
-          
+
              meta: [
              {
                 name:`twitter:card`,
@@ -98,7 +98,7 @@
               name: `description`,
               content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
             },
-           
+
              {
               name: `og:image`,
               content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
@@ -108,9 +108,9 @@
               content: "article",
             },
              ],
-        
+
              link: [{ rel: 'stylesheet' }],
-             script: [ { 
+             script: [ {
     type:"application/ld+json",
     children:computed(()=>`
 {
@@ -119,7 +119,7 @@
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
-                
+
               ],
               "datePublished": "${computed(()=> homeLocalState.value !==null && homeLocalState.value.date !==undefined ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
               "dateModified": "${computed(()=> homeLocalState.value !==null && homeLocalState.value.date !==undefined ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
@@ -132,18 +132,18 @@
 
 "publisher": {
                 "@type": "Organization",
-                "name": "GamerSubculture"
+                "name": "Gmrnews"
               }
 }`
          )} ]
-          
+
            })
            if (true) {
              // No data, get it fresh from any API
              const fbd = await getDoc(queryR);
              if(fbd.exists())
                      homeLocalState.value = fbd.data();
-                                  
+
           //   console.log("Home---",homeLocalState.value);
              if (import.meta.env.SSR) {
                // Save this data in SSR initial state for hydration later
@@ -153,7 +153,7 @@
            return {
             homeLocalState
            }
-          
+
           },
       components: {
         Footer: FooterVue,
@@ -172,19 +172,18 @@
         //this.readArticles();
       },
       methods: {
-       
+
       },
     };
     </script>
-    
+
     <style>
-    
+
     ul {
   margin:32px;
   text-align: start;
-}  
+}
 h4 {
   text-align: left;
 }
     </style>
-    

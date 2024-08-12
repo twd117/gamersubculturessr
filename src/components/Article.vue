@@ -1,34 +1,40 @@
 <template>
- 
-       
+
+
   <h1 class="ht">{{ title }}</h1>
   <div id="post-content">
-   
-  
+
+
     <div class="article aparent">
-     
+
       <h2 class="news">Developer(s): {{ dev }}</h2>
              <p id="typo_pl">Platform(s): {{ platform }} </p>
          <div class="line"></div>
       <p id="typo_rel" v-if="release!==null && release.length>3">Release date: {{  release }}</p>
 
-    
-    
-      <AmaDisclosure/>
-       
-      
-         <!--      
+
+         <AmaDisclosure/>
+
+
+         <!--
            <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
         <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
 
-           -->  
-           <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
-        <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/>
-   
+           -->
+         <!--  <img v-if="imgurl===null || typeof imgurl==='undefined'" class="image mgb" :src="img[0].downloadURL"  />
+        <img v-else-if="imgurl.length>6" class="image mgb" :src="imgurl"/> -->
 
-         <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
-     
-      
+
+        <img  class="image mgb" :src="img[0].downloadURL"  />
+
+         <div id="mkdn">
+           
+             <Markdown class="mkrdown" :html="true" :breaks="true" :source="story +analyse" />
+
+         </div>
+        
+
+
 
 
                <div v-if="video" class="video-container">
@@ -47,23 +53,23 @@
 
     <div class="tagcat"><span class="tagspan">{{ tag }}</span></div>
 
- 
-
-    <Rating :rating="rating"/> 
 
 
-              
+    <Rating :rating="rating"/>
+
+
+
       <div id="ratingandsocial">
-     
+
         <div class="rs">
                 <SocialMedia :url="currentUrl" :title="title" />
 
         </div>
-       
+
       </div>
        <div id="amazonbox"></div>
      <!--
-      
+
         <div id="adsencectn5">
           <ins class="adsbygoogle"
      style="display:block"
@@ -71,22 +77,22 @@
      data-ad-client="ca-pub-1291356316800764"
      data-ad-slot="5114908570"></ins>
          </div>
-      
-      --->  
-    
+
+      --->
+
 
 
         <HorNavBar :isGame="true" />
       <NewsLetters/>
-     
 
-  
-      
-  </div> 
-  
-      
+
+
+
+  </div>
+
+
     </div>
-   
+
 </template>
 
 <script>
@@ -129,27 +135,27 @@ export default defineComponent({
    let abox = document.getElementById("amazonbox");
    let amaads = document.createElement("script");
          amaads.setAttribute("type","text/javascript");
-         amaads.textContent = ` 
+         amaads.textContent = `
           amzn_assoc_tracking_id = "twd117259-20";
-          amzn_assoc_ad_mode = "manual"; 
+          amzn_assoc_ad_mode = "manual";
           amzn_assoc_ad_type = "smart";
           amzn_assoc_marketplace = "amazon";
           amzn_assoc_region = "US";
           amzn_assoc_design = "enhanced_links";
           amzn_assoc_asins = "B0B7NYN3N3";
-          amzn_assoc_placement = "adunit"; 
-          amzn_assoc_linkid = "3e4dc4bfd8282595c2d01a989ea00465";      
-        
-       
+          amzn_assoc_placement = "adunit";
+          amzn_assoc_linkid = "3e4dc4bfd8282595c2d01a989ea00465";
+
+
          `;
             let box = document.createElement("script");
             box.setAttribute("src","//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US");
-         
+
             abox.appendChild(amaads);
             abox.appendChild(box);
-     
+
      */
-      
+
 
    /* const adsencectn = document.getElementById("adsencectn");
   <div id="adsencectn1">
@@ -159,13 +165,13 @@ export default defineComponent({
      data-ad-slot="2797142084"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-   
-   
-        
-    
+
+
+
+
        </div>
-     
-     
+
+
        <div id="adsencectn2">
 
         <ins class="adsbygoogle"
@@ -174,7 +180,7 @@ export default defineComponent({
      data-ad-slot="5853275170"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-       </div> 
+       </div>
      <!--  <div id="adsencectn">
       <ins class="adsbygoogle"
      style="display:block"
@@ -188,25 +194,25 @@ export default defineComponent({
     adsencectn.appendChild(adScript);
     adsencectn.appendChild(adpushScript);
     const adsencectn1 = document.getElementById("adsencectn1");
-    
+
     adsencectn1.appendChild(adScript);
     adsencectn1.appendChild(adpushScript);
 
     const adsencectn2 = document.getElementById("adsencectn2");
-    
+
     adsencectn2.appendChild(adScript);
     adsencectn2.appendChild(adpushScript);*/
-    
 
-    
-     
-  
+
+
+
+
       },
-  
+
     setup(props) {
-       
-      
-     
+
+
+
     //  postscribe('#firstad', '<h1>Hello PostScribe</h1>');
 
     /*     const route=useRoute();
@@ -214,8 +220,8 @@ export default defineComponent({
     const siteData = reactive({
       title: props.title,
       description: props.sub,
-      url:"https://gamersubculture.com"+route.path  ,
-    
+      url:"https://gmrnews.com"+route.path  ,
+
       img: props.imgurl,
     })
       console.log("--R--",siteData.url)
@@ -231,7 +237,7 @@ export default defineComponent({
           name: `description`,
           content: computed(() => siteData.description),
         },
-       
+
          {
           name: `og:image`,
           content: computed(() => siteData.img),
@@ -250,7 +256,7 @@ export default defineComponent({
   },
   components: {
     SocialMedia: SocialMediaVue,
-    
+
      Markdown:MarkdownVue,
      NewsLetters:NewsLettersVue,
      HorNavBar:HorNavBarVue,
@@ -260,9 +266,9 @@ export default defineComponent({
      AmaDisclosure:AmaDisclosureVue
 
 
-   
 
-    
+
+
 
   },
   name: "Article",
@@ -289,17 +295,21 @@ export default defineComponent({
 created() {
   const route=useRoute();
 
- 
-this.currentUrl = "https://gamersubculture.com"+route.path;
+
+this.currentUrl = "https://gmrnews.com"+route.path;
     this.moment = moment;
 
 },
 });
 </script>
 
-<style >
- 
- 
+<style  >
+
+.zain-bold {
+  font-family: "Zain", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 #adsencectn {
   width: 100%;
@@ -317,9 +327,9 @@ this.currentUrl = "https://gamersubculture.com"+route.path;
 .twitter-tweet{
   margin-right: auto;
     margin-left: auto;
-  
+
     justify-content: center;
-    
+
 }
 .twitter-tweet > iframe{
 height: 765px;
@@ -404,10 +414,10 @@ text-align:left;
 
   background-color:#424242;
   width: 100%;
- 
+
 }
  .adsbanner {
-      display: none; 
+      display: none;
 }
 .adscontent {
 
@@ -419,15 +429,20 @@ text-align:left;
 
 }
 
+
+
 h2 {
-  
   margin-bottom: 16px;
   margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
-    font-family: Alegreya sans-serif;
-    color: rgb(30,30,30);
+    color: rgb(13,13,13);
+        font-family:  Avenir, Helvetica, Arial, sans-serif;
+
+    font-style: normal;
 }
+
+ 
 #starcontainer {
   display: flex;
   flex-direction: row;
@@ -577,7 +592,7 @@ font-family: 'Open Sans', sans-serif;
     display: none;
   }
     .adsbanner {
-      display: flex; 
+      display: flex;
       justify-content: center;
 }
 }
@@ -588,7 +603,7 @@ font-family: 'Open Sans', sans-serif;
     flex-direction: column;
     height: 100%;
   }
-  
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -601,7 +616,7 @@ font-family: 'Open Sans', sans-serif;
 }
 @media only screen and (max-width: 470px) {
   .adsbanner {
-      display: none; 
+      display: none;
 }
 }
 /**************Amazon */

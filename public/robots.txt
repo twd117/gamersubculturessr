@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.gamersubculture.com/sitemap.xml
+Sitemap: https://www.gmrnews.com/sitemap.xml

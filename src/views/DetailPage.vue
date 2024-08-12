@@ -82,9 +82,9 @@ export default {
        const homeLocalState = ref(initialState.homeLocalState || null);
        console.log("computed--,", homeLocalState.value );
        useHead({
-      
+
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
-         
+
 
          meta: [
          {
@@ -99,7 +99,7 @@ export default {
           name: `description`,
           content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
         },
-       
+
          {
           name: `og:image`,
           content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
@@ -108,10 +108,10 @@ export default {
           name: `og:type`,
           content: "article",
         },
-      
+
          ],
 
-         script: [ { 
+         script: [ {
     type:"application/ld+json",
     children:computed(()=>`
 {
@@ -120,34 +120,34 @@ export default {
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
-                
+
               ],
               "datePublished": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
               "dateModified": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
-             
+
               "author": [{
                   "@type": "Person",
                   "name": "Rolox Tot",
                   "url": "https://twitter.com/Rolox77"}],
-               
+
               "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.subtitle:"").value}",
 
 
               "publisher": {
                               "@type": "Organization",
-                              "name": "GamerSubculture"
+                              "name": "gmrnews"
                             }
 }`
          )} ]
-       
-    
+
+
        });
        if (true) {
          // No data, get it fresh from any API
          const fbd = await getDoc(queryR);
          if(fbd.exists())
                  homeLocalState.value = fbd.data();
-                              
+
         // console.log("Home---",homeLocalState.value._createdAt);
          if (import.meta.env.SSR) {
            // Save this data in SSR initial state for hydration later
@@ -157,7 +157,7 @@ export default {
        return {
         homeLocalState
        }
-      
+
       },
   components: {
     Footer: FooterVue,
@@ -177,13 +177,13 @@ export default {
   },
   methods: {
     readArticles() {
-     
+
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 h4 {
   text-align: left;
 }

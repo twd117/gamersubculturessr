@@ -19,7 +19,7 @@
     <Footer  />
     </div>
   </template>
-  
+
 <script>
   import ArticleVue from "../components/ScienceArticle.vue";
   import FooterVue from "../components/Footer.vue";
@@ -32,9 +32,9 @@
   import { useContext } from 'vite-ssr/vue'
   import {  computed } from 'vue';
   import moment from "moment";
- 
 
-  
+
+
   export default {
     name: "Smlc",
     components: {
@@ -42,8 +42,8 @@
       Article: ArticleVue,
       DetaillNav:DetailNavVue,
           Box: BoxVue,
-  
-  
+
+
     },
     data() {
       return {
@@ -56,31 +56,31 @@
      // this.readArticles();
     },
    async setup(props) {
-  
+
    const sdata = [];
        //  const queryR = query(q, where("__name__", "==", props.id));
        const queryR = doc(db, "smlc", props.id);
-      
+
        const { initialState } = useContext();
          // Hydrate from initialState, if there's anything
          const homeLocalState = ref(initialState.homeLocalState || null)
         //   console.log("Home---",homeLocalState.value);
-  
-  
+
+
          try{
-  
+
          //  title = homeLocalState.value.title;
-  
+
          }catch(e){
-  
+
          }
 
-           
+
 
 
          useHead({
            title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
-      
+
            meta: [
            {
             name:`twitter:card`,
@@ -94,7 +94,7 @@
             name: `description`,
             content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
           },
-         
+
            {
             name: `og:image`,
             content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
@@ -103,12 +103,12 @@
             name: `og:type`,
             content: "article",
           },
-         
+
            ],
-         
-        
+
+
            link: [{ rel: 'stylesheet' }],
-           script: [ { 
+           script: [ {
     type:"application/ld+json",
     children:computed(()=>`
 {
@@ -117,7 +117,7 @@
               "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
               "image": [
               "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
-                
+
               ],
               "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
               "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value.date.seconds*1000) : "").value}",
@@ -130,20 +130,20 @@
 
                     "publisher": {
                                     "@type": "Organization",
-                                    "name": "GamerSubculture"
+                                    "name": "gmrnews"
                                   }
 }`
          )} ]
-          
-        
+
+
          });
          if (true) {
            // No data, get it fresh from any API
            const fbd = await getDoc(queryR);
            if(fbd.exists())
                    homeLocalState.value = fbd.data();
-                  
-                                
+
+
            if (import.meta.env.SSR) {
           //  console.log("Home---",homeLocalState.value);
 
@@ -154,19 +154,19 @@
          return {
           homeLocalState
          }
-      
-      
+
+
       }
-  
+
     ,
     methods: {
       readArticles() {
-        
+
       },
     },
   };
   </script>
-  
+
   <style>
   ul {
   margin:32px;
@@ -175,19 +175,19 @@
 h4 {
   text-align: left;
 }
-  
+
   </style>
   /*
-  
-  script: [ { 
+
+  script: [ {
     type:"application/ld+json",
     children:computed(()=>`{
-"@context": "https://www.gamersubculture.com",
+"@context": "https://www.gmrnews.com",
 "@type": "NewsArticle",
 "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
 "image": [
 "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
-  
+
  ],
 "datePublished": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
 "dateModified": "${computed(()=> homeLocalState.value !==null ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
@@ -196,5 +196,5 @@ h4 {
     "name": "rolox",
     "url": "https://twitter.com/Rolox77"
   }]
-  
-  */ 
+
+  */

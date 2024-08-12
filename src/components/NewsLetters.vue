@@ -31,7 +31,7 @@ export default {
     data() {
     return {
       email: "",
-      msg:"GamerSubculture newsletters",
+      msg:"Gmrnews newsletters",
       disable:false
     };
 },
@@ -49,7 +49,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .news-letter{
     margin-top: 16px;
     margin-bottom: 16px;
@@ -92,12 +92,12 @@ export default {
 text-align: center;
 }
 .news-heading{
-  
-  font-size: 24px;
+
+  font-size: 31px;
   line-height: 1.4;
   color: #333;
-  font-family: Roboto, sans-serif;
-  letter-spacing: 2.5px;
+  font-family: "Gupter", serif;
+    font-weight: 700;
 
 }
 .nnews p{
@@ -106,9 +106,10 @@ text-align: center;
   margin-bottom: 16px;
   margin-top: 1px;
   line-height: 1.8;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Gupter", serif;
+   font-weight: 400;
 
-  
+
 }
 
 
@@ -149,7 +150,7 @@ text-align: center;
     border-radius: 0.25rem;
       width: 70%;
     margin-bottom: 9px;
-    
+
     border: 1px solid #bfbfbf;
     background-color: #fff;
     font-size: 14px;
@@ -173,7 +174,7 @@ input[type="email"]{
   margin-top: 18px;
   border-radius: 20px;
   border: none;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06); 
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
 
 }
 input,
