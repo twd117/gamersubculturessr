@@ -33,6 +33,7 @@ import { useHead } from '@vueuse/head'
 import { useContext } from 'vite-ssr/vue'
 import {  computed } from 'vue';
 import moment from "moment";
+ import { useRoute } from 'vue-router';
 
 
 export default {
@@ -60,8 +61,15 @@ export default {
  const sdata = [];
      //  const queryR = query(q, where("__name__", "==", props.id));
      const queryR = doc(db, "entertainment", props.id);
+       const route = useRoute();
 
      const { initialState } = useContext();
+        if (typeof window !== 'undefined') {
+       if(route.query.red)
+          window.location.href = 'https://'+route.query.red;
+
+              }
+
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
          console.log("Home---",homeLocalState.value);

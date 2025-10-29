@@ -1,30 +1,33 @@
 import Home from "../views/Home.vue";
 import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
-import NewsDetailPage from "../views/NewsDetailPage.vue"; 
+import NewsDetailPage from "../views/NewsDetailPage.vue";
 import Smlc from "../views/smlc.vue";
+import Deals from "../views/Deals.vue";
+
+
 const routes = [
-  
+
   {
     path: "/",
     name: "Home",
     component: Home,
   },
- 
- 
+
+
   {
     path: "/tech/:title/:id",
     name: "news",
     component: NewsDetailPage,
     props: true
-  }, 
-  
+  },
+
   {
     path: "/articles/:title/:id",
     name: "Article",
     component: DetailPage,
     props: true
-  }, 
+  },
   {
     path: "/entertainment/:title/:id",
     name: "Sciences",
@@ -37,6 +40,15 @@ const routes = [
     component: Smlc,
     props: true
   },
+
+   {
+    path: "/deals",
+    name: "Deals",
+    component: Deals,
+    props: true
+  },
+
+
   {
     path: "/:category",
     name: "category",
@@ -44,6 +56,8 @@ const routes = [
     props: true
   },
  
+
+
 ];
 
 

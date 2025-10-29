@@ -1,34 +1,34 @@
 <template>
   <header class="mhparent navbar-container">
     <div id="logo">
-      <span id="publishername">ゲームオタク </span>
+      <span id="publishername">GMR</span>
     </div>
-     
+
     <ul class="mhchild--featured hparent">
       <li @click="gamelinkclick()" class="hchild nav-link" :class="{ active: store.isGame }" >
-       Games 
+       Games
         <div class="underline" ></div>
-      </li> 
-      
-          
+      </li>
+
+
        <li @click="enterlinkclick()" class="hchild nav-link" :class="{ active: store.isEntertainment }">
         Entertainment
         <div class="underline "></div>
-      </li>  
+      </li>
       <li @click="newslinkclick()" class="hchild nav-link" :class="{ active: store.isNews }">
         Tech
         <div class="underline "></div>
-      </li> 
+      </li>
       <li @click="scifilinkclick()" class="hchild nav-link" :class="{ active: store.isScifi }">
         others
         <div class="underline "></div>
-      </li> 
+      </li>
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
       <router-view />
     </ul>
     <!--  <div id="search-icon">
         <i class="material-icons">search</i>
-        
+
       </div> -->
   </header>
 </template>
@@ -42,7 +42,7 @@ export default {
     const store = useNavStore();
     const dataStore = useDataStore()
 
-  
+
     return { store ,dataStore}
   },
   data() {
@@ -103,6 +103,7 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding-bottom: 28px;
+  border-bottom: 1px solid #00ff00;
 }
 .hparent {
   padding-left: 0px;
@@ -117,15 +118,12 @@ export default {
   margin-left: 9px;
 }
 .hchild a {
-  color: #414549;
+  color: #00ff00;
   padding: 0px;
 }
 .push {
   margin-left: auto;
 }
-/*.mhchild--featured {
-  flex-basis: 30%;
-}*/
 
 a {
   outline: none;
@@ -141,10 +139,10 @@ a {
 }
 
 .navbar-container ul li {
-  color: #414549;
+  color: #e0e0e0;
   font-weight: 500;
-  text-transform: capitalize;
-  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .navbar-container ul li a {
@@ -164,29 +162,29 @@ a {
 .navbar-container ul li.active .underline {
   margin-top: 10px;
   width: 100%;
-  background-color: blue;
+  background-color: #00ff00;
 }
 
 
 .blue {
  margin-top: 10px;
-  background-color: blue;
+  background-color: #00ff00;
   width: 100%;
  }
 
 .navbar-container ul li:hover .underline {
   margin-top: 10px;
-  background-color: blue;
+  background-color: #00ff00;
   width: 100%;
 }
 .navbar-container ul li:active a {
   transition: none;
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(0, 255, 0, 0.76);
 }
 
 .navbar-container ul li:active .underline {
   transition: none;
-  background-color: rgba(255, 255, 255, 0.76);
+  background-color: rgba(0, 255, 0, 0.76);
 }
 
 #logo {
@@ -194,17 +192,17 @@ a {
 }
 
 #publishername {
- 
-  color: #5f6368;
+  color: #00ff00;
   font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.4rem;
-    font-family: roboto-monospace;
-    font-size: x-large;
+    font-family: 'Orbitron', sans-serif;
+    font-size: xx-large;
+    text-shadow: 0 0 10px #00ff00;
 
 }
 
 .header-shadow {
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.26);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 255, 0, 0.26);
 }
 </style>

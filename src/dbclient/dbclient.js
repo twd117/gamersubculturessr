@@ -10,6 +10,7 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyC4p4PZKJ34Y1_1kt1T-T1XByt4iIoNJhg",
   authDomain: "blog-31210.firebaseapp.com",
+  databaseURL: "https://blog-31210-default-rtdb.firebaseio.com",
   projectId: "blog-31210",
   storageBucket: "blog-31210.appspot.com",
   messagingSenderId: "920758206433",
@@ -19,11 +20,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db =  getFirestore();
+
 if (typeof window !== 'undefined') {
 
  getAnalytics(app);
+
+
 }
-const db = getFirestore();
 
 
 

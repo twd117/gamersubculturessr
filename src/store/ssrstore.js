@@ -15,7 +15,7 @@ const getNewsArticles = async function(){
   const data = [];
    const q = query(collection(db, "news"), orderBy("date",'desc'));
    await getDocs(q).then((querySnapshot) => {
-   //  console.log("last", this.lastVisible);
+    console.log("last", this.lastVisible);
 
      querySnapshot.forEach((doc) => {
       data.push({

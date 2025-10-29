@@ -63,17 +63,17 @@ export default {
     const store = useNavStore();
     useHead({
 
-      title:computed(()=>   "Gmrnews"),
+      title:computed(()=>   "Gamersub"),
 
       meta: [
 
       {
        name: `og:title`,
-       content:computed(()=> "Gmrnews" ),
+       content:computed(()=> "Gamersub" ),
         },
      {
        name: `description`,
-       content:computed(()=>  "Gmrnews find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
+       content:computed(()=>  "Gamersub find the latest news about pcgames, Console game, entertainment and much more. An independent site run by real gamers just like you."),
      },
 
 

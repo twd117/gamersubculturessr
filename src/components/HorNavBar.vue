@@ -189,34 +189,36 @@
 
   <style scoped>
   .line {
-    height: 0.5px;
-  margin-top: 26px;
-  margin-bottom: 26px;
-
-  background-color:#424242;
-  width: 100%;
-
-}
+    height: 1px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    background-color: #00ff00;
+    width: 100%;
+    box-shadow: 0 0 10px #00ff00;
+  }
   .hsb > span{
     display: flex;
     text-align: left;
-    color: red;
-    font-family:  'Roboto', sans-serif;
-    font-weight: 900;
+    color: #00ff00;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
     font-size: 2rem;
     line-height: 110%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     margin-bottom: 6px;
+    text-shadow: 0 0 5px #00ff00;
   }
   .hsb > h3{
-    font-family:  'Roboto', sans-serif;
-    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
     font-size: 3rem;
     line-height: 110%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     margin-bottom: 16px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
   }
   a {
     list-style: none;
@@ -225,8 +227,7 @@
   }
 .easy-grid {
   display: grid;
-
-   align-items: start;
+  align-items: start;
   grid-gap:  1rem;
   grid-template-columns: repeat(
     2,
@@ -238,7 +239,6 @@
 
 .easy-grid{
   display: grid;
-
   align-items: start;
   grid-gap:  1rem;
   grid-template-columns: repeat(
@@ -254,28 +254,20 @@
     width: 12px;
     height: 100%;
     margin: 0px;
-    background: rgb(229, 229, 229);
+    background: #00ff00;
 }
 .brdr{
        margin-bottom: 12px;
 }
 
 
-
-
-#navrow {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-
-}
-
-/***********************old card ************************************/
-
-
 .ccard {
-	background-color: #fff;
+	background-color: #2a2a2a;
 	margin-bottom: 1.6rem;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 
 }
 
@@ -283,6 +275,7 @@
   margin-top:0.5rem;
   margin-bottom:0.5rem;
   text-align: left;
+  color: #e0e0e0;
 }
 
 
@@ -296,35 +289,23 @@
 
 /* card article */
 .ccard__article h4 {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Orbitron", sans-serif;
     text-align: left;
     margin-top: 0px;
     margin-bottom: 0px;
     font-weight: 700;
-    color: #424242;
+    color: #00ff00;
 
 
 }
 
 .ccard-text{
-  font-family: Roboto;
+  font-family: 'Roboto Mono', monospace;
 font-size: 14px;
 line-height: 20px;
-color: #424242;
+color: #e0e0e0;
 margin-top: 4px
 }
-/* card action */
-
-
-
-
-
-
-
-
-
-
-
 
 .cxchild {
      width:100%;
@@ -336,7 +317,7 @@ margin-top: 4px
     font-size: .875rem;
     font-weight: 550;
     font-style: normal;
-    color: #5f6368;
+    color: #00ff00;
     font-family: 'Roboto Mono', monospace;
    margin-top:.5rem;
    margin-bottom:.5rem;
@@ -353,7 +334,7 @@ margin-top: 4px
 }
 
 .ccard-shadow:hover{
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.3);
 }
 
   </style>

@@ -121,24 +121,19 @@ export default {
 /****************card******/
 a {
   text-decoration: none;
-  color: #3498db;
+  color: #00ff00;
 }
 a:hover {
-  color: #2980b9;
+  color: #fff;
 }
-
-/**
- * Helpers
- */
-
-/**
- * Card Styles
- */
 
 .card {
   padding: 12px;
-  background-color: #fff;
+  background-color: #2a2a2a;
   margin-bottom: 1.6rem;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 }
 
 .card__padding {
@@ -154,6 +149,7 @@ a:hover {
 .card__image img {
   width: 100%;
   max-width: 100%;
+  border-radius: 8px;
 }
 
 .card__content {
@@ -175,24 +171,22 @@ a:hover {
 .card__article a {
   text-decoration: none;
   text-align: left;
-
   transition: all 0.5s ease;
-  font-family: "Roboto", sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 24px;
   line-height: 32px;
-  color: #424242;
-
+  color: #00ff00;
   letter-spacing: 0.28px;
 }
 .card__article a:hover {
-  color: #2980b9;
+  color: #fff;
 }
 .card-text {
   text-align: justify;
-  font-family: Roboto;
+  font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   line-height: 20px;
-  color: #424242;
+  color: #e0e0e0;
   margin-top: 4px;
 }
 /* card action */
@@ -223,7 +217,7 @@ a:hover {
   font-size: 0.875rem;
   font-weight: 400;
   font-style: normal;
-  color: #5f6368;
+  color: #00ff00;
   font-family: "Roboto Mono", monospace;
   margin-left: 0.8rem;
   margin-bottom: 1rem;
@@ -235,10 +229,13 @@ a:hover {
 
 .material-icons {
   margin-right: 6px;
+  color: #00ff00;
 }
 
 .card-shadow:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 750px) {
      .child{

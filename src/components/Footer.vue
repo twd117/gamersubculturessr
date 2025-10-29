@@ -15,10 +15,12 @@ export default {
 </script>
 <style>
 footer{
-  padding: 8px 0;
-  background-color: #000;
-  color: #fff;
+  padding: 20px 0;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
   text-align: center;
+  border-top: 1px solid #00ff00;
+  box-shadow: 0 -5px 15px rgba(0, 255, 0, 0.1);
 }
 .Site-content {
   flex: 1;
@@ -26,15 +28,22 @@ footer{
 
 .footer-content p{
   line-height: 22px;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .footer-social-icon a i{
-  color: #fff;
+  color: #00ff00;
   display: inline-block;
   font-size: 14px;
   line-height: 20px;
   margin-top: 5px;
   margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icon a i:hover{
+  color: #fff;
+  text-shadow: 0 0 10px #00ff00;
 }
 
 

@@ -59,21 +59,24 @@ export default {
   line-height: 32px;
   border-radius: 2px;
   font-size: 0.9em;
-  background-color: #fff;
-  color: #646464;
+  background-color: transparent;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 .center {
   text-align: center;
 }
 
 .button.raised {
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0.2s;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 255, 0, 0.26);
 }
 
-.button.raised:active {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-  transition-delay: 0s;
+.button.raised:hover {
+  background-color: #00ff00;
+  color: #1a1a1a;
+  box-shadow: 0 8px 17px 0 rgba(0, 255, 0, 0.2);
 }
 </style>

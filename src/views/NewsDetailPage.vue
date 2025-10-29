@@ -31,6 +31,7 @@
     import { useContext } from 'vite-ssr/vue'
     import {  computed } from 'vue';
     import moment from "moment";
+     import { useRoute } from 'vue-router';
 
 
 
@@ -48,6 +49,13 @@
      //   const q = collection(db, "articles");
         //  const queryR = query(q, where("__name__", "==", props.id));
           const queryR = doc(db, "news", props.id);
+             const route = useRoute();
+
+            if (typeof window !== 'undefined') {
+       if(route.query.red)
+          window.location.href = 'https://'+route.query.red;
+
+              }
 
          /* const firebaseData = getDocs(queryR).then((querySnapshot) => {
 

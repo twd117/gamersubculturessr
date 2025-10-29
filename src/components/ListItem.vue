@@ -159,17 +159,15 @@
  
 
  .line {
-    height: 0.2px;
+    height: 1px;
   margin-top: 10px;
   margin-bottom:10px;
-  background-color:#424242;
+  background-color:#00ff00;
   width: 100%;
+  box-shadow: 0 0 10px #00ff00;
  
 }
 
- /*a:hover .thecard {
-  box-shadow: 0 10px 50px rgba(0,0,0,.6);
-}*/
 a {
   text-decoration: none;
 }
@@ -179,13 +177,13 @@ a {
   width:300Px;
   object-fit: cover;
    height: 100%;
+   border-radius: 10px;
+   border: 1px solid #00ff00;
 }
 
 .thecard {
   width: 100%;
   height:100%;
-  
-  /* box-shadow: 0 1px 30px rgba(0,0,0,.4);*/
   display: flex;
   flex-direction:column;
   border-radius: 4px;
@@ -195,15 +193,21 @@ a {
 
 p {
   font-size: 13px;
+  color: #e0e0e0;
+  font-family: 'Roboto Mono', monospace;
 }
 
 
 .Dcard-caption span.date {
   font-size: 10px;
+  color: #00ff00;
+  font-family: 'Roboto Mono', monospace;
 }
 .flt {
  
  font-size: 10px;
+ color: #00ff00;
+ font-family: 'Roboto Mono', monospace;
  
 }
 
@@ -211,6 +215,9 @@ p {
 
 .Dcard-caption h1 {
   font-size: 22px;
+  color: #00ff00;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ff00;
 }
 
 h5 {
@@ -224,17 +231,17 @@ h5 {
 
 .Dcard-caption span{
   
-    font-family: 'Muli', sans-serif;
-  color:#040404;
+    font-family: 'Roboto Mono', monospace;
+  color:#00ff00;
 }
 .Dcard-caption p{
-  font-family: 'Noto Sans', sans-serif;
-  color:#040404;
+  font-family: 'Roboto Mono', monospace;
+  color:#e0e0e0;
   
 }
 .Dcard-caption h1{
-  font-family: 'Noto Sans', sans-serif;
-  color:#000000;
+  font-family: 'Orbitron', sans-serif;
+  color:#00ff00;
   margin-top:18px;
   margin-bottom: 18px;
 }
@@ -244,15 +251,21 @@ h5 {
   text-align: left;
 }
 
-/*#flx {
- 
-}*/
-
 .crd-ctn {
   display:flex;
   margin:8px;
   align-items: center;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
 
+}
+
+.crd-ctn:hover {
+  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 1090px) {
