@@ -95,7 +95,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
     align-items: center;
   
-    border-left: 1px solid #00ff00;
+    border-left: 1px solid #e0e0e0;
   
     padding-left: 20px;
   
@@ -107,15 +107,15 @@ import { useNavStore } from "../store/useNavStore.js"
   
   .scard {
   
-  	background-color: #2a2a2a;
+  	background-color: #ffffff;
   
   	margin-bottom: 1.6rem;
   
-    border: 1px solid #00ff00;
+    border: 1px solid #e0e0e0;
   
-    border-radius: 10px;
+    border-radius: 4px;
   
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   
   }
   
@@ -133,7 +133,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
     margin-right: 1rem;
   
-    color: #e0e0e0;
+    color: #000000;
   
   }
   
@@ -145,7 +145,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
   	min-height: 100px;
   
-  	background-color: #2a2a2a;
+  	background-color: #ffffff;
   
   }
   
@@ -155,7 +155,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
   		max-width: 100%;
   
-      border-radius: 8px 8px 0 0;
+      border-radius: 4px 4px 0 0;
   
   	
   
@@ -181,7 +181,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
   	font-size: 1.5rem;
   
-  	color: #bbb;
+  	color: #757575;
   
   	margin-left: 1rem;
   
@@ -201,11 +201,11 @@ import { useNavStore } from "../store/useNavStore.js"
   
      text-align: left;
   
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Roboto', sans-serif;
   
   font-size: 18px;
   
-  color: #00ff00;
+  color: #000000;
   
   
   
@@ -217,13 +217,13 @@ import { useNavStore } from "../store/useNavStore.js"
   
   .card-text{
   
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', sans-serif;
   
   font-size: 14px;
   
   line-height: 20px;
   
-  color: #e0e0e0;
+  color: #000000;
   
   margin-top: 4px
   
@@ -281,9 +281,9 @@ import { useNavStore } from "../store/useNavStore.js"
   
       font-style: normal;
   
-      color: #00ff00;
+      color: #000000;
   
-      font-family: 'Roboto Mono', monospace;
+      font-family: 'Roboto', sans-serif;
   
      margin-top:.5rem;
   
@@ -311,7 +311,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
     margin-right:6px;
   
-    color: #00ff00;
+    color: #000000;
   
   }
   
@@ -319,7 +319,7 @@ import { useNavStore } from "../store/useNavStore.js"
   
   .card-shadow:hover{
   
-    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   
     transform: translateY(-5px);
   

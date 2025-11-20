@@ -192,33 +192,33 @@
     height: 1px;
     margin-top: 26px;
     margin-bottom: 26px;
-    background-color: #00ff00;
+    background-color: #e0e0e0;
     width: 100%;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
   }
   .hsb > span{
     display: flex;
     text-align: left;
-    color: #00ff00;
-    font-family: 'Orbitron', sans-serif;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     line-height: 110%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     margin-bottom: 6px;
-    text-shadow: 0 0 5px #00ff00;
+    text-shadow: 0 0 5px rgba(0,0,0,0.1);
   }
   .hsb > h3{
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 3rem;
     line-height: 110%;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     margin-bottom: 16px;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    color: #000000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
   a {
     list-style: none;
@@ -254,7 +254,7 @@
     width: 12px;
     height: 100%;
     margin: 0px;
-    background: #00ff00;
+    background: #e0e0e0;
 }
 .brdr{
        margin-bottom: 12px;
@@ -262,12 +262,12 @@
 
 
 .ccard {
-	background-color: #2a2a2a;
+	background-color: #ffffff;
 	margin-bottom: 1.6rem;
-  border: 1px solid #00ff00;
-  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
   padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
 }
 
@@ -275,12 +275,12 @@
   margin-top:0.5rem;
   margin-bottom:0.5rem;
   text-align: left;
-  color: #e0e0e0;
+  color: #000000;
 }
 
 
     .ccard__image img {
-        border-radius: 8px;
+        border-radius: 4px;
        height: auto;
     width: 100%;
 
@@ -289,21 +289,21 @@
 
 /* card article */
 .ccard__article h4 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Roboto", sans-serif;
     text-align: left;
     margin-top: 0px;
     margin-bottom: 0px;
     font-weight: 700;
-    color: #00ff00;
+    color: #000000;
 
 
 }
 
 .ccard-text{
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif;
 font-size: 14px;
 line-height: 20px;
-color: #e0e0e0;
+color: #000000;
 margin-top: 4px
 }
 
@@ -317,8 +317,8 @@ margin-top: 4px
     font-size: .875rem;
     font-weight: 550;
     font-style: normal;
-    color: #00ff00;
-    font-family: 'Roboto Mono', monospace;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
    margin-top:.5rem;
    margin-bottom:.5rem;
 
@@ -334,7 +334,7 @@ margin-top: 4px
 }
 
 .ccard-shadow:hover{
-  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.3);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
   </style>

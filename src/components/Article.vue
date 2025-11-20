@@ -341,11 +341,10 @@ height: 765px;
   border-radius: 30px;
     padding: 0.75em 1.5em;
     cursor: pointer;
-    background:#E5E5E5;
-    color: #202125;
-    border: 1px solid;
+    background:#f2f2f2;
+    color: #333;
+    border: 1px solid #ccc;
 
-    border:  0px solid;
     transition: 250ms ease-out;
 }
 .tagcat{
@@ -357,7 +356,7 @@ height: 765px;
     line-height: 1.5;
     letter-spacing: 1.2px;
     text-align: left;
-    color: #202125;
+    color: #333;
 }
 #adone{
   display:grid;
@@ -406,13 +405,13 @@ text-align:left;
     line-height: 1.95rem;
     font-weight: 300;
     font-style: normal;
-    color: #000;
+    color: #333;
 }
 .line {
     height: 0.5px;
   margin-top: 10px;
 
-  background-color:#424242;
+  background-color:#ccc;
   width: 100%;
 
 }
@@ -436,7 +435,7 @@ h2 {
   margin-top: 26px;
     margin-bottom: 16px;
     text-align: start;
-    color: rgb(13,13,13);
+    color: #333;
         font-family:  Avenir, Helvetica, Arial, sans-serif;
 
     font-style: normal;
@@ -450,7 +449,7 @@ h2 {
 }
 .ic svg {
   margin-right: 4px;
-  color: white;
+  color: #333;
 }
 .ic {
   position: static;
@@ -504,7 +503,7 @@ h2 {
   height: 100%;
 }
 .ht {
-  color: #424242;
+  color: #333;
   font-family: Google Sans;
   font-size: 2.25rem;
   font-weight: 400;
@@ -522,7 +521,7 @@ h2 {
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
-  color: #424242;
+  color: #333;
   margin-top: -8px;
   text-align: left;
   margin-bottom: 0px;
@@ -535,7 +534,7 @@ h2 {
     line-height: 1.5;
      letter-spacing: 1.2px;
     text-align: left;
-    color: #202125;
+    color: #333;
     margin-top:16px;
     margin-bottom:16px;
   }
@@ -546,7 +545,7 @@ h2 {
     line-height: 1.5;
      letter-spacing: 1.2px;
     text-align: left;
-    color: #202125;
+    color: #333;
     margin-top:16px;
     margin-bottom:16px;
   }
@@ -556,7 +555,7 @@ font-family: 'Open Sans', sans-serif;
   font-weight: 550;
   line-height: 1.5;
    letter-spacing: 1.2px;
-  color: #000;
+  color: #333;
   margin-top:16px;
   margin-bottom:16px;
   text-align: justify;

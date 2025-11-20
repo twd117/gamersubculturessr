@@ -2,8 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import { createPinia } from 'pinia'
-
-
+ 
 
 // or from 'vite-ssr/vue' or 'vite-ssr/react', which slightly improves typings
 
@@ -19,7 +18,7 @@ import { faLink,faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter,faFacebookF,faRedditAlien } from '@fortawesome/free-brands-svg-icons';
 library.add(faLink,faEnvelope,faTwitter,faFacebookF,faRedditAlien );
 
-
+ 
 export default viteSSR(
     App,
     { routes },

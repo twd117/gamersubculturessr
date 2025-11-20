@@ -13,13 +13,13 @@ export default {
   display: flex;
 }
 .ht {
-  color: #00ff00;
+  color: #212529;
   font-family: 'Orbitron', sans-serif;
   font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: 0.0175rem;
   line-height: 2.75rem;
   text-align: left;
-  text-shadow: 0 0 10px #00ff00;
+  text-shadow: none;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <header class="mhparent navbar-container">
     <div id="logo">
-      <span id="publishername">GMR</span>
+      <span id="publishername">ゲームオタク </span>
     </div>
 
     <ul class="mhchild--featured hparent">
@@ -103,7 +103,7 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding-bottom: 28px;
-  border-bottom: 1px solid #00ff00;
+  border-bottom: 1px solid #e0e0e0;
 }
 .hparent {
   padding-left: 0px;
@@ -118,7 +118,7 @@ export default {
   margin-left: 9px;
 }
 .hchild a {
-  color: #00ff00;
+  color: #000000;
   padding: 0px;
 }
 .push {
@@ -139,10 +139,10 @@ a {
 }
 
 .navbar-container ul li {
-  color: #e0e0e0;
+  color: rgba(0,0,0,0.87);
   font-weight: 500;
   text-transform: uppercase;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar-container ul li a {
@@ -162,29 +162,29 @@ a {
 .navbar-container ul li.active .underline {
   margin-top: 10px;
   width: 100%;
-  background-color: #00ff00;
+  background-color: #000000;
 }
 
 
 .blue {
  margin-top: 10px;
-  background-color: #00ff00;
+  background-color: #000000;
   width: 100%;
  }
 
 .navbar-container ul li:hover .underline {
   margin-top: 10px;
-  background-color: #00ff00;
+  background-color: #000000;
   width: 100%;
 }
 .navbar-container ul li:active a {
   transition: none;
-  color: rgba(0, 255, 0, 0.76);
+  color: rgba(0, 0, 0, 0.76);
 }
 
 .navbar-container ul li:active .underline {
   transition: none;
-  background-color: rgba(0, 255, 0, 0.76);
+  background-color: rgba(0, 0, 0, 0.76);
 }
 
 #logo {
@@ -192,17 +192,17 @@ a {
 }
 
 #publishername {
-  color: #00ff00;
+  color: #000000;
   font-style: normal;
     font-weight: 700;
     line-height: 1.4rem;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: xx-large;
-    text-shadow: 0 0 10px #00ff00;
+    text-shadow: 0 0 10px rgba(0,0,0,0.1);
 
 }
 
 .header-shadow {
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 255, 0, 0.26);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.26);
 }
 </style>

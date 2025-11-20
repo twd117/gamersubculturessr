@@ -16,11 +16,11 @@ export default {
 <style>
 footer{
   padding: 20px 0;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+  background-color: #f8f9fa;
+  color: #212529;
   text-align: center;
-  border-top: 1px solid #00ff00;
-  box-shadow: 0 -5px 15px rgba(0, 255, 0, 0.1);
+  border-top: 1px solid #dee2e6;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 .Site-content {
   flex: 1;
@@ -28,11 +28,11 @@ footer{
 
 .footer-content p{
   line-height: 22px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer-social-icon a i{
-  color: #00ff00;
+  color: #212529;
   display: inline-block;
   font-size: 14px;
   line-height: 20px;
@@ -42,8 +42,8 @@ footer{
 }
 
 .footer-social-icon a i:hover{
-  color: #fff;
-  text-shadow: 0 0 10px #00ff00;
+  color: #007bff;
+  text-shadow: none;
 }
 
 

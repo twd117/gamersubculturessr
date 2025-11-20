@@ -6,11 +6,11 @@
                       <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 100 100">
                         <defs>
                           <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#0c1e2c" stop-opacity="0"></stop>
-                            <stop offset="100%" stop-color="#cb2240" stop-opacity="1"></stop>
+                            <stop offset="0%" stop-color="#f8f9fa" stop-opacity="0"></stop>
+                            <stop offset="100%" stop-color="#007bff" stop-opacity="1"></stop>
                           </linearGradient>
                         </defs>
-                        <circle cx="50" cy="50" r="47" :stroke-dasharray="calcer()" stroke="#cb2240" stroke-width="6" fill="none"></circle>
+                        <circle cx="50" cy="50" r="47" :stroke-dasharray="calcer()" stroke="#007bff" stroke-width="6" fill="none"></circle>
                       </svg>
                     </div>
                     <div class="product-inf__percent-txt">
@@ -76,14 +76,16 @@
     padding-top: 30px;
 
     text-align: center;
-    background-color: black;
+    background-color: #f8f9fa;
     padding-bottom: 30px;
     border-radius: 9px;
       margin-top: 30px;
       margin-bottom: 30px;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .product-slider__content {
-    color: #fff;
+    color: #212529;
     padding-top: 1px;
     position: relative;
     z-index: 2;
@@ -96,9 +98,9 @@
     font-size: 44px;
     letter-spacing: 1px;
     margin-bottom: 12px;
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto', sans-serif;
     position: relative;
-    color:white
+    color:#212529
 }
 .product-inf__percent-txt {
     position: absolute;
@@ -107,10 +109,10 @@
     transform: translate(-50%, -50%);
 }
 .product-inf__title {
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 33px;
-    color: white;
+    color: #212529;
 }
   </style>

@@ -5,7 +5,11 @@ global.fetch = require('node-fetch')
 const path = require('path')
 const express = require('express')
 
-
+try {
+  tls = require('node:tls');
+} catch (err) {
+  console.error('tls support is disabled!');
+} 
 
 const dist = `../dist`
 

@@ -74,7 +74,6 @@ export default {
     height: 50px;
     padding: 5px 15px;
     box-shadow: none;
-  box-shadow: none;
     border-color: #d8d8d8;
     border-radius: 0.25rem;
       width: 50%;
@@ -86,17 +85,19 @@ export default {
   font-family: Roboto, sans-serif;
 }
 .nnews{
-      border: solid #e6e6e6;
-    border-width: 1px;
-  padding: 4.8px 0 9.6px 0;
-text-align: center;
+      border: 1px solid #dee2e6;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .news-heading{
 
   font-size: 31px;
   line-height: 1.4;
   color: #333;
-  font-family: "Gupter", serif;
+  font-family: "Roboto", serif;
     font-weight: 700;
 
 }
@@ -106,7 +107,7 @@ text-align: center;
   margin-bottom: 16px;
   margin-top: 1px;
   line-height: 1.8;
-  font-family: "Gupter", serif;
+  font-family: "Roboto", serif;
    font-weight: 400;
 
 
@@ -114,7 +115,7 @@ text-align: center;
 
 
 #nfbtn {
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto', sans-serif;
     height: 2.6rem;
     font-weight: bolder;
   width:50%;
@@ -132,7 +133,7 @@ text-align: center;
     background-size: auto 100%;
     border-radius: 4px;
     transition: all 0.25s;
-    background-color: #0000FF;
+    background-color: #007bff;
   color:white;
 }
 
@@ -145,7 +146,6 @@ text-align: center;
     height: 50px;
     padding: 5px 15px;
     box-shadow: none;
-  box-shadow: none;
     border-color: #d8d8d8;
     border-radius: 0.25rem;
       width: 70%;
@@ -159,32 +159,4 @@ text-align: center;
 }
 
 }
-
-
-/****
-
-input[type="email"]{
-  display: inline-block;
-  width: 60%;
-  padding: 18px 36px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  height: 70px;
-  margin-top: 18px;
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
-
-}
-input,
-input::-webkit-input-placeholder {
-    font-size: 16px;
-    line-height: 3;
-}
-
-
-
-
-***/
 </style>

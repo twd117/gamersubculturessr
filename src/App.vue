@@ -24,13 +24,13 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #00ff00;
+  color: #000000;
   margin-top: 6px;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   
 }
 
