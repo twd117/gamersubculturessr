@@ -5,6 +5,7 @@
 
     <Article
     v-if="homeLocalState !== null"
+      :id="id"
       :title="homeLocalState.title"
       :sub="homeLocalState.subtitle"
       :img="homeLocalState.img"
@@ -137,7 +138,7 @@
 
                     "publisher": {
                                     "@type": "Organization",
-                                    "name": "gmrnews"
+                                    "name": "Gamersub"
                                   }
 }`
          )} ]
@@ -189,7 +190,7 @@ h4 {
   script: [ {
     type:"application/ld+json",
     children:computed(()=>`{
-"@context": "https://www.gmrnews.com",
+"@context": "https://www.gamersub.com",
 "@type": "NewsArticle",
 "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
 "image": [

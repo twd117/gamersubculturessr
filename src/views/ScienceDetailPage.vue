@@ -5,6 +5,8 @@
 
   <Article
   v-if="homeLocalState !== null"
+
+    :id="id"
     :title="homeLocalState.title"
     :sub="homeLocalState.subtitle"
     :img="homeLocalState.img"
@@ -134,7 +136,7 @@ export default {
 
                   "publisher": {
                                   "@type": "Organization",
-                                  "name": "Gmrnews"
+                                  "name": "Gamersub"
                                 }
 }`
          )} ]

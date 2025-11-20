@@ -196,8 +196,9 @@ margin: 16px 0px;
 padding: 3px;
 justify-content: center;
 
-width: 40%;
+width: 60%;
 
+/* Inside auto layout */
 
 background: rgba(0, 255, 0, 0.1);
 border-radius: 0px 8px;
@@ -209,12 +210,10 @@ flex-wrap: wrap;
 margin: 16px 0px;
 }
 #tag span {
-
-  justify-content: center;
+  width: 100%;
+    justify-content: center;
   position: static;
-width: 49px;
-height: 16px;
-left: 8px;
+ left: 8px;
 top: 4px;
 color:#00ff00;
 /* Mobile/Small copy */
@@ -223,8 +222,7 @@ font-family: 'Roboto Mono', monospace;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
-line-height: 16px;
-/* identical to box height, or 114% */
+ /* identical to box height, or 114% */
 
 
 /* Primary/Teal */
@@ -234,8 +232,7 @@ color: #00ff00;
 
 /* Inside auto layout */
 
-flex: none;
-order: 0;
+ order: 0;
 flex-grow: 0;
 margin: 0px 10px;
 }

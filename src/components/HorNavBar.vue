@@ -231,7 +231,7 @@
   grid-gap:  1rem;
   grid-template-columns: repeat(
     2,
-    minmax(300px, 1fr)
+    minmax(200px, 1fr)
   );
  }
 

@@ -285,7 +285,7 @@ export const useDataStore = defineStore('data',{
             this.sidebarData = [];
       //  console.log("entertainment-----------------------------");
      
-     const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(2));
+     const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(5));
      await getDocs(q).then((querySnapshot) => {
      //  console.log("doc----", querySnapshot);
      //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
@@ -318,7 +318,7 @@ export const useDataStore = defineStore('data',{
             this.sidebarData = [];
       //  console.log("entertainment-----------------------------");
      
-     const q = query(collection(db, "entertainment"), orderBy("date",'desc'),limit(3));
+     const q = query(collection(db, "entertainment"), orderBy("date",'desc'),limit(5));
      await getDocs(q).then((querySnapshot) => {
      //  console.log("doc----", querySnapshot);
      //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
@@ -349,6 +349,138 @@ export const useDataStore = defineStore('data',{
      });
      
          },
+
+
+         async getSidebarDataTechNews(){
+          this.sidebarData = [];
+    //  console.log("entertainment-----------------------------");
+   
+   const q = query(collection(db, "news"), orderBy("date",'desc'),limit(5));
+   await getDocs(q).then((querySnapshot) => {
+   //  console.log("doc----", querySnapshot);
+   //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
+   
+     querySnapshot.forEach((doc) => {
+       this.sidebarData.push({
+         id: doc.id,
+         title: doc.data().title,
+         img: doc.data().img,
+         sub: doc.data().subtitle,
+         story: doc.data().story,
+          video: doc.data().video,
+   
+         tag: doc.data().tag,
+         date: doc.data().date,
+         imgurl: doc.data().imgurl,
+         rating:doc.data().rating
+
+       });
+     //   console.log(doc.id, "-------------entertainment");
+     });
+   //  console.log(this.sidebarData, "-------------entertainment");
+   
+   }).catch(function(err) {
+     //console.log(err, "-------------error");
+   
+   });
+   
+       },
+
+ 
+       async getSidebarDataOthers(){
+        this.sidebarData = [];
+  //  console.log("entertainment-----------------------------");
+ 
+ const q = query(collection(db, "smlc"), orderBy("date",'desc'),limit(5));
+ await getDocs(q).then((querySnapshot) => {
+ //  console.log("doc----", querySnapshot);
+ //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
+ 
+   querySnapshot.forEach((doc) => {
+     this.sidebarData.push({
+       id: doc.id,
+       title: doc.data().title,
+       img: doc.data().img,
+       sub: doc.data().subtitle,
+       story: doc.data().analyse,
+        video: doc.data().video,
+ 
+       tag: doc.data().tag,
+       date: doc.data().date,
+       imgurl: doc.data().imgurl,
+       rating:doc.data().rating
+
+     });
+   //   console.log(doc.id, "-------------entertainment");
+   });
+ //  console.log(this.sidebarData, "-------------entertainment");
+ 
+ }).catch(function(err) {
+   //console.log(err, "-------------error");
+ 
+ });
+ 
+     },
+
+
+         async getDeals(id){
+          this.data=[];
+
+          console.log(id);
+          const q = query(
+            collection(db, "Deals"),
+            where("dealsid", "==", id)
+          );
+          await getDocs(q).then((querySnapshot) => {
+ 
+            querySnapshot.forEach((doc) => {
+              this.data.push({
+                id: doc.id,
+                name: doc.data().name,
+                code: doc.data().code,
+                discountedPrice: doc.data().discountedPrice,
+                originalPrice: doc.data().originalPrice,
+                image: doc.data().image,
+                savePercent: doc.data().savePercent,
+                link:doc.data().link,
+                store: doc.data().store,
+                
+    
+              });
+         //     console.log(" title => ", doc.data().title);
+    
+            });
+ 
+          });
+
+      },
+
+
+
+
+
+
+      async getDealsVerticalBanner(  ){
+        this.data=[];
+
+         const q = query(
+          collection(db, "Deals"),
+          where("dealsid", "==", "0")
+        );
+        await getDocs(q).then((querySnapshot) => {
+           querySnapshot.forEach((doc) => {
+            this.data.push({
+              id: doc.id,
+               
+              image: doc.data().image,
+               link:doc.data().link, 
+  
+            });
+   
+          });
+         });
+ 
+    },
          
          async setNewLetterEmail(email){
     //  console.log("entertainment-----------------------------");

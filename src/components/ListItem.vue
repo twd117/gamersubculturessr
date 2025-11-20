@@ -162,9 +162,8 @@
     height: 1px;
   margin-top: 10px;
   margin-bottom:10px;
-  background-color:#00ff00;
+  background-color:#ccc;
   width: 100%;
-  box-shadow: 0 0 10px #00ff00;
  
 }
 
@@ -178,7 +177,7 @@ a {
   object-fit: cover;
    height: 100%;
    border-radius: 10px;
-   border: 1px solid #00ff00;
+   border: 1px solid #ddd;
 }
 
 .thecard {
@@ -193,21 +192,21 @@ a {
 
 p {
   font-size: 13px;
-  color: #e0e0e0;
-  font-family: 'Roboto Mono', monospace;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
 }
 
 
 .Dcard-caption span.date {
   font-size: 10px;
-  color: #00ff00;
-  font-family: 'Roboto Mono', monospace;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
 }
 .flt {
  
  font-size: 10px;
- color: #00ff00;
- font-family: 'Roboto Mono', monospace;
+ color: #666;
+ font-family: 'Roboto', sans-serif;
  
 }
 
@@ -215,9 +214,8 @@ p {
 
 .Dcard-caption h1 {
   font-size: 22px;
-  color: #00ff00;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 5px #00ff00;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
 }
 
 h5 {
@@ -231,17 +229,17 @@ h5 {
 
 .Dcard-caption span{
   
-    font-family: 'Roboto Mono', monospace;
-  color:#00ff00;
+    font-family: 'Roboto', sans-serif;
+  color:#666;
 }
 .Dcard-caption p{
-  font-family: 'Roboto Mono', monospace;
-  color:#e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  color:#333;
   
 }
 .Dcard-caption h1{
-  font-family: 'Orbitron', sans-serif;
-  color:#00ff00;
+  font-family: 'Roboto', sans-serif;
+  color:#000;
   margin-top:18px;
   margin-bottom: 18px;
 }
@@ -255,16 +253,16 @@ h5 {
   display:flex;
   margin:8px;
   align-items: center;
-  background-color: #2a2a2a;
+  background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #00ff00;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 }
 
 .crd-ctn:hover {
-  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
-  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
   transition: all 0.3s ease;
 }
 

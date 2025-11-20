@@ -4,6 +4,8 @@
 
       <Article
       v-if="homeLocalState !== null"
+
+        :id="id"
         :title="homeLocalState.title"
         :date="homeLocalState.date"
         :sub="homeLocalState.subtitle"
@@ -140,7 +142,7 @@
 
 "publisher": {
                 "@type": "Organization",
-                "name": "Gmrnews"
+                "name": "gamersub"
               }
 }`
          )} ]

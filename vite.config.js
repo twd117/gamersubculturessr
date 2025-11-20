@@ -5,7 +5,7 @@ import api from './node-server/api.js'
 import Sitemap from 'vite-plugin-sitemap';
 import allData from "./src/store/ssrstore.js";
 import { rssPlugin } from "vite-plugin-rss";
-
+const bodyParser = require('body-parser');
 
 const ASSET_URL = process.env.ASSET_URL || '';
 
@@ -14,7 +14,6 @@ export default defineConfig( async ({ command, mode }) => {
   const dynamicRoutes = await allData(true);
   const rss = await allData(false);
 
- // console.log(dynamicRoutes);
   return {
     plugins: [
       vue(),
@@ -28,6 +27,8 @@ export default defineConfig( async ({ command, mode }) => {
       {
         // Mock API during development
         configureServer({ middlewares }) {
+          middlewares.use(bodyParser.json());
+          middlewares.use(bodyParser.urlencoded({ extended: true }));
           api.forEach(({ route, handler }) => middlewares.use(route, handler))
         },
       },
@@ -45,16 +46,21 @@ export default defineConfig( async ({ command, mode }) => {
       }),
 
     ],
-
+    ssr: {
+      external: ['body-parser'],
+    },
+    optimizeDeps: {
+      exclude: ['body-parser'],
+    },
     resolve: {
       alias: {
       },
     },
     server: {
       fs: {
-      // The API logic is in outside of the project
-      strict: false,
-    },
+        // The API logic is in outside of the project
+        strict: false,
+      },
       hmr: { overlay: false },
     },
   };

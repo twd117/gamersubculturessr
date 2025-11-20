@@ -121,19 +121,19 @@ export default {
 /****************card******/
 a {
   text-decoration: none;
-  color: #00ff00;
+  color: #007bff;
 }
 a:hover {
-  color: #fff;
+  color: #0056b3;
 }
 
 .card {
   padding: 12px;
-  background-color: #2a2a2a;
+  background-color: #fff;
   margin-bottom: 1.6rem;
-  border: 1px solid #00ff00;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card__padding {
@@ -169,24 +169,25 @@ a:hover {
     flex-direction: column;
 }
 .card__article a {
+  
   text-decoration: none;
-  text-align: left;
-  transition: all 0.5s ease;
-  font-family: "Orbitron", sans-serif;
-  font-size: 24px;
-  line-height: 32px;
-  color: #00ff00;
-  letter-spacing: 0.28px;
+    text-align: left;
+    transition: all .5s ease;
+    font-family: Roboto,sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    color: #424242;
+    letter-spacing: .28px;
 }
 .card__article a:hover {
-  color: #fff;
+  color: #0056b3;
 }
 .card-text {
   text-align: justify;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #e0e0e0;
+  color: #333;
   margin-top: 4px;
 }
 /* card action */
@@ -217,10 +218,11 @@ a:hover {
   font-size: 0.875rem;
   font-weight: 400;
   font-style: normal;
-  color: #00ff00;
-  font-family: "Roboto Mono", monospace;
+  color: #000;
+  font-family: "Roboto", sans-serif;
   margin-left: 0.8rem;
   margin-bottom: 1rem;
+  align-items: center;
 }
 
 .lk-tag url {
@@ -229,12 +231,12 @@ a:hover {
 
 .material-icons {
   margin-right: 6px;
-  color: #00ff00;
+  color: #000;
 }
 
 .card-shadow:hover {
-  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5);
-  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 750px) {

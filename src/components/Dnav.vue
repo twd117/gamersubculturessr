@@ -77,7 +77,7 @@ a {
 .navbar-container {
   margin: 0px;
   width: 100%;
-}
+ }
 
 .navbar-container ul {
   padding-top: 27px;
@@ -94,6 +94,7 @@ a {
   text-decoration: none;
   display: inline-block;
   transition: color 0.5s;
+  color: #333;
 }
 
 .navbar-container ul li .underline {
@@ -107,29 +108,29 @@ a {
 .navbar-container ul li.active-link .underline {
   margin-top: 10px;
   width: 100%;
-  background-color: blue;
+  background-color: #333;
 }
 
 .navbar-container ul li:hover .underline {
   margin-top: 10px;
-  background-color: blue;
+  background-color: #333;
   width: 100%;
-}
+ }
 .blue {
  margin-top: 10px;
-  background-color: blue;
+  background-color: #333;
   width: 100%;
  }
 
 
 .navbar-container ul li:active a {
   transition: none;
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(0, 0, 0, 0.76);
 }
 
 .navbar-container ul li:active .underline {
   transition: none;
-  background-color: rgba(255, 255, 255, 0.76);
+  background-color: rgba(0, 0, 0, 0.76);
 }
 
 #logo  {
@@ -137,11 +138,11 @@ a {
 }
 
 #logo a {
-  color: #2c3e50;
+  color: #000;
 }
 
 
 .header-shadow {
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.26);
+  box-shadow: none;
 }
 </style>

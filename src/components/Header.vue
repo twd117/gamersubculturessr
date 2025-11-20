@@ -162,7 +162,7 @@ a {
 .navbar-container ul li.active .underline {
   margin-top: 10px;
   width: 100%;
-  background-color: #000000;
+  background-color: #FF7A30;
 }
 
 
@@ -174,7 +174,7 @@ a {
 
 .navbar-container ul li:hover .underline {
   margin-top: 10px;
-  background-color: #000000;
+  background-color:#FF7A30;
   width: 100%;
 }
 .navbar-container ul li:active a {
@@ -184,7 +184,7 @@ a {
 
 .navbar-container ul li:active .underline {
   transition: none;
-  background-color: rgba(0, 0, 0, 0.76);
+  background-color:#E9E3DF;
 }
 
 #logo {
@@ -204,5 +204,30 @@ a {
 
 .header-shadow {
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.26);
+}
+
+@media (max-width: 600px) {
+  .mhparent {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar-container ul {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hchild {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 15px;
+  }
+
+  #logo {
+    margin-top: 15px;
+  }
 }
 </style>

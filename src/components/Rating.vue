@@ -112,7 +112,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
-    font-size: 33px;
+    font-size: 23px;
     color: #212529;
 }
   </style>

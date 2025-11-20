@@ -78,8 +78,7 @@
   display:flex;
   flex-direction:column;
   width: 75%;
-  background-color: #1a1a1a;
-}
+ }
 @media screen and (max-width: 900px) {
   #fc {
  

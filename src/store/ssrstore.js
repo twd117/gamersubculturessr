@@ -136,22 +136,22 @@ let  xsitenews = news.map(name => `/smlc/${name["title"]}/${name["id"]}`);
 
    let rssgames = games.map((name) =>  ({
      title : `${name["title"]}`,
-     link : `https://www.gmrnews.com/articles/${name["title"]}/${name["id"]}`,
+     link : `https://www.gamersub.com/articles/${name["title"]}/${name["id"]}`,
      pubDate : new Date(name['date']['seconds']*1000) })
    );
    let rsstech = techs.map((name) =>  ({
     title : `${name["title"]}`,
-    link : `https://www.gmrnews.com/tech/${name["title"]}/${name["id"]}`,
+    link : `https://www.gamersub.com/tech/${name["title"]}/${name["id"]}`,
     pubDate : new Date(name['date']['seconds']*1000) })
   );
   let rssent = ent.map((name) =>  ({
     title : `${name["title"]}`,
-    link : `https://www.gmrnews.com/entertainment/${name["title"]}/${name["id"]}`,
+    link : `https://www.gamersub.com/entertainment/${name["title"]}/${name["id"]}`,
     pubDate : new Date(name['date']['seconds']*1000) })
   );
   let rssnews = news.map((name) =>  ({
     title : `${name["title"]}`,
-    link : `https://www.gmrnews.com/smlc/${name["title"]}/${name["id"]}`,
+    link : `https://www.gamersub.com/smlc/${name["title"]}/${name["id"]}`,
     pubDate : new Date(name['date']['seconds']*1000)})
   );
 

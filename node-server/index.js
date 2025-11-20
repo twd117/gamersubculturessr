@@ -1,9 +1,8 @@
 
 // This is a simple Node server that uses the built project.
-
-global.fetch = require('node-fetch')
-const path = require('path')
+ const path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser');
 
 try {
   tls = require('node:tls');
@@ -25,6 +24,9 @@ const { default: renderPage } = require(`${dist}/server/`)
 const api = require('./api')
 
 const server = express()
+
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve every static asset route
 for (const asset of ssr.assets || []) {
@@ -63,4 +65,3 @@ server.get('*', async (request, response) => {
 const port = 8080
 console.log(`Server started: http://localhost:${port}`)
 server.listen(port)
-

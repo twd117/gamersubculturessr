@@ -19,25 +19,6 @@ const root = {
   }),
 }
 
-const parseBody = (req) => {
-  return new Promise((resolve, reject) => {
-    let body = ''
-
-    req.on('data', (chunk) => {
-      body += chunk
-    })
-
-    req.on('end', () => {
-      let bodyJs = {}
-      try {
-        resolve(JSON.parse(body))
-      } catch (error) {
-        reject(error)
-      }
-    })
-  })
-}
-
 module.exports = [
   {
     route: '/api/getProps',
@@ -59,14 +40,12 @@ module.exports = [
     route: '/graphql',
     method: 'post',
     async handler(req, res) {
-      const body = await parseBody(req)
-
       const data = await graphql(
         schema,
-        body.query,
+        req.body.query,
         root,
-        body.operationName,
-        body.variables
+        req.body.operationName,
+        req.body.variables
       )
 
       res.setHeader('Cache-Control', 'max-age=0')

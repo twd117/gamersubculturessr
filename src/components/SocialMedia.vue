@@ -31,7 +31,6 @@
 <script>
   import { getModularInstance } from '@firebase/util';
 import { escapeHtml } from '@vue/shared';
-import { urlencoded } from 'body-parser';
 import { copyText } from 'vue3-clipboard';
 
 export default {

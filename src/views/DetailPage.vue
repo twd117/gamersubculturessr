@@ -3,6 +3,8 @@
   <Suspense>
   <Article
   v-if="homeLocalState !== null"
+
+    :id="id" 
     :title="homeLocalState.title"
     :sub="homeLocalState.subtitle"
     :img="homeLocalState.img"
@@ -143,7 +145,7 @@ export default {
 
               "publisher": {
                               "@type": "Organization",
-                              "name": "gmrnews"
+                              "name": "gamersub"
                             }
 }`
          )} ]
@@ -162,6 +164,8 @@ export default {
            initialState.homeLocalState = homeLocalState.value;
          }
        }
+
+       console.log("homeLocalState",homeLocalState  )
        return {
         homeLocalState
        }

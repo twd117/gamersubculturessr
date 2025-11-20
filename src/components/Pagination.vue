@@ -59,9 +59,9 @@ export default {
   line-height: 32px;
   border-radius: 2px;
   font-size: 0.9em;
-  background-color: #007bff;
+  background-color: #FF7A30;
   color: #fff;
-  border: 1px solid #007bff;
+  border: 1px solid #FF7A30;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -75,7 +75,7 @@ export default {
 }
 
 .button.raised:hover {
-  background-color: #0056b3;
+  background-color: #465C88;
   color: #fff;
   box-shadow: 0 8px 17px 0 rgba(0, 123, 255, 0.2);
 }
