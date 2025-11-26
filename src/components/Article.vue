@@ -62,8 +62,7 @@
         </div>
  
   </div>
-
-  <NewsList  :nslug="slug"  :items="Trenddata" />
+   <NewsList  :nslug="slug"  :items="Trenddata" />
 </template>
 
 <script>

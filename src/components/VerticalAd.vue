@@ -3,12 +3,12 @@
     <div class="one">
      <h1> LATEST NEWS </h1>
    </div>
-  <div v-for=" (d, key, index) in data" :key="key">
+  <div class="aditem" v-for=" (d, key, index) in data" :key="key">
      
     <ShrinkCard :sslug="slug"   :id="d.id" :title="d.title" :imageUrl="d.img[0].downloadURL" /> 
     <div  class="vads" v-if="key === 0">
   <a   v-if='datav && datav.length > 0    ' :href='datav[0].link  ' target='_parent'>
-      <img width='100%' height='auto'
+      <img class="adimg"
        :src='datav[0].image '
         />
     </a></div>
@@ -56,12 +56,27 @@ export default {
 </script>
 
 <style scoped>
- 
+ .aditem {
+
+  flex-direction: column-reverse;
+display:flex;
+justify-content:center;
+align-items:center;
+
+ }
 .vads {
  margin-top:6px;
 margin-bottom:6px;
+display:flex;
+justify-content:center;
+align-items:center;
 
 
+}
+.adimg{
+     width: 100%;
+  max-width:310px;
+   height:'auto';
 
 }
 .vertical-ad {
