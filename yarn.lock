@@ -2260,6 +2260,11 @@ array-flatten@3.0.0:
   resolved "https://registry.npmjs.org/array-flatten/-/array-flatten-3.0.0.tgz"
   integrity sha512-zPMVc3ZYlGLNk4mpK1NzP2wg0ml9t7fUgDsayR5Y5rSzxQilzR9FGu/EH2jQOcKSAeAfWeylyW8juy3OkWRvNA==
 
+array-shuffle@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/array-shuffle/-/array-shuffle-4.0.0.tgz"
+  integrity sha512-C7U1jQYpMCCQcjhPNtngE3Fki2+wFTaPzc5K4jJPY9Wwce9aQp8BwAkgyMhG6WIQEaE1qnrtkT6XoYkatxXTSQ==
+
 array-union@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/array-union/-/array-union-2.1.0.tgz"
@@ -6063,6 +6068,13 @@ kind-of@^6.0.3:
   resolved "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
+knuth-shuffle-seeded@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/knuth-shuffle-seeded/-/knuth-shuffle-seeded-1.0.6.tgz"
+  integrity sha512-9pFH0SplrfyKyojCLxZfMcvkhf5hH0d+UwR9nTVJ/DDQJGuzcXjTwB7TP7sDfehSudlGGaOLblmEWqv04ERVWg==
+  dependencies:
+    seed-random "~2.2.0"
+
 kuler@1.0.x:
   version "1.0.1"
   resolved "https://registry.npmjs.org/kuler/-/kuler-1.0.1.tgz"
@@ -8066,6 +8078,11 @@ scheduler@^0.20.2:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+
+seed-random@~2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/seed-random/-/seed-random-2.2.0.tgz"
+  integrity sha512-34EQV6AAHQGhoc0tn/96a9Fsi6v2xdqe/dMUwljGRaFOzR3EgRmECvD0O8vi8X+/uQ50LGHfkNu/Eue5TPKZkQ==
 
 select@^1.1.2:
   version "1.1.2"

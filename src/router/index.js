@@ -3,8 +3,6 @@ import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
 import NewsDetailPage from "../views/NewsDetailPage.vue";
 import Smlc from "../views/smlc.vue";
-import Deals from "../views/Deals.vue";
-
 
 const routes = [
 
@@ -40,14 +38,6 @@ const routes = [
     component: Smlc,
     props: true
   },
-
-   {
-    path: "/deals",
-    name: "Deals",
-    component: Deals,
-    props: true
-  },
-
 
   {
     path: "/:category",

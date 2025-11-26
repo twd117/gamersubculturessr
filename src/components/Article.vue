@@ -57,9 +57,8 @@
       
 
      </div>
-
-    <div class="ad-container">
-          <VerticalAd    :data="Newsdata.slice(1)" />
+     <div class="ad-container">
+          <VerticalAd    :data="Newsdata " />
         </div>
  
   </div>
@@ -85,8 +84,9 @@ import { useDataStore } from "../store/useDataStore.js";
 import VerticalAd from './VerticalAd.vue';
 import PowerStationDeals from "./PowerStationDeals.vue";
 import AdComponent from './AdComponent.vue';
-   
-export default defineComponent({
+import DealsComponent from './DealsComponent.vue';
+
+ export default defineComponent({
   mounted() {
     let Script = document.createElement("script");
     let amazonScript = document.createElement("script");
@@ -120,8 +120,8 @@ export default defineComponent({
     Trenddata = dataStore.sidebarData;
 
     await dataStore.getSidebarDataGames();
-    Newsdata = dataStore.sidebarData;
-
+    Newsdata =  dataStore.sidebarData.slice(2);
+     
      await dataStore.getDeals(props.id);
     dealsdata = dataStore.data;
  
@@ -142,7 +142,7 @@ export default defineComponent({
     TopStories: TopStories,
     PowerStationDeals: PowerStationDeals,
     AdComponent,
-
+    DealsComponent,
     VerticalAd,
   },
   name: "Article",

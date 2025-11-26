@@ -1,16 +1,22 @@
 <template>
   <div class="vertical-ad">
-   
-    <a  class="vads" v-if='datav && datav.length > 0' :href='datav[0].link  ' target='_parent'>
+    <div class="one">
+     <h1> LATEST NEWS </h1>
+   </div>
+  <div v-for=" (d, key, index) in data" :key="key">
+     
+    <ShrinkCard :sslug="slug"   :id="d.id" :title="d.title" :imageUrl="d.img[0].downloadURL" /> 
+    <div  class="vads" v-if="key === 0">
+  <a   v-if='datav && datav.length > 0    ' :href='datav[0].link  ' target='_parent'>
       <img width='100%' height='auto'
        :src='datav[0].image '
         />
-    </a>
+    </a></div>
+  
+  </div>
+     
 
- 
-
-     <ShrinkCard :sslug="slug" v-for="d in data" :id="d.id" :title="d.title" :imageUrl="d.img[0].downloadURL" /> 
-    
+  
 
  
      </div>
@@ -18,11 +24,9 @@
 
 <script>
 import  ShrinkCard from './ShrinkCard.vue';
-import { defineComponent } from 'vue';
-
+ 
 import { useDataStore } from "../store/useDataStore.js";
-import Article from './Article.vue';
-
+ 
 export default {
   name: 'VerticalAd',
   components: {
@@ -52,15 +56,55 @@ export default {
 </script>
 
 <style scoped>
-
+ 
 .vads {
+ margin-top:6px;
+margin-bottom:6px;
 
-margin-top:4px;
+
+
 }
 .vertical-ad {
    height: 1450px; /* 1043px * 1.39 */
    display: flex;
   flex-direction:column;
    align-items: center;
+  
+
 }
+
+
+
+/* === HEADING STYLE #1 === */
+
+.one {
+  width:100%;
+ display:flex;
+ justify-content:center;
+
+
+}
+
+.one h1 {
+  font-weight: 700; color:#202020;
+  text-transform: uppercase;
+  word-spacing: 1px; letter-spacing:2px;
+  text-align: center;
+   padding-bottom: 8px;
+  margin-bottom:4px;
+  font-size:24px;
+
+  
+
+}
+ 
+.one h1:after {
+  width: 100%;
+  height: 1px;
+  display: block;
+  content: "";
+   margin-top: 25px;
+   background-color: #b80000;
+}
+
 </style>

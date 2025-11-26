@@ -28,7 +28,7 @@ export const useDataStore = defineStore('data',{
              await getDocs(q).then((querySnapshot) => {
                this.lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
              //  console.log("last", this.lastVisible);
-       
+               
                querySnapshot.forEach((doc) => {
                  this.data.push({
                    id: doc.id,
@@ -133,6 +133,7 @@ export const useDataStore = defineStore('data',{
 
       },
 
+     
          async getNextGamesArticles() {
             //  Construct a new query starting at this document,
             // get the next 25 cities.
@@ -280,6 +281,9 @@ export const useDataStore = defineStore('data',{
          }
          
           },
+
+
+         
          
     async getSidebarDataGames(){
             this.sidebarData = [];
@@ -287,8 +291,7 @@ export const useDataStore = defineStore('data',{
      
      const q = query(collection(db, "articles"), orderBy("_createdAt",'desc'),limit(5));
      await getDocs(q).then((querySnapshot) => {
-     //  console.log("doc----", querySnapshot);
-     //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
+      //console.log("entertainment-------------------------fetch----",querySnapshot.docs.length);
      
        querySnapshot.forEach((doc) => {
          this.sidebarData.push({
@@ -306,8 +309,7 @@ export const useDataStore = defineStore('data',{
          });
        //   console.log(doc.id, "-------------entertainment");
        });
-     //  console.log(this.sidebarData, "-------------entertainment");
-     
+      
      }).catch(function(err) {
        //console.log(err, "-------------error");
      
@@ -341,8 +343,7 @@ export const useDataStore = defineStore('data',{
          });
        //   console.log(doc.id, "-------------entertainment");
        });
-     //  console.log(this.sidebarData, "-------------entertainment");
-     
+      
      }).catch(function(err) {
        //console.log(err, "-------------error");
      
@@ -377,8 +378,7 @@ export const useDataStore = defineStore('data',{
        });
      //   console.log(doc.id, "-------------entertainment");
      });
-   //  console.log(this.sidebarData, "-------------entertainment");
-   
+    
    }).catch(function(err) {
      //console.log(err, "-------------error");
    
@@ -469,7 +469,7 @@ export const useDataStore = defineStore('data',{
         );
         await getDocs(q).then((querySnapshot) => {
            querySnapshot.forEach((doc) => {
-            this.data.push({
+             this.data.push({
               id: doc.id,
                
               image: doc.data().image,
@@ -479,6 +479,8 @@ export const useDataStore = defineStore('data',{
    
           });
          });
+
+          
  
     },
          

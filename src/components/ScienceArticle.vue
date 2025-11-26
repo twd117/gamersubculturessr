@@ -51,7 +51,7 @@
     </div>
 
     <div class="ad-container">
-      <VerticalAd :data="Newsdata.slice(1)" />
+      <VerticalAd :data="Newsdata " />
     </div>
   </div>
 
@@ -110,7 +110,7 @@ export default defineComponent({
     Trenddata = dataStore.sidebarData;
 
     await dataStore.getSidebarDataGames();
-    Newsdata = dataStore.sidebarData;
+    Newsdata = dataStore.sidebarData.slice(2); 
       await dataStore.getDeals(props.id);
          dealsdata = dataStore.data;
     return { Trenddata,slug, TopStoriesdata, Newsdata , dealsdata};
