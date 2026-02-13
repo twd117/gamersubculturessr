@@ -95,6 +95,10 @@ export default {
                 }
               ,
               {
+                name:`twitter:site`,
+                content:'@vanderlind_0',
+                },
+              {
                 name:`twitter:title`,
                 content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
                 },

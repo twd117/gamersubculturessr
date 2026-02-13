@@ -100,12 +100,17 @@ export default {
         
         {
                 name:`twitter:card`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
                 }
               ,
+
               {
                 name:`twitter:title`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+                content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+                },
+              {
+                name:`twitter:site`,
+                content:'@vanderlind_0',
                 },
                 {
                 name:`twitter:description`,
