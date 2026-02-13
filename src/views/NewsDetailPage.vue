@@ -113,6 +113,10 @@
                 name:`twitter:image`,
                 content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
                 }, 
+                {
+                name:`twitter:card`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                },
 
              {
               name: `og:title`,

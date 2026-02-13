@@ -17,7 +17,7 @@ export default defineConfig( async ({ command, mode }) => {
   return {
     plugins: [
       vue(),
-      Sitemap({  hostname:"https://www.gmrnews.com",outDir:"public",dynamicRoutes }),
+      Sitemap({  hostname:"https://www.gamersub.com",outDir:"public",dynamicRoutes }),
 
       viteSSR({
         build: {
@@ -39,9 +39,9 @@ export default defineConfig( async ({ command, mode }) => {
          ...rss
         ],
         channel: {
-          title: "Gmrnews RSS Feed",
-          link: "https://www.gmrnews.com",
-          description: "Rss feed for https://www.gmrnews.com.",
+          title: "Gamersub RSS Feed",
+          link: "https://www.gamersub.com",
+          description: "Rss feed for https://www.gamersub.com.",
         },
       }),
 
