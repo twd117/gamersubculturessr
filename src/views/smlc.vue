@@ -92,11 +92,8 @@
            meta: [
            
 
-          {
-                name:`twitter:card`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
-                }
-              ,
+        
+              
               {
                 name:`twitter:site`,
                 content:'@vanderlind_0',

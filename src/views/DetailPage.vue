@@ -98,11 +98,7 @@ export default {
 
          meta: [
         
-        {
-                name:`twitter:card`,
-                content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
-                }
-              ,
+        
 
               {
                 name:`twitter:title`,
