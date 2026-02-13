@@ -196,9 +196,7 @@ margin: 16px 0px;
 padding: 3px;
 justify-content: center;
 
-width: 60%;
-
-/* Inside auto layout */
+width:fit-content; 
 
 background: rgba(0, 255, 0, 0.1);
 border-radius: 0px 8px;

@@ -22,7 +22,7 @@
         
       </div>
       <PowerStationDeals  v-if="dealsdata"  :deals="dealsdata" />
-
+       
       <div v-if="video" class="video-container">
         <iframe
           id="ytb"
@@ -40,12 +40,18 @@
       </div>
 
       <Rating :rating="rating" />
-
+      <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="9c3e65ec-b6db-438a-a139-0d29c8e61e31"
+  data-page-id="{{ id }}"
+  data-page-url="{{ currentUrl }}"
+  data-page-title="{{ title }}"
+></div>
       <TopStories :stories="TopStoriesdata" />
 
 
  
-
+ 
       <div id="ratingandsocial">
         <div class="rs">
           <SocialMedia :url="currentUrl" :title="title" />
@@ -55,7 +61,7 @@
       <HorNavBar :isGame="true" />
       <NewsLetters />
       
-
+ 
      </div>
      <div class="ad-container">
           <VerticalAd    :data="Newsdata " />
@@ -84,25 +90,21 @@ import VerticalAd from './VerticalAd.vue';
 import PowerStationDeals from "./PowerStationDeals.vue";
 import AdComponent from './AdComponent.vue';
 import DealsComponent from './DealsComponent.vue';
-
+ 
  export default defineComponent({
   mounted() {
     let Script = document.createElement("script");
-    let amazonScript = document.createElement("script");
-    amazonScript.setAttribute("src", "//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=a7d57b86-663b-465e-9a91-6ede27915f95");
-    document.body.appendChild(amazonScript);
-
+    
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
-    let adScript = document.createElement("script");
-    adScript.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1291356316800764");
-    adScript.setAttribute("crossorigin", "anonymous");
-    adScript.async = true;
-    document.head.appendChild(adScript);
-    let adpushScript = document.createElement("script");
-    adpushScript.innerHTML = "(adsbygoogle = window.adsbygoogle || []).push({});";
-    document.body.appendChild(adpushScript);
-  },
+  
+    let commetsyst = document.createElement("script");
+    commetsyst.setAttribute("src", "https://cusdis.com/js/cusdis.es.js");
+    document.body.appendChild(commetsyst);
+
+ 
+
+   },
    
   async setup(props) {
     const dataStore = useDataStore();
@@ -123,9 +125,8 @@ import DealsComponent from './DealsComponent.vue';
      
      await dataStore.getDeals(props.id);
     dealsdata = dataStore.data;
- 
-
-
+    
+    
      return { Trenddata,slug ,TopStoriesdata, Newsdata, dealsdata};
   },
   components: {
@@ -142,7 +143,7 @@ import DealsComponent from './DealsComponent.vue';
     PowerStationDeals: PowerStationDeals,
     AdComponent,
     DealsComponent,
-    VerticalAd,
+    VerticalAd, 
   },
   name: "Article",
   props: [
@@ -165,6 +166,7 @@ import DealsComponent from './DealsComponent.vue';
   ],
   data() {
     return {
+      showComments: false,
       currentUrl: "",
       adsData: [
         {
@@ -180,6 +182,16 @@ import DealsComponent from './DealsComponent.vue';
       ],
     };
   },
+  computed: {
+    fastCommentsConfig() {
+      return {
+        tenantId: 'mztLi86h3bc',
+        urlId: this.id,
+        onRender: () => { this.showSpinner = false }
+      }
+    }
+  },
+
   created() {
     const route = useRoute();
     this.currentUrl = "https://gamersub.com" + route.path;

@@ -88,10 +88,26 @@ export default {
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
 
          meta: [
-         {
-          name:`twitter:card`,
-          content:`summary_large_image`
-        },
+        
+        {
+                name:`twitter:card`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                }
+              ,
+              {
+                name:`twitter:title`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+                },
+                {
+                name:`twitter:description`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
+                }, 
+               
+                {
+                name:`twitter:image`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                },
+
            {
           name: `og:title`,
           content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),

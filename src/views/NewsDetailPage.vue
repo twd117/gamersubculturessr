@@ -97,9 +97,23 @@
              meta: [
              {
                 name:`twitter:card`,
-                content:`summary_large_image`
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
                 }
               ,
+              {
+                name:`twitter:title`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+                },
+                {
+                name:`twitter:description`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
+                }, 
+               
+                {
+                name:`twitter:image`,
+                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                }, 
+
              {
               name: `og:title`,
               content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
@@ -117,6 +131,13 @@
               name: `og:type`,
               content: "article",
             },
+            
+            {
+              name: `og:type`,
+              content: "article",
+            },
+
+
              ],
 
              link: [{ rel: 'stylesheet' }],
