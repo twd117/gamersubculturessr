@@ -72,7 +72,7 @@
               }
          // Hydrate from initialState, if there's anything
          const homeLocalState = ref(initialState.homeLocalState || null)
-        //   console.log("Home---",homeLocalState.value);
+          console.log("Home---",homeLocalState.value);
 
 
          try{
@@ -92,11 +92,29 @@
            meta: [
            
 
-        
+           {
+            name: `topic`,
+            content: "gamer subculture",
+          },
+
+          {
+            name: `keywords`,
+            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+          },
+
+          {
+            name: `category`,
+            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+          },
+
+          {
+            name: `news_keywords`,
+            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+          },
               
-              {
-                name:`twitter:site`,
-                content:'@vanderlind_0',
+           {
+                name:`twitter:card`,
+                content: 'summary_large_image',
                 },
               {
                 name:`twitter:title`,
@@ -111,10 +129,7 @@
                 name:`twitter:image`,
                 content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
                 },
-                {
-                name:`twitter:card`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
-                },
+                 
              {
             name: `og:title`,
             content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : "" ),
@@ -128,10 +143,16 @@
             name: `og:image`,
             content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
           },
-            {
+           
+
+          {
             name: `og:type`,
             content: "article",
           },
+
+         
+
+ 
 
            ],
 

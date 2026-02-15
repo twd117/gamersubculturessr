@@ -99,15 +99,35 @@ export default {
          meta: [
         
         
+         {
+            name: `topic`,
+            content: "game",
+          },
 
+          {
+            name: `keywords`,
+            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+          },
+
+          {
+            name: `category`,
+            content: 'gaming',
+          },
+
+          {
+            name: `news_keywords`,
+            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+          },
+              
+           {
+                name:`twitter:card`,
+                content: 'summary_large_image',
+                },
               {
                 name:`twitter:title`,
                 content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
                 },
-              {
-                name:`twitter:site`,
-                content:'@vanderlind_0',
-                },
+              
                 {
                 name:`twitter:description`,
                 content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
@@ -117,10 +137,7 @@ export default {
                 name:`twitter:image`,
                 content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
                 },
-                {
-                name:`twitter:card`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
-                },
+                
          {
           name: `og:title`,
           content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
