@@ -40,13 +40,7 @@
       </div>
 
       <Rating :rating="rating" />
-      <div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="9c3e65ec-b6db-438a-a139-0d29c8e61e31"
-  data-page-id="{{ id }}"
-  data-page-url="{{ currentUrl }}"
-  data-page-title="{{ title }}"
-></div>
+      
       <TopStories :stories="TopStoriesdata" />
 
 
