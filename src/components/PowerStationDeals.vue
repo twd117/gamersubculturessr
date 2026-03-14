@@ -10,7 +10,7 @@
         <span class="save-info">save {{ deal.savePercent }}%</span>
       </div>
       <p class="discounted-price">{{ deal.discountedPrice }} at {{ deal.store }}</p>
-      <a :href="deal.link">
+      <a target="_blank" :href="deal.link">
         <button class="coupon-button" v-if="deal.code && deal.code !== ''">Use code '{{ deal.code }}'</button>
         <button  class="coupon-button" v-else>Use Link</button>
       </a>

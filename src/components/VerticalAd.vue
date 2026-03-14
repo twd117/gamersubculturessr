@@ -7,7 +7,7 @@
      
     <ShrinkCard :sslug="slug"   :id="d.id" :title="d.title" :imageUrl="d.img[0].downloadURL" /> 
     <div  class="vads" v-if="key === 0">
-  <a   v-if='datav && datav.length > 0    ' :href='datav[0].link  ' target='_parent'>
+  <a   v-if='datav && datav.length > 0    ' :href='datav[0].link  ' target="_blank" >
       <img class="adimg"
        :src='datav[0].image '
         />

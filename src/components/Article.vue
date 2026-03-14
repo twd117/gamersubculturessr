@@ -43,8 +43,8 @@
       
       <TopStories :stories="TopStoriesdata" />
 
-
- 
+      
+       
  
       <div id="ratingandsocial">
         <div class="rs">
@@ -84,7 +84,8 @@ import VerticalAd from './VerticalAd.vue';
 import PowerStationDeals from "./PowerStationDeals.vue";
 import AdComponent from './AdComponent.vue';
 import DealsComponent from './DealsComponent.vue';
- 
+
+
  export default defineComponent({
   mounted() {
     let Script = document.createElement("script");
@@ -92,15 +93,39 @@ import DealsComponent from './DealsComponent.vue';
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
   
-    let commetsyst = document.createElement("script");
-    commetsyst.setAttribute("src", "https://cusdis.com/js/cusdis.es.js");
-    document.body.appendChild(commetsyst);
+    let ads = document.createElement("script");
+    ads.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6434547547999163");
+    ads.setAttribute("crossorigin", "anonymous");
+    ads.setAttribute("crossorigin", "anonymous");
+    ads.setAttribute("async", "");
+    
+    document.body.appendChild(ads);
 
  
 
    },
    
   async setup(props) {
+    window.adsbygoogle = window.adsbygoogle || [];
+
+    // 2. Create the ad container (ins element)
+    var ins = document.createElement("ins");
+    ins.setAttribute('class', 'adsbygoogle');
+    ins.setAttribute('style', 'display:block;');
+    // Replace with your actual ad client and ad slot IDs from your AdSense account
+    ins.setAttribute('data-ad-client', 'ca-pub-YOUR-CLIENT-ID'); 
+    ins.setAttribute('data-ad-slot', 'YOUR-AD-SLOT-ID');
+    ins.setAttribute('data-ad-format', 'auto');
+    ins.setAttribute('data-full-width-responsive', 'true');
+
+    // 3. Append the ins element to your desired location in the DOM
+    // For example, appending to the body or a specific div (e.g., document.getElementById('ad-container'))
+    document.body.appendChild(ins);
+
+    // 4. Push the ad request
+    window.adsbygoogle.push({});
+
+
     const dataStore = useDataStore();
     let TopStoriesdata = [];
     let Trenddata = [];
@@ -124,6 +149,7 @@ import DealsComponent from './DealsComponent.vue';
      return { Trenddata,slug ,TopStoriesdata, Newsdata, dealsdata};
   },
   components: {
+    
     SocialMedia: SocialMediaVue,
     Markdown: MarkdownVue,
     NewsLetters: NewsLettersVue,
@@ -137,7 +163,8 @@ import DealsComponent from './DealsComponent.vue';
     PowerStationDeals: PowerStationDeals,
     AdComponent,
     DealsComponent,
-    VerticalAd, 
+    VerticalAd,
+
   },
   name: "Article",
   props: [
