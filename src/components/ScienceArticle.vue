@@ -85,10 +85,7 @@ export default defineComponent({
     
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
-  
-    let commetsyst = document.createElement("script");
-    commetsyst.setAttribute("src", "https://cusdis.com/js/cusdis.es.js");
-    document.body.appendChild(commetsyst);
+   
   },
 
   async setup(props) {

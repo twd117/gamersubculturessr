@@ -93,13 +93,7 @@ import DealsComponent from './DealsComponent.vue';
     Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
     document.head.appendChild(Script);
   
-    let ads = document.createElement("script");
-    ads.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6434547547999163");
-    ads.setAttribute("crossorigin", "anonymous");
-    ads.setAttribute("crossorigin", "anonymous");
-    ads.setAttribute("async", "");
     
-    document.body.appendChild(ads);
 
  
 
