@@ -158,6 +158,8 @@
   <style scoped>
  
 
+
+
  .line {
     height: 1px;
   margin-top: 10px;
@@ -308,12 +310,15 @@ p {
   display:flex;
   flex-direction: column;
   margin:8px;
+  padding:16px;
   justify-content: center;
 }
   .Dcard-caption span.date {
   font-size: 10px;
   margin-top: 8px;;
 }
+
+
 .flt {
  
  display: none ;
@@ -325,7 +330,8 @@ p {
   font-size: 11px;
 }
 .card-img {
-  width:100%;}
+  width:100%;
+}
 }
 
 
