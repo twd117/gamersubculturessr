@@ -34,6 +34,7 @@
           allowfullscreen
         ></iframe>
       </div>
+      <div class="QtDRQr421398"></div>
 
       <div class="tagcat">
         <span class="tagspan">{{ tag }}</span>
@@ -65,6 +66,10 @@
    <NewsList  :nslug="slug"  :items="Trenddata" />
 </template>
 
+
+
+        
+
 <script>
 import SocialMediaVue from "./SocialMedia.vue";
 import MarkdownVue from 'vue3-markdown-it';
@@ -94,30 +99,32 @@ import DealsComponent from './DealsComponent.vue';
     document.head.appendChild(Script);
   
     
+    window.k_init = window.k_init || [];
+    k_init.push({
+        id: 'QtDRQr421398',
+        type: 'bn',
+        domain: 'hdbkome.com',
+        refresh: false,
+        next: 0
+    });
+    
+    var s = document.createElement('script');
+    s.setAttribute('async', true);
+    s.setAttribute('charset', 'utf-8');
+    s.setAttribute('data-cfasync', false);
+    s.src = 'https://hdbkome.com/h0ynr39q.js'; 
+    document.head && document.head.appendChild(s);
+
+
+
 
  
 
    },
    
   async setup(props) {
-    window.adsbygoogle = window.adsbygoogle || [];
 
-    // 2. Create the ad container (ins element)
-    var ins = document.createElement("ins");
-    ins.setAttribute('class', 'adsbygoogle');
-    ins.setAttribute('style', 'display:block;');
-    // Replace with your actual ad client and ad slot IDs from your AdSense account
-    ins.setAttribute('data-ad-client', 'ca-pub-YOUR-CLIENT-ID'); 
-    ins.setAttribute('data-ad-slot', 'YOUR-AD-SLOT-ID');
-    ins.setAttribute('data-ad-format', 'auto');
-    ins.setAttribute('data-full-width-responsive', 'true');
-
-    // 3. Append the ins element to your desired location in the DOM
-    // For example, appending to the body or a specific div (e.g., document.getElementById('ad-container'))
-    document.body.appendChild(ins);
-
-    // 4. Push the ad request
-    window.adsbygoogle.push({});
+   
 
 
     const dataStore = useDataStore();

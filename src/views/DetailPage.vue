@@ -44,8 +44,7 @@ export default {
 
   },
   async setup(props) {
-   // console.log("props---",props);
-
+ 
   //   const sdata = [];
  //   const q = collection(db, "articles");
     //  const queryR = query(q, where("__name__", "==", props.id));
@@ -90,8 +89,7 @@ export default {
        const { initialState } = useContext();
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null);
-       console.log("computed--,", homeLocalState.value );
-       useHead({
+        useHead({
 
          title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
 
@@ -202,8 +200,7 @@ export default {
          }
        }
 
-       console.log("homeLocalState",homeLocalState  )
-       return {
+        return {
         homeLocalState
        }
 

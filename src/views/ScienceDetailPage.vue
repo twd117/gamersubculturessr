@@ -74,8 +74,7 @@ export default {
 
        // Hydrate from initialState, if there's anything
        const homeLocalState = ref(initialState.homeLocalState || null)
-         console.log("Home---",homeLocalState.value);
-
+ 
 
        try{
 
