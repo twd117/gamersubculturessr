@@ -12,7 +12,7 @@
        :src='datav[0].image '
         />
     </a></div>
-  
+   <div id="kid"  ></div>
   </div>
      
 
@@ -33,15 +33,42 @@ export default {
     ShrinkCard,
   },
 
+  async mounted(props){
+    let Script = document.createElement("script");
+    
+    Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    document.head.appendChild(Script);
+   
+    let Scriptads = document.createElement("script");
+    
+    Scriptads.setAttribute('key','bc7d042fa8366c2b8f6af5d5ccae5363');
+           Scriptads.setAttribute('format' , 'iframe');
+     Scriptads.setAttribute('height' , 250);
+     Scriptads.setAttribute('width' , 300);
+
+    
+
+     document.getElementById('kidk').appendChild(Scriptads);
+
+  },
+
   async setup(props) {
+
+    
+     
+  
+  
+     
+    
+
+
     const dataStore = useDataStore();
     let datav = [];
 
     let slug = "Article";
     await dataStore.getDealsVerticalBanner();
     datav = dataStore.data ; 
-      console.log("ver----",datav);
-     return { datav,slug };
+      return { datav,slug };
 
   },
   props: {

@@ -22,7 +22,8 @@
         
       </div>
       <PowerStationDeals  v-if="dealsdata"  :deals="dealsdata" />
-       
+      <div id="container-13f978299e46ebb02849704ef5a478c0"></div>
+
       <div v-if="video" class="video-container">
         <iframe
           id="ytb"
@@ -34,7 +35,7 @@
           allowfullscreen
         ></iframe>
       </div>
-      <div class="QtDRQr421398"></div>
+      <div class="aSAsSe421398"></div>
 
       <div class="tagcat">
         <span class="tagspan">{{ tag }}</span>
@@ -57,6 +58,7 @@
       <NewsLetters />
       
  
+ 
      </div>
      <div class="ad-container">
           <VerticalAd    :data="Newsdata " />
@@ -67,6 +69,8 @@
 </template>
 
 
+  
+        
 
         
 
@@ -95,25 +99,35 @@ import DealsComponent from './DealsComponent.vue';
   mounted() {
     let Script = document.createElement("script");
     
-    Script.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    document.head.appendChild(Script);
+    Script.setAttribute("atOptions", "https://platform.twitter.com/widgets.js");
+    document.appendChild(Script);
   
     
-    window.k_init = window.k_init || [];
-    k_init.push({
-        id: 'QtDRQr421398',
-        type: 'bn',
-        domain: 'hdbkome.com',
-        refresh: false,
-        next: 0
-    });
     
-    var s = document.createElement('script');
+ 
+     let sct = document.createElement('script');
+    sct.setAttribute('async', true);
+    sct.setAttribute('charset', 'utf-8');
+    sct.setAttribute('data-cfasync', false);
+    sct.src = 'https://pl29078887.profitablecpmratenetwork.com/13f978299e46ebb02849704ef5a478c0/invoke.js'; 
+    document.head && document.head.appendChild(sct);
+    
+
+
+    
+    let s = document.createElement('script');
     s.setAttribute('async', true);
     s.setAttribute('charset', 'utf-8');
     s.setAttribute('data-cfasync', false);
-    s.src = 'https://hdbkome.com/h0ynr39q.js'; 
+    s.src = 'https://hdbkome.com/41nge0y5.js'; 
     document.head && document.head.appendChild(s);
+    
+    let bn = document.createElement('script');
+    bn.setAttribute('async', true);
+    bn.setAttribute('charset', 'utf-8');
+    bn.setAttribute('data-cfasync', false);
+    bn.src = 'https://www.highperformanceformat.com/e8694784b9a6d72851e9366e641fb40c/invoke.js'; 
+    document.head && document.head.appendChild(bn);
 
 
 
@@ -124,7 +138,7 @@ import DealsComponent from './DealsComponent.vue';
    
   async setup(props) {
 
-   
+    
 
 
     const dataStore = useDataStore();
