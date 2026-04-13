@@ -22,8 +22,7 @@
         
       </div>
       <PowerStationDeals  v-if="dealsdata"  :deals="dealsdata" />
-      <div id="container-13f978299e46ebb02849704ef5a478c0"></div>
-
+      
       <div v-if="video" class="video-container">
         <iframe
           id="ytb"
@@ -70,7 +69,8 @@
 
 
   
-        
+ 
+
 
         
 
@@ -105,30 +105,18 @@ import DealsComponent from './DealsComponent.vue';
     
     
  
-     let sct = document.createElement('script');
+     /**  let sct = document.createElement('script');
     sct.setAttribute('async', true);
     sct.setAttribute('charset', 'utf-8');
     sct.setAttribute('data-cfasync', false);
     sct.src = 'https://pl29078887.profitablecpmratenetwork.com/13f978299e46ebb02849704ef5a478c0/invoke.js'; 
-    document.head && document.head.appendChild(sct);
+    document.head && document.head.appendChild(sct); **/
     
 
 
     
-    let s = document.createElement('script');
-    s.setAttribute('async', true);
-    s.setAttribute('charset', 'utf-8');
-    s.setAttribute('data-cfasync', false);
-    s.src = 'https://hdbkome.com/41nge0y5.js'; 
-    document.head && document.head.appendChild(s);
     
-    let bn = document.createElement('script');
-    bn.setAttribute('async', true);
-    bn.setAttribute('charset', 'utf-8');
-    bn.setAttribute('data-cfasync', false);
-    bn.src = 'https://www.highperformanceformat.com/e8694784b9a6d72851e9366e641fb40c/invoke.js'; 
-    document.head && document.head.appendChild(bn);
-
+ 
 
 
 
