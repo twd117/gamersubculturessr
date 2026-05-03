@@ -137,14 +137,19 @@ export default {
           content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
         },
 
-         {
-          name: `og:image`,
-          content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
-        },
-          {
-          name: `og:type`,
-          content: "article",
-        },
+        {
+              name: `og:image`,
+              content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+            },
+
+        {
+              name: `og:url`,
+              content: 'https://'+route.query.red,
+            },
+            {
+              name: `og:logo`,
+              content: "https://gamersub.com/vite.svg",
+            },
 
          ],
 

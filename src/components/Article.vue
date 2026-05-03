@@ -8,7 +8,7 @@
 
       <AmaDisclosure />
 
-      <img class="image mgb" :src="img[0].downloadURL" />
+      <img class="image mgb" :src="imageUrl" />
 
   </div>
 
@@ -21,6 +21,8 @@
         </div>
         
       </div>
+
+ 
       <PowerStationDeals  v-if="dealsdata"  :deals="dealsdata" />
       
       <div v-if="video" class="video-container">
@@ -34,8 +36,7 @@
           allowfullscreen
         ></iframe>
       </div>
-      <div class="aSAsSe421398"></div>
-
+ 
       <div class="tagcat">
         <span class="tagspan">{{ tag }}</span>
       </div>
@@ -78,7 +79,7 @@
 import SocialMediaVue from "./SocialMedia.vue";
 import MarkdownVue from 'vue3-markdown-it';
 import moment from 'moment';
-import { defineComponent,   reactive } from 'vue';
+import { defineComponent,   reactive, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import NewsLettersVue from "./NewsLetters.vue";
 import HorNavBarVue from "./HorNavBar.vue";
@@ -96,45 +97,27 @@ import DealsComponent from './DealsComponent.vue';
 
 
  export default defineComponent({
-  mounted() {
-    let Script = document.createElement("script");
-    
-    Script.setAttribute("atOptions", "https://platform.twitter.com/widgets.js");
-    document.appendChild(Script);
   
-    
-    
- 
-     /**  let sct = document.createElement('script');
-    sct.setAttribute('async', true);
-    sct.setAttribute('charset', 'utf-8');
-    sct.setAttribute('data-cfasync', false);
-    sct.src = 'https://pl29078887.profitablecpmratenetwork.com/13f978299e46ebb02849704ef5a478c0/invoke.js'; 
-    document.head && document.head.appendChild(sct); **/
-    
-
-
-    
-    
- 
-
-
-
- 
-
-   },
-   
   async setup(props) {
-
-    
-
-
     const dataStore = useDataStore();
     let TopStoriesdata = [];
     let Trenddata = [];
     let Newsdata = [];
     let dealsdata= [];
     let slug="smlc";
+
+    const imageUrl = ref(props.img && props.img.length > 0 ? props.img[0].downloadURL : '');
+
+    onMounted(() => {
+      if (imageUrl.value) {
+        fetch(imageUrl.value)
+          .then(response => response.blob())
+          .then(blob => {
+            imageUrl.value = URL.createObjectURL(blob);
+          })
+          .catch(e => console.error("Error fetching image blob:", e));
+      }
+    });
 
      await dataStore.getSidebarDataEnter();
     TopStoriesdata = dataStore.sidebarData;
@@ -149,7 +132,7 @@ import DealsComponent from './DealsComponent.vue';
     dealsdata = dataStore.data;
     
     
-     return { Trenddata,slug ,TopStoriesdata, Newsdata, dealsdata};
+     return { Trenddata,slug ,TopStoriesdata, Newsdata, dealsdata, imageUrl};
   },
   components: {
     

@@ -156,8 +156,12 @@
             },
             
             {
-              name: `og:type`,
-              content: "article",
+              name: `og:url`,
+              content: 'https://'+route.query.red,
+            },
+            {
+              name: `og:logo`,
+              content: "https://gamersub.com/vite.svg",
             },
 
 

@@ -37,6 +37,7 @@ import {  computed } from 'vue';
 import moment from "moment";
 
 
+
 export default {
   name: "DetailPage",
   mounted(){
@@ -147,12 +148,21 @@ export default {
 
          {
           name: `og:image`,
-          content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+          content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
         },
           {
           name: `og:type`,
           content: "article",
         },
+
+        {
+              name: `og:url`,
+              content: 'https://'+route.query.red ,
+            },
+            {
+              name: `og:logo`,
+              content: "https://gamersub.com/vite.svg",
+            },
 
          ],
 
@@ -188,7 +198,7 @@ export default {
 
        });
        if (true) {
-         // No data, get it fresh from any API
+         // No data, get it from any API
          const fbd = await getDoc(queryR);
          if(fbd.exists())
                  homeLocalState.value = fbd.data();
@@ -222,9 +232,23 @@ export default {
     //this.readArticles();
   },
   methods: {
-    readArticles() {
+    async displayBlobAsImage(url) {
+      // 1. Get your blob (using the fetch method from the previous step)
+      const response = await fetch(downloadUrl);
+      const blob = await response.blob();
 
-    },
+      // 2. Create a temporary local URL for the blob
+      const localUrl = URL.createObjectURL(blob);
+
+      // 3. Set it to the image element
+      const imgElement = document.getElementById('my-image-id');
+      return localUrl;
+
+      // 4. (Optional) Clean up memory when the image is no longer needed
+      imgElement.onload = () => {
+        URL.revokeObjectURL(localUrl);
+      };
+    }
   },
 };
 </script>
