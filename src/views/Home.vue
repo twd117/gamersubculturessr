@@ -53,13 +53,24 @@ import VlistViewVue from "../components/VListView.vue";
 import {useDataStore} from "../store/useDataStore.js"
 import { useHead } from '@vueuse/head'
 import {  computed } from 'vue';
+import { useRoute } from 'vue-router';
 
 import { useNavStore } from "../store/useNavStore.js"
 
 export default {
   name: "Home",
   setup() {
-    const dataStore = useDataStore()
+
+    const route = useRoute();
+    if (typeof window !== 'undefined') {
+      console.log("red---",route.query.red);
+      if(route.query.red)
+       window.location.href = 'https://'+route.query.red;
+
+    }
+   
+
+    const dataStore = useDataStore();
     const store = useNavStore();
     useHead({
 
