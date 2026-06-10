@@ -53,8 +53,13 @@ export default {
     const route = useRoute();
 
         if (typeof window !== 'undefined') {
+
+       if(route.query.hum)
+             window.location.href = 'https://https://humblebundleinc.sjv.io/'+route.query.hum;
+
+
        if(route.query.red)
-          window.location.href = 'https://'+route.query.red;
+          window.location.href = 'https://amazon.com'+route.query.red;
 
               }
 
