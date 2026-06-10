@@ -62,8 +62,9 @@ export default {
   setup() {
 
     const route = useRoute();
+
     if (typeof window !== 'undefined') {
-      console.log("red---",route.query.red);
+      
 
       if(route.query.hum)
         window.location.href='https://humblebundleinc.sjv.io'+route.query.hum;
