@@ -16,7 +16,7 @@ defineProps({
     <NewsCard
       v-for="(item, index) in items"
       :key="index"
-      :image="item.img[0].downloadURL"
+      :image="item.img && item.img.length > 0 ? item.img[0].downloadURL : ''"
       :title="item.title"
       :subtitle="item.sub"
       :id="item.id"

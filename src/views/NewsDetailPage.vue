@@ -196,17 +196,23 @@
          )} ]
 
            })
-           if (true) {
-             // No data, get it fresh from any API
-             const fbd = await getDoc(queryR);
-             if(fbd.exists())
-                     homeLocalState.value = fbd.data();
+           try {
+             if (!homeLocalState.value) {
+               // No data, get it fresh from any API
+               const fbd = await getDoc(queryR);
+               if(fbd.exists()) {
+                       homeLocalState.value = fbd.data();
+               }
 
-          //   console.log("Home---",homeLocalState.value);
-             if (import.meta.env.SSR) {
-               // Save this data in SSR initial state for hydration later
-               initialState.homeLocalState = homeLocalState.value;
+               //   console.log("Home---",homeLocalState.value);
+               if (import.meta.env.SSR) {
+                 // Save this data in SSR initial state for hydration later
+                 initialState.homeLocalState = homeLocalState.value;
+               }
              }
+           } catch (error) {
+                console.error("Error fetching news article:", error);
+                // Optionally, you could set an error state here
            }
            return {
             homeLocalState

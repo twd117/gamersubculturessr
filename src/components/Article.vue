@@ -79,7 +79,7 @@
 import SocialMediaVue from "./SocialMedia.vue";
 import MarkdownVue from 'vue3-markdown-it';
 import moment from 'moment';
-import { defineComponent,   reactive, ref, onMounted } from 'vue';
+import { defineComponent,   reactive, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import NewsLettersVue from "./NewsLetters.vue";
 import HorNavBarVue from "./HorNavBar.vue";
@@ -107,17 +107,6 @@ import DealsComponent from './DealsComponent.vue';
     let slug="smlc";
 
     const imageUrl = ref(props.img && props.img.length > 0 ? props.img[0].downloadURL : '');
-
-    onMounted(() => {
-      if (imageUrl.value) {
-        fetch(imageUrl.value)
-          .then(response => response.blob())
-          .then(blob => {
-            imageUrl.value = URL.createObjectURL(blob);
-          })
-          .catch(e => console.error("Error fetching image blob:", e));
-      }
-    });
 
      await dataStore.getSidebarDataEnter();
     TopStoriesdata = dataStore.sidebarData;

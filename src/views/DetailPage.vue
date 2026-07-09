@@ -97,7 +97,7 @@ export default {
        const homeLocalState = ref(initialState.homeLocalState || null);
         useHead({
 
-         title:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+         title:computed(() => (homeLocalState.value ? homeLocalState.value.title : '')),
 
 
          meta: [
@@ -110,7 +110,7 @@ export default {
 
           {
             name: `keywords`,
-            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+            content: computed(() => (homeLocalState.value ? homeLocalState.value.tag : '')),
           },
 
           {
@@ -120,7 +120,7 @@ export default {
 
           {
             name: `news_keywords`,
-            content: computed(()=> homeLocalState.value !==null ? homeLocalState.value.tag : ""),
+            content: computed(() => (homeLocalState.value ? homeLocalState.value.tag : '')),
           },
               
            {
@@ -129,31 +129,31 @@ export default {
                 },
               {
                 name:`twitter:title`,
-                content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+                content:computed(() => (homeLocalState.value ? homeLocalState.value.title : '')),
                 },
               
                 {
                 name:`twitter:description`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
+                content: computed(() => (homeLocalState.value ? homeLocalState.value.subtitle : '')),
                 }, 
                
                 {
                 name:`twitter:image`,
-                content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+                content: computed(() => (homeLocalState.value ? homeLocalState.value.imgurl : '')),
                 },
                 
          {
           name: `og:title`,
-          content:computed(()=>  homeLocalState.value !==null ? homeLocalState.value.title : ""),
+          content:computed(() => (homeLocalState.value ? homeLocalState.value.title : '')),
            },
         {
           name: `description`,
-          content:computed(()=> homeLocalState.value !==null ? homeLocalState.value.subtitle : ""),
+          content:computed(() => (homeLocalState.value ? homeLocalState.value.subtitle : '')),
         },
 
          {
           name: `og:image`,
-          content: computed(()=>  homeLocalState.value !==null ? homeLocalState.value.imgurl : ""),
+          content: computed(() => (homeLocalState.value ? homeLocalState.value.imgurl : '')),
         },
           {
           name: `og:type`,
@@ -177,20 +177,20 @@ export default {
 {
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.title : "").value}",
+              "headline": "${(homeLocalState.value ? homeLocalState.value.title : '')}",
               "image": [
-              "${computed(()=> homeLocalState.value !==null ? homeLocalState.value.imgurl : "").value}"
+              "${(homeLocalState.value ? homeLocalState.value.imgurl : '')}"
 
               ],
-              "datePublished": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
-              "dateModified": "${computed(()=> homeLocalState.value !==null && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : "").value}",
+              "datePublished": "${(homeLocalState.value && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : '')}",
+              "dateModified": "${(homeLocalState.value && homeLocalState.value._createdAt!==undefined ?new moment(homeLocalState.value._createdAt.seconds*1000) : '')}",
 
               "author": [{
                   "@type": "Person",
                   "name": "Rolox Tot",
                   "url": "https://twitter.com/Rolox77"}],
 
-              "articleSection":"${computed(()=> homeLocalState.value !==null ?homeLocalState.value.subtitle:"").value}",
+              "articleSection":"${(homeLocalState.value ? homeLocalState.value.subtitle:'')}",
 
 
               "publisher": {
