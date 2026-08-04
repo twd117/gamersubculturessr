@@ -1,16 +1,28 @@
 <template>
   <div class="vertical-ad">
     <div class="one">
-     <h1> LATEST NEWS </h1>
+     <h1> MORE NEWS </h1>
    </div>
   <div class="aditem" v-for=" (d, key, index) in data" :key="key">
      
     <ShrinkCard :sslug="slug"   :id="d.id" :title="d.title" :imageUrl="d.img[0].downloadURL" /> 
+
+
     <div  class="vads" v-if="key === 0">
   <a   v-if='datav && datav.length > 0    ' :href='datav[0].link  ' target="_blank" >
-      <img class="adimg"
-       :src='datav[0].image '
-        />
+      
+       
+      
+    
+      
+        <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+
+        <iframe :src="`https://www.youtube.com/embed/${datav[0].image}?rel=0&autoplay=1&mute=1`"
+
+        style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;" referrerpolicy="strict-origin">
+
+        </iframe></div>
+
     </a></div>
    <div id="kid"  ></div>
   </div>
