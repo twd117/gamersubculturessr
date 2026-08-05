@@ -5,7 +5,7 @@
    </div>
 
 
-<div  style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"> <a target='_blank'  href="https://humblebundleinc.sjv.io/k4NkMx">   <iframe :src="datav[0].image" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;" referrerpolicy="strict-origin"></iframe></a></div>
+<div  style="left: 0; width: 100%; height: 100%; position: relative; padding-bottom: 56.25%;"> <a target='_blank'  href="https://humblebundleinc.sjv.io/k4NkMx">   <iframe :src="datav[0].image" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;"    allowfullscreen scrolling="no" allow="accelerometer *; autoplay; clipboard-write *;  encrypted-media *; gyroscope *; picture-in-picture *; web-share *;" referrerpolicy="strict-origin"></iframe></a></div>
    
    
 
