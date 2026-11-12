@@ -13,6 +13,7 @@
      
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
     </ul>
+    <SearchBar />
     <!--  <div id="search-icon">
         <i class="material-icons">search</i>
         
@@ -21,7 +22,12 @@
 </template>
 
 <script>
+import SearchBar from "./SearchBar.vue";
+
 export default {
+  components: {
+    SearchBar,
+  },
  
   data() {
     return {

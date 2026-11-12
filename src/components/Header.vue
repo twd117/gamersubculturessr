@@ -26,6 +26,7 @@
       <!--  <li class="child push"><i class="material-icons">search</i></li> -->
       <router-view />
     </ul>
+    <SearchBar />
     <!--  <div id="search-icon">
         <i class="material-icons">search</i>
 
@@ -36,8 +37,12 @@
 <script>
 import { useNavStore } from "../store/useNavStore.js"
 import {useDataStore} from "../store/useDataStore.js"
+import SearchBar from "./SearchBar.vue"
 
 export default {
+  components: {
+    SearchBar,
+  },
   setup(){
     const store = useNavStore();
     const dataStore = useDataStore()

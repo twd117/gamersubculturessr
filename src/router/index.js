@@ -3,6 +3,7 @@ import DetailPage from "../views/DetailPage.vue";
 import SciencesDetailPage from "../views/ScienceDetailPage.vue";
 import NewsDetailPage from "../views/NewsDetailPage.vue";
 import Smlc from "../views/smlc.vue";
+import SearchView from "../views/SearchView.vue";
 
 const routes = [
 
@@ -10,6 +11,12 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+
+  {
+    path: "/search",
+    name: "Search",
+    component: SearchView,
   },
 
 
