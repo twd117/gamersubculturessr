@@ -156,183 +156,141 @@
   </script>
   
   <style scoped>
- 
-
-
-
- .line {
-    height: 1px;
-  margin-top: 10px;
-  margin-bottom:10px;
-  background-color:#ccc;
-  width: 100%;
- 
+.line {
+  display: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
+.crd-ctn {
+  display: flex;
+  margin: 0 0 20px 0;
+  align-items: stretch;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crd-ctn:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
 
 .card-img {
-  width:300Px;
+  width: 280px;
+  min-height: 190px;
   object-fit: cover;
-   height: 100%;
-   border-radius: 10px;
-   border: 1px solid #ddd;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  flex-shrink: 0;
+  background-color: #f1f3f4;
+  transition: transform 0.3s ease;
+}
+
+.crd-ctn:hover .card-img {
+  transform: scale(1.03);
 }
 
 .thecard {
   width: 100%;
-  height:100%;
   display: flex;
-  flex-direction:column;
-  border-radius: 4px;
-  transition: 400ms ease;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0;
 }
 
-
-p {
-  font-size: 13px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
+.Dcard-caption {
+  padding: 20px 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+.dtg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
 
 .Dcard-caption span.date {
-  font-size: 10px;
-  color: #666;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
   font-family: 'Roboto', sans-serif;
 }
+
 .flt {
- 
- font-size: 10px;
- color: #666;
- font-family: 'Roboto', sans-serif;
- 
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 122, 48, 0.12);
+  color: #d85a12;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
 }
-
-
 
 .Dcard-caption h1 {
-  font-size: 22px;
-  color: #000;
   font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0 0 10px 0;
+  transition: color 0.2s ease;
+}
+
+.crd-ctn:hover .Dcard-caption h1 {
+  color: #FF7A30;
+}
+
+.Dcard-caption p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 h5 {
-  margin:0;
-}
-.dtg {
-  display:flex;
-  justify-content:space-between;
-}
-/**********Dark card***********/
-
-.Dcard-caption span{
-  
-    font-family: 'Roboto', sans-serif;
-  color:#666;
-}
-.Dcard-caption p{
-  font-family: 'Roboto', sans-serif;
-  color:#333;
-  
-}
-.Dcard-caption h1{
-  font-family: 'Roboto', sans-serif;
-  color:#000;
-  margin-top:18px;
-  margin-bottom: 18px;
-}
-.Dcard-caption {
-  padding: 15px 25px 15px 25px;
-  border-radius: 4px 4px 4px 4px;
-  text-align: left;
-}
-
-.crd-ctn {
-  display:flex;
-  margin:8px;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
-
-.crd-ctn:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 1090px) {
-    .Dcard-caption span.date {
-  font-size: 10px;
-}
-.flt {
- 
- font-size: 10px;
- 
-}
-
-p {
-  font-size: 11px;
-}
-
-.Dcard-caption h1 {
-  font-size: 15px;
-}
-
+  margin: 0;
 }
 
 @media screen and (max-width: 700px) {
-  .Dcard-caption span.date {
-  font-size: 10px;
-}
-.flt {
- 
- font-size: 10px;
- 
-}
-
-p {
-  font-size: 11px;
-}
-.card-img {
-  width:200Px;}
+  .card-img {
+    width: 210px;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .crd-ctn {
-  display:flex;
-  flex-direction: column;
-  margin:8px;
-  padding:16px;
-  justify-content: center;
-}
-  .Dcard-caption span.date {
-  font-size: 10px;
-  margin-top: 8px;;
-}
+    flex-direction: column;
+    padding: 0;
+  }
 
+  .card-img {
+    width: 100%;
+    height: 200px;
+  }
 
-.flt {
- 
- display: none ;
+  .Dcard-caption {
+    padding: 18px 20px;
+  }
 }
-.Dcard-caption{
-  padding:0px;
-}
-p {
-  font-size: 11px;
-}
-.card-img {
-  width:100%;
-}
-}
-
-
   </style>

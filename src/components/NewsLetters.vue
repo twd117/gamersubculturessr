@@ -66,6 +66,7 @@ export default {
   border-radius: 12px;
   font-family: 'Roboto', sans-serif;
    border: 1px solid #4B4B64;
+       margin-top: 8px
 }
 
 .content {

@@ -118,38 +118,69 @@ export default {
 };
 </script>
 <style>
-/****************card******/
+/**************** Material Design Card (matching SearchView) ******/
 a {
   text-decoration: none;
-  color: #007bff;
+  color: inherit;
 }
 a:hover {
-  color: #0056b3;
+  color: inherit;
 }
 
 .card {
-  padding: 12px;
-  background-color: #fff;
-  margin-bottom: 1.6rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  background-color: #ffffff;
+  margin-bottom: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card__padding {
-  padding: 1rem;
+  padding: 18px 20px 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card__image {
-  margin-top: 1rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  min-height: 100px;
-}
-.card__image img {
+  position: relative;
   width: 100%;
+  padding-top: 56.25%;
+  margin: 0;
+  min-height: unset;
+  background-color: #f1f3f4;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
-  border-radius: 8px;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card__image img {
+  transform: scale(1.03);
 }
 
 .card__content {
@@ -158,38 +189,55 @@ a:hover {
 
 /* card meta */
 .card__meta time {
-  font-size: 1.5rem;
-  color: #bbb;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
   margin-left: 0.8rem;
 }
 
 /* card article */
-.card__article{
+.card__article {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
 }
+
 .card__article a {
-  
   text-decoration: none;
-    text-align: left;
-    transition: all .5s ease;
-    font-family: Roboto,sans-serif;
-    font-size: 24px;
-    line-height: 32px;
-    color: #424242;
-    letter-spacing: .28px;
+  text-align: left;
+  transition: color 0.2s ease;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: rgba(0, 0, 0, 0.87);
+  letter-spacing: normal;
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+
+.card:hover .card__article a,
 .card__article a:hover {
-  color: #0056b3;
+  color: #FF7A30;
 }
+
 .card-text {
-  text-align: justify;
+  text-align: left;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  line-height: 20px;
-  color: #333;
-  margin-top: 4px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
 }
+
 /* card action */
 .card__action {
   overflow: hidden;
@@ -198,8 +246,6 @@ a:hover {
   padding-bottom: 1.6rem;
 }
 
-
-
 .card__author img,
 .card__author-content {
   display: inline-block;
@@ -207,22 +253,36 @@ a:hover {
 }
 
 .child {
- /** width: 28%;*/ 
- width: 31%;
-  min-width: 237px;
-  margin: 6px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
 }
 
 .lk-tag {
   display: flex;
-  font-size: 0.875rem;
-  font-weight: 400;
-  font-style: normal;
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  margin-left: 0.8rem;
-  margin-bottom: 1rem;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.65);
+  margin: auto 20px 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f3f4;
+}
+
+.lk-tag::after {
+  content: 'Read Article \2192';
+  margin-left: auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FF7A30;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .lk-tag::after {
+  transform: translateX(3px);
 }
 
 .lk-tag url {
@@ -231,23 +291,23 @@ a:hover {
 
 .material-icons {
   margin-right: 6px;
-  color: #000;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .card-shadow:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-@media screen and (max-width: 750px) {
-     .child{
-      width: 44%;
-     }
-}
-@media screen and (max-width: 499px) {
-     .child{
-      width: 100%;
-     }
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
+@media screen and (max-width: 750px) {
+  .child {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  .child {
+    width: 100%;
+  }
+}
 </style>

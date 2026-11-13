@@ -75,71 +75,56 @@ export default {
 </script>
 
 <style  >
-
 .share-text {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   color:#212529;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #1d1b20;
+}
 
-    .share-text > span {
-      font-family: Roboto, sans-serif;
-      font-size: 22px;
-    font-weight: bold;
-    margin-left: 4px;
-    }
+/* M3 Title Medium */
+.share-text > span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem; /* 16px — M3 Title Medium */
+  font-weight: 600;
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0.15px;
+  margin-left: 8px;
+}
 
-  .share-buttons-container {
-        width: 100%;
-    background: #f8f9fa;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding-right: 12px;
-    padding-left: 12px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 1px solid #dee2e6;
-    justify-content: space-between;
-  }
+.share-buttons-container {
+  width: 100%;
+  background: #fafafa;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 10px 18px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  justify-content: space-between;
+}
+
 .share-list {
   display: flex;
   flex-direction: row;
- }
+  gap: 4px;
+}
 
 .share-list a {
-  border-radius: 100px;
-  width: 35px;
-  height: 35px;
-  padding: 7px;
-  margin: 10px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  margin: 4px;
   cursor: pointer;
   overflow: hidden;
-}
-.share-list a img {
-  width: 100%;
-  height: 100%;
-  filter: invert(100%);
-}
-a.fb-h {
-  background: #3B5998;
-}
-a.tw-h {
-  background: #00acee;
-}
-a.li-h {
-  background: #0077B5;
-}
-a.re-h {
-  background: #FF5700;
-}
-a.pi-h {
-  background: #c8232c;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
- 
+.share-list a:hover {
+  background-color: rgba(255, 122, 48, 0.12);
+  transform: translateY(-2px);
+}
 </style>

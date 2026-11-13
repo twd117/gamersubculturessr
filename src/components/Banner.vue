@@ -118,238 +118,171 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped >
-
-.btit {
-    text-align: start;
-    font-family: 'Orbitron', sans-serif;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
-}
-a {
-  color: #00ff00;
-  text-decoration: none; /* no underline */
-}
-a :hover{
-  color: #fff;
-  text-decoration: none; /* no underline */
-}
-
-.btn {
-  cursor: pointer;
-  display: inline-block;
-  border: 1px solid #00ff00;
-  font-weight: bold;
-  padding: 10px 20px;
-  background: transparent;
-  color: #00ff00;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover{
-  background-color: #00ff00;
-  color:#1a1a1a;
-}
-#starcontainer {
-  display:flex;
-  flex-direction:row;
-  margin-bottom:16px;
-}
-.ic svg {
-  margin-right:4px;
-  color: #00ff00;
-  filter: drop-shadow(0 0 5px #00ff00);
-}
-.ic {
-  position: static;
-width: 16px;
-height: 16px;
-left: calc(50% - 16px/2 - 16px);
-top: calc(50% - 16px/2);
-
-
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
-margin: 0px 0px;
-}
-.start {
-  display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-
-position: static;
-width: 80px;
-height: 16px;
-left: 0px;
-top: 40px;
-
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 16px 0px;
-}
-#tag {
-  display: flex;
-padding: 3px;
-justify-content: center;
-
-width:fit-content; 
-
-background: rgba(0, 255, 0, 0.1);
-border-radius: 0px 8px;
-border: 1px solid #00ff00;
-
-/* Inside auto layout */
-
-flex-wrap: wrap;
-margin: 16px 0px;
-}
-#tag span {
-  width: 100%;
-    justify-content: center;
-  position: static;
- left: 8px;
-top: 4px;
-color:#00ff00;
-/* Mobile/Small copy */
-
-font-family: 'Roboto Mono', monospace;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
- /* identical to box height, or 114% */
-
-
-/* Primary/Teal */
-
-color: #00ff00;
-
-
-/* Inside auto layout */
-
- order: 0;
-flex-grow: 0;
-margin: 0px 10px;
-}
-
 .container {
-    width: 100%;
-    margin: auto;
-   font-family: 'Roboto Mono', monospace;
-  background: #1a1a1a;
-  color: #e0e0e0;
-  font-size: 17px;
+  width: 100%;
+  margin: 24px auto 32px;
+  font-family: 'Roboto', sans-serif;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .xbox {
   width: 100%;
-  height: 450px;
+  height: 440px;
   margin-bottom: 20px;
   position: relative;
-   background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
   background-position: center;
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.xbox:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
 .xbox::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.52) 55%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
 }
 
 .xbox .content {
-  width: 40%;
-  padding: 50px 0 0 30px;
+  width: 65%;
+  padding: 36px 40px;
   text-align: left;
   position: relative;
   z-index: 1;
 }
 
+#tag {
+  display: inline-flex;
+  padding: 5px 12px;
+  justify-content: center;
+  width: fit-content;
+  background: #FF7A30;
+  border-radius: 6px;
+  border: none;
+  margin: 0 0 14px 0;
+}
+
+#tag span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin: 0;
+}
+
+#starcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+}
+
+.ic {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.ic svg {
+  color: #FF7A30;
+  fill: #FF7A30;
+}
+
+.btit {
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  margin: 0 0 10px 0;
+}
+
 .xbox p {
-  margin: 10px 0 20px;
-}
-
-
-
-.content {
-  width: 55%;
-  padding: 100px 0 0 30px;
-}
-
-@media only screen and (max-width: 1000px) {
-    .container {
-
-  color: #e0e0e0;
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
   line-height: 1.5;
-}
-.xbox .content {
-  width: 55%;
-  padding: 50px 0 0 30px;
-  text-align: left;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 20px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  background-color: #FF7A30;
+  color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 2px 6px rgba(255, 122, 48, 0.35);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.btn:hover {
+  background-color: #465C88;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(70, 92, 136, 0.4);
+}
+
 @media only screen and (max-width: 800px) {
-    .container {
-
-  color: #e0e0e0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-.xbox .content {
-  width: 60%;
-  padding: 50px 0 0 30px;
-  text-align: left;
-}
-
+  .xbox {
+    height: 380px;
+  }
+  .xbox .content {
+    width: 85%;
+    padding: 28px;
+  }
+  .btit {
+    font-size: 22px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
-
-  color: #e0e0e0;
-  font-size: 13px;
-  line-height: 1.5;
-}
-.xbox .content {
-  width: 65%;
-  padding: 50px 0 0 30px;
-  text-align: left;
-}
-
-}
-@media only screen and (max-width: 450px) {
-    .container {
-
-  color: #e0e0e0;
-  font-size: 10px;
-  line-height: 1.5;
-}
-#tag span {
-  padding:7px;
-}
-.xbox .content {
-  width: 75%;
-  padding: 50px 0 0 30px;
-  text-align: left;
-}
-
-
+  .xbox {
+    height: 340px;
+  }
+  .xbox .content {
+    width: 100%;
+    padding: 20px;
+  }
+  .btit {
+    font-size: 19px;
+  }
 }
 </style>

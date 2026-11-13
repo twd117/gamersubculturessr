@@ -12,6 +12,6 @@ export default {
 
 <style>
 #box {
-  margin: 35px;
+  padding: 35px;
 }
 </style>

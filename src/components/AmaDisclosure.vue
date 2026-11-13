@@ -14,30 +14,25 @@
   </script>
   
   <style scoped>
-
+/* Material Design 3 Body Small for Affiliate Disclosure */
 .amadisclosure {
-  
   width: 100%;
   height: auto;
-  background: #fff;
-  margin: 0 auto;
-  
-  
-  box-shadow: 2px 2px 10px #ccc;
-  padding-right: 12px;
-  padding-left: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-	border-radius:8px;
+  background: #ffffff;
+  margin: 12px auto 16px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
 }
 .amadisclosure span {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 1.2px;
-    color: #202125;
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem; /* 12px — M3 Body Small */
+  font-weight: 600;
+  line-height: 1rem; /* 16px */
+  letter-spacing: 0.4px;
+  color: #49454f;
+  text-align: center;
 }
   </style>

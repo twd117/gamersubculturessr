@@ -61,12 +61,20 @@ export default {
 
 <style>
 #main {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: stretch;
   width: 100%;
+  padding: 0 35px;
   margin-top: 28px;
- }
+  margin-bottom: 36px;
+}
+
+@media (max-width: 650px) {
+  #main {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+}
 </style>

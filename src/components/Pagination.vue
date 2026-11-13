@@ -47,36 +47,40 @@ export default {
 <style>
 #pgn {
   display: flex;
-  margin: 35px;
-  width: 90%;
-  justify-content: space-around;
+  margin: 24px auto 48px;
+  width: 100%;
+  justify-content: center;
 }
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 120px;
-  height: 32px;
-  line-height: 32px;
-  border-radius: 2px;
-  font-size: 0.9em;
+  padding: 0 28px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
   background-color: #FF7A30;
-  color: #fff;
-  border: 1px solid #FF7A30;
+  color: #ffffff;
+  border: none;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 .center {
   text-align: center;
 }
 
 .button.raised {
-  box-shadow: 0 2px 5px 0 rgba(0, 123, 255, 0.26);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
 }
 
 .button.raised:hover {
   background-color: #465C88;
-  color: #fff;
-  box-shadow: 0 8px 17px 0 rgba(0, 123, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
 </style>
